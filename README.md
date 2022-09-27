@@ -39,5 +39,8 @@ Desafio Final do ciclo I da turma Turing  - AlphaEdtech
 		<td align="center">
 			<a href="https://github.com/LauraSeixas"><img src="https://avatars.githubusercontent.com/u/92645879?v=4" width="100px;" alt="Laura Seixas"/><br /><sub><b>Laura Seixas</b></sub></a>	<br />🚀<br />
 		</td>
+		<td align="center">
+			<a href="https://github.com/VictorRaffaele"><img src="https://avatars.githubusercontent.com/u/40237458?v=4" width="100px;" alt="Victor A. Raffaele"/><br /><sub><b>Victor A. Raffaele</b></sub></a>	<br />🚀<br />
+		</td>
 	</tr>
 </table>
