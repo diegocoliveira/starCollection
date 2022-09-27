@@ -21,7 +21,7 @@ Desafio Final do ciclo I da turma Turing  - AlphaEdtech
 
 ## Links:
 - **[Comando Básicos e Boas Práticas de git](https://diegocoliveira.github.io/equipe10-dev-html/index.html)**
-- **[https://starcollection.vercel.app/] (https://starcollection.vercel.app/)**
+- **https://starcollection.vercel.app/**
 
 ## 🤝 Contribuidores
 
