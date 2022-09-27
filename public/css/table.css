@@ -1,0 +1,24 @@
+table {
+}
+
+thead {
+}
+
+tbody {
+}
+
+tr:nth-child(even) {
+}
+
+th {
+    padding: 1vh 0;
+}
+
+td {
+    padding: 1vh 1vw;
+}
+
+.material-icons {
+    width: 100%;
+    cursor: pointer;
+}

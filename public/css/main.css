@@ -1,0 +1,31 @@
+@import url("./modal.css");
+@import url("./button.css");
+@import url("./input.css");
+@import url("./table.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+}
+
+main,
+form {
+    width: 70vw; /*metade da seção da direta (84vw)*/
+    padding: 3vh 3vw;
+    display: flex;
+    gap: 2vh;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: -0.5vw 1vh 2vmax 0.2vmax black;
+}

@@ -1,0 +1,36 @@
+{
+  "name": "starcollection",
+  "version": "1.0.0",
+  "description": "Desafio Final do ciclo I da turma Turing  - AlphaEdtech",
+  "main": "server.mjs",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diegocoliveira/starCollection.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diegocoliveira/starCollection/issues"
+  },
+  "homepage": "https://github.com/diegocoliveira/starCollection#readme",
+  "dependencies": {
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "pg": "^8.8.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "public/*",
+      "repository/*"
+    ]
+  }
+}
