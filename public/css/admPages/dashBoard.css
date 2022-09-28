@@ -1,0 +1,84 @@
+#divInfos{
+
+    width: 79vw;
+    height: 10vh;
+
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#recentTrades{
+
+    width: 79vw;
+    height: 60vh;
+
+    background: #FBF9F9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
+
+    padding: 2vw;
+
+}
+
+#infoTrades{
+
+    width: 15vw;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.infoDashboard{
+
+    width: 18vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    background: #FBF9F9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
+
+}
+
+.info{
+
+    width: 10vw;
+    height: 8vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.infoBetween{
+
+    width: 74vw;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.trades{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.divStatus{
+
+    width: 10vw;
+    height: 10vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}

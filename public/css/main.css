@@ -2,6 +2,11 @@
 @import url("./button.css");
 @import url("./input.css");
 @import url("./table.css");
+@import url("./font.css");
+@import url("./line.css");
+@import url("./admPages/admMenu.css");
+@import url("./admPages/dashBoard.css");
+@import url("./admPages/registerProd.css");
 
 * {
     margin: 0;
@@ -16,11 +21,18 @@ body {
     justify-content: center;
     align-items: center;
     font-family: "Roboto", sans-serif;
+    background-color: #0f0f13;
 }
 
-main,
+main{
+
+    background-color: #FBF9F9;
+
+}
+
+/*main,
 form {
-    width: 70vw; /*metade da seção da direta (84vw)*/
+    width: 70vw; /*metade da seção da direta (84vw)
     padding: 3vh 3vw;
     display: flex;
     gap: 2vh;
@@ -28,4 +40,4 @@ form {
     justify-content: flex-start;
     align-items: center;
     box-shadow: -0.5vw 1vh 2vmax 0.2vmax black;
-}
+}*/
