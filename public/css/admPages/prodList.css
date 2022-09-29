@@ -1,0 +1,29 @@
+#prodHeader{
+
+    height: 8vh;
+
+}
+
+#prodList{
+
+    width: 80vw;
+    height: 60vh;
+    padding: 2vw;
+
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
+
+}
+
+.infoProd{
+
+    width: 20vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
