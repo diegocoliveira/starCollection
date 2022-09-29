@@ -1,3 +1,36 @@
+#btRegister{
+
+    width: 14vw;
+    height: 4vh;
+    
+    background: #262730;
+    border-radius: 25px;
+
+}
+
+#btRegister:hover{
+
+    background-color: #494b5d;
+
+}
+
+#btListProds{
+
+    width: 14vw;
+    height: 4vh;
+
+    background: #D20801;
+    border: none;
+    border-radius: 25px;    
+
+}
+
+#btListProds:hover{
+
+    background-color: #d208019e;
+
+}
+
 .btn-primary {
 }
 
@@ -8,4 +41,26 @@
 }
 
 .btn-alternate:hover {
+}
+
+.options{
+
+    height: 6vh;
+    width: 15vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    background-color: #262730;
+    border: none;
+
+    font-size: 0.8em;
+
+}
+
+.options:hover{
+
+    background-color: rgba(251, 249, 249, 0.15);
+
 }

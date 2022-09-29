@@ -1,0 +1,88 @@
+@import url("./dashBoard.css");
+@import url("./font.css");
+@import url("./line.css");
+@import url("./registerProd.css");
+@import url("./button.css");
+
+#admMenu{
+
+    height: 80vh;
+    width: 15vw;
+
+    background-color: #262730;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+#perfil{
+
+    height: 15vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+#avatar{
+
+    width: 9vh;
+    height: 4vw;
+
+    background-color: gray;
+    border-radius: 50px;
+
+}
+
+#subMenu{
+
+    height: 25vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    font-size: 1.3rem;
+
+}
+
+#signOut{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#outBt{
+
+    width: 15vw;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#admMain{
+
+    width: 85vw;
+    height: 80vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+.iconAdm{
+
+    width: 2vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
