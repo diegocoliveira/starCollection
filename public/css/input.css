@@ -1,6 +1,15 @@
 input{
 
     height: 4vh;
+    background-color: transparent;
+    border: none;
+
+}
+
+select{
+
+    height: 4vh;
+    background-color: transparent;
     border: none;
 
 }
@@ -8,5 +17,6 @@ input{
 textarea{
 
     border: none;
+    background-color: transparent;
 
 }

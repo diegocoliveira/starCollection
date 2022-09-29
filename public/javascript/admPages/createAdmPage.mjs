@@ -1,26 +1,31 @@
 import { admMenu } from "./admMenu.mjs";
 import { Dashboard } from "./dashBoard.mjs";
-import { regPage } from "./regProds.mjs";
+import { RegProd } from "./regProds.mjs";
 import { Line } from "../line.mjs";
+import { readURL } from "../preview.js";
+import { Clear } from "../clearPages.js";
 
-const body = document.querySelector('#body');
-
+const clear = new Clear();
 const dashBoard = new Dashboard();
+const regProd = new RegProd();
 const line = new Line();
 
-body.innerHTML = '';
-body.innerHTML += admMenu;
-const dashBt = document.querySelector("#dashBt");
-const registBt = document.querySelector("#registBt");
+function createMenu() {
+    const body = document.querySelector('#body');
 
-function mainClear() {
-    const main = document.querySelector("#admMain");
-    main.innerHTML = '';
+    clear.bodyClear();
+    body.innerHTML += admMenu;
+
+    const dashBt = document.querySelector("#dashBt");
+    const registBt = document.querySelector("#registBt");
+
+    dashBt.addEventListener("click", dashBoardCreate);
+    registBt.addEventListener("click", registerCreate);
 }
 
 function dashBoardCreate(){
     const main = document.querySelector("#admMain");
-    mainClear();
+    clear.mainClear();
     main.innerHTML += dashBoard.infos;
     main.innerHTML += dashBoard.recentTrades;
     listInfo();
@@ -64,9 +69,10 @@ function statusList() {
 
 function registerCreate() {
     const main = document.querySelector("#admMain");
-    mainClear();
-    main.innerHTML += regPage;
+    clear.mainClear();
+    main.innerHTML += regProd.regPage;
+    const inputImg = document.querySelector("#inputImg");
+    inputImg.addEventListener('change', function(){readURL(this, 'fk')});
 }
 
-dashBt.addEventListener("click", dashBoardCreate);
-registBt.addEventListener("click", registerCreate);
+createMenu();
