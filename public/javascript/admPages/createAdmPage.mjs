@@ -1,17 +1,24 @@
 import { admMenu } from "./admMenu.mjs";
 import { Dashboard } from "./dashBoard.mjs";
-import { regPage } from "./regProds.mjs";
+import { RegProd } from "./regProds.mjs";
 import { Line } from "../line.mjs";
 
-const body = document.querySelector('#body');
-
 const dashBoard = new Dashboard();
+const regProd = new RegProd();
 const line = new Line();
 
-body.innerHTML = '';
-body.innerHTML += admMenu;
-const dashBt = document.querySelector("#dashBt");
-const registBt = document.querySelector("#registBt");
+function createMenu(params) {
+    const body = document.querySelector('#body');
+
+    body.innerHTML = '';
+    body.innerHTML += admMenu;
+
+    const dashBt = document.querySelector("#dashBt");
+    const registBt = document.querySelector("#registBt");
+
+    dashBt.addEventListener("click", dashBoardCreate);
+    registBt.addEventListener("click", registerCreate);
+}
 
 function mainClear() {
     const main = document.querySelector("#admMain");
@@ -65,8 +72,9 @@ function statusList() {
 function registerCreate() {
     const main = document.querySelector("#admMain");
     mainClear();
-    main.innerHTML += regPage;
+    main.innerHTML += regProd.regPage;
+    const inputImg = document.querySelector("#inputImg");
+    inputImg.addEventListener('change', function(){regProd.readURL(this)});
 }
 
-dashBt.addEventListener("click", dashBoardCreate);
-registBt.addEventListener("click", registerCreate);
+createMenu();

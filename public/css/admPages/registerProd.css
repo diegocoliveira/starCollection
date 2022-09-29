@@ -23,6 +23,19 @@
 
 }
 
+#fk{
+
+    max-width: 15vw;
+    max-height: 15vw;
+
+}
+
+#inputImg{
+
+    margin-top: 1.5vh;
+
+}
+
 #infoProds{
 
     width: 40vw;
