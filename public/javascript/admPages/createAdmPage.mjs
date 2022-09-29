@@ -2,15 +2,18 @@ import { admMenu } from "./admMenu.mjs";
 import { Dashboard } from "./dashBoard.mjs";
 import { RegProd } from "./regProds.mjs";
 import { Line } from "../line.mjs";
+import { readURL } from "../preview.js";
+import { Clear } from "../clearPages.js";
 
+const clear = new Clear();
 const dashBoard = new Dashboard();
 const regProd = new RegProd();
 const line = new Line();
 
-function createMenu(params) {
+function createMenu() {
     const body = document.querySelector('#body');
 
-    body.innerHTML = '';
+    clear.bodyClear();
     body.innerHTML += admMenu;
 
     const dashBt = document.querySelector("#dashBt");
@@ -20,14 +23,9 @@ function createMenu(params) {
     registBt.addEventListener("click", registerCreate);
 }
 
-function mainClear() {
-    const main = document.querySelector("#admMain");
-    main.innerHTML = '';
-}
-
 function dashBoardCreate(){
     const main = document.querySelector("#admMain");
-    mainClear();
+    clear.mainClear();
     main.innerHTML += dashBoard.infos;
     main.innerHTML += dashBoard.recentTrades;
     listInfo();
@@ -71,10 +69,10 @@ function statusList() {
 
 function registerCreate() {
     const main = document.querySelector("#admMain");
-    mainClear();
+    clear.mainClear();
     main.innerHTML += regProd.regPage;
     const inputImg = document.querySelector("#inputImg");
-    inputImg.addEventListener('change', function(){regProd.readURL(this)});
+    inputImg.addEventListener('change', function(){readURL(this, 'fk')});
 }
 
 createMenu();
