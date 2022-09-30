@@ -1,23 +1,3 @@
-#title {
-    font-family: "Distant Galaxy";
-    font-size: 2.5vw;
-    text-align: end;
-    position: relative;
-    top: 15%;
-    padding-right: 3%;
-}
-
-.titleH2 {
-    font-family: "Distant Galaxy";
-    font-size: 1.5vw;
-    text-align: center;
-}
-
-#logo {
-    font-family: "Distant Galaxy";
-    font-size: 2.5vw;
-}
-
 body {
     background-color: #262730;
     height: 100vh;
@@ -27,6 +7,37 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+header {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FBF9F9;
+    color: #000000;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+#title {
+    font-family: "Distant Galaxy";
+    font-size: 2.5vw;
+    text-align: end;
+    position: relative;
+    top: 15%;
+    padding-right: 3%;
+}
+
+#logo {
+    font-family: "Distant Galaxy";
+    font-size: 2.3vw;
+}
+
 #mainCenter{
     display: flex;
     flex-direction: column;
@@ -36,6 +47,7 @@ body {
     max-width: 1200px;
     height: 100%;
 }
+
 #root {
     display: flex;
     flex-direction: column;
@@ -54,66 +66,14 @@ body {
     height: 100%;
     margin-top: 0.8vh;
 }
-.login {
-    background-color: #FBF9F9;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    margin-top: 0.8vh;
-}
-#mainRightLogin {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
 
-}
-#mainLeftSignup{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-}
-#mainLeftLogin{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-}
-header {
-    width: 100%;
-    height: 70px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #FBF9F9;
-    color: #000000;
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-}
-.imagePagesLogin{
-    height: 60vh;
-}
-.imagePagesLoginJar{
-    height: 55vh;
-}
 .linkFormat {
     text-decoration: none;
     color: #000000;
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 1vw;
+    font-size: 0.75vw;
     line-height: 23px;
 }
 
@@ -131,37 +91,6 @@ header {
     align-items: center;
 }
 
-#search {
-    background-image: url("../images/search.svg");
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: 2.5vh;
-    padding-left: 1.5vw;
-    border-radius: 20px;
-    margin-left: 1.5vw;
-    height: 2vh;
-    border: thin solid #000000;
-}
-
-#btnChange {
-    width: 10vw;
-    height: auto;
-    border: none;
-    background: linear-gradient(178.99deg, #262730 0.86%, rgba(38, 39, 48, 0) 211.02%);
-    border-radius: 3px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 1vw;
-    line-height: 38px;
-    color: #FBF9F9;
-    cursor: pointer;
-    position: relative;
-    top: 65%;
-    left: 5%;
-    
-}
-
 .icons {
     display: flex;
     flex-direction: row;
@@ -174,97 +103,6 @@ header {
     margin-left: 0.5vw;
     margin-right: 0.5vw;
     height: 3vh;
-}
-
-
-
-#email {
-    padding-left: 1.5vw;
-    border-radius: 20px;
-    height: 2.5vh;
-    width: 13vw;
-    margin: 1vh;
-}
-
-#password {
-    background-image: url("../images/visibility_off.svg");
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: 2.5vh;
-    padding-left: 1.5vw;
-    border-radius: 20px;
-    height: 2.5vh;
-    width: 13vw;
-    margin: 1vh;
-}
-
-#loginButton {
-    background: #262730;
-    border-radius: 25px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 23px;
-    color: #FBF9F9;
-    cursor: pointer;
-    width: 150px;
-    height: 41.61px;
-    margin: 1vh;
-}
-
-.pLogin {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 13px;
-    line-height: 23px;
-    color: #000000;
-    margin-top: 1vh;
-    margin-right: 5vw;
-}
-.pSignup{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 13px;
-    line-height: 23px;
-    color: #000000;
-    margin-top: 1vh;  
-}
-.bar {
-    width: 50%;
-    height: 1px;
-    background: #000000;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
-
-}
-
-#forgot {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 13px;
-    color: #000000;
-    margin-top: 0.5vh;
-    text-decoration: none;
-    margin-left: 7vw;
-}
-#signup{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 13px;
-    color: #000000;
-    margin-top: 0.5vh;
-    text-decoration: none;
-}
-#signup:hover{
-    text-decoration: underline;
-}
-#forgot:hover{
-    text-decoration: underline;
 }
 
 /* @media screen {
