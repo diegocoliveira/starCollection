@@ -5,12 +5,14 @@ import { Line } from "../line.mjs";
 import { readURL } from "../preview.js";
 import { Clear } from "../clearPages.js";
 import { ProdList } from "./prodList.mjs";
+import { UserListPage } from "./userList.mjs";
 
 const clear = new Clear();
 const dashBoard = new Dashboard();
 const regProd = new RegProd();
 const line = new Line();
 const prodListPage = new ProdList();
+const userListPage = new UserListPage();
 
 function createMenu() {
     const body = document.querySelector('#body');
@@ -20,9 +22,11 @@ function createMenu() {
 
     const dashBt = document.querySelector("#dashBt");
     const registBt = document.querySelector("#registBt");
+    const userBt = document.querySelector("#userBt");
 
     dashBt.addEventListener("click", dashBoardCreate);
     registBt.addEventListener("click", registerCreate);
+    userBt.addEventListener("click", userListCreate);
 }
 
 function dashBoardCreate(){
@@ -92,6 +96,22 @@ function listProdCreate(){
 
     const backBt = document.querySelector("#backBt");
     backBt.addEventListener("click", registerCreate);
+}
+
+function userListCreate() {
+    const main = document.querySelector("#admMain");
+    clear.mainClear();
+    main.innerHTML += userListPage.userHeader;
+
+    const divListUser = document.querySelector("#divListUser");
+    divListUser.innerHTML += line.line3;
+    divListUser.innerHTML += userListPage.userView + line.line4;
+
+    const userList = document.querySelector("#userListPage");
+    userList.innerHTML += userListPage.newUserDiv;
+
+    const divNewUser = document.querySelector("#divNewUser");
+    divNewUser.innerHTML += userListPage.newUserView;
 }
 
 createMenu();

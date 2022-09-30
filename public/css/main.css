@@ -8,6 +8,8 @@
 @import url("./admPages/dashBoard.css");
 @import url("./admPages/registerProd.css");
 @import url("./admPages/prodList.css");
+@import url("./admPages/listUser.css");
+@import url("./admPages/confAdm.css");
 
 * {
     margin: 0;

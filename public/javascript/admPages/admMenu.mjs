@@ -2,7 +2,7 @@ export const admMenu = `
 <aside id="admMenu">
 <div>
 <div id="perfil">
-    <div class="avatar"></div>
+    <img src="./images/person3.svg" class="avatar" alt="user icon">
     <h2 class="font2">NAME</h2>
 </div>
 <nav>

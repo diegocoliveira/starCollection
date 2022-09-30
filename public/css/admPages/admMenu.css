@@ -1,9 +1,3 @@
-@import url("./dashBoard.css");
-@import url("./font.css");
-@import url("./line.css");
-@import url("./registerProd.css");
-@import url("./button.css");
-
 #admMenu{
 
     height: 80vh;
@@ -69,8 +63,8 @@
 
 .avatar{
 
-    width: 9vh;
-    height: 4vw;
+    width: 6vw;
+    height: 6vw;
 
     display: flex;
     align-items: center;
