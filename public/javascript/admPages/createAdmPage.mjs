@@ -4,11 +4,13 @@ import { RegProd } from "./regProds.mjs";
 import { Line } from "../line.mjs";
 import { readURL } from "../preview.js";
 import { Clear } from "../clearPages.js";
+import { ProdList } from "./prodList.mjs";
 
 const clear = new Clear();
 const dashBoard = new Dashboard();
 const regProd = new RegProd();
 const line = new Line();
+const prodListPage = new ProdList();
 
 function createMenu() {
     const body = document.querySelector('#body');
@@ -71,8 +73,25 @@ function registerCreate() {
     const main = document.querySelector("#admMain");
     clear.mainClear();
     main.innerHTML += regProd.regPage;
+
     const inputImg = document.querySelector("#inputImg");
+    const btListProd = document.querySelector("#btListProds")
+
     inputImg.addEventListener('change', function(){readURL(this, 'fk')});
+    btListProd.addEventListener('click', listProdCreate);
+}
+
+function listProdCreate(){
+    const main = document.querySelector("#admMain");
+    clear.mainClear();
+    main.innerHTML += prodListPage.prodHeader;
+
+    const prodList = document.querySelector("#prodList");
+    prodList.innerHTML += line.line1;
+    prodList.innerHTML += prodListPage.prodInfos + line.line2;
+
+    const backBt = document.querySelector("#backBt");
+    backBt.addEventListener("click", registerCreate);
 }
 
 createMenu();

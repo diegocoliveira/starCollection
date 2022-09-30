@@ -31,6 +31,27 @@
 
 }
 
+.whiteBt{
+
+    width: 2vw;
+    height: 2vw;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    background-color: #FBF9F9;
+    border: none;
+
+}
+
+.whiteBt:hover{
+
+    background-color: #b7b7b7;
+
+}
+
 .btn-primary {
 }
 

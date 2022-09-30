@@ -2,7 +2,7 @@ export const admMenu = `
 <aside id="admMenu">
 <div>
 <div id="perfil">
-    <div id="avatar"></div>
+    <div class="avatar"></div>
     <h2 class="font2">NAME</h2>
 </div>
 <nav>
