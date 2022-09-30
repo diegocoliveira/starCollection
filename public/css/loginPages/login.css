@@ -1,0 +1,98 @@
+.titleH2 {
+    font-family: "Distant Galaxy";
+    font-size: 1.4vw;
+    text-align: center;
+}
+
+#forgot {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.7vw;
+    color: #000000;
+    margin-top: 0.5vh;
+    text-decoration: none;
+    margin-left: 7vw;
+}
+#signup{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.7vw;
+    color: #000000;
+    margin-top: 0.5vh;
+    text-decoration: none;
+}
+#signup:hover{
+    text-decoration: underline;
+}
+#forgot:hover{
+    text-decoration: underline;
+}
+
+.bar {
+    width: 50%;
+    height: 1px;
+    background: #000000;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+
+}
+
+.pLogin {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.7vw;
+    line-height: 23px;
+    color: #000000;
+    margin-top: 1vh;
+    margin-right: 5vw;
+}
+.pSignup{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.7vw;
+    line-height: 23px;
+    color: #000000;
+    margin-top: 1vh;  
+}
+.imagePagesLogin{
+    width: 25vw;
+}
+.imagePagesLoginJar{
+    height: 24vw;
+}
+.login {
+    background-color: #FBF9F9;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 0.8vh;
+}
+#mainRightLogin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+
+}
+#mainLeftSignup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+#mainLeftLogin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}

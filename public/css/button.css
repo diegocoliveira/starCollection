@@ -100,3 +100,36 @@
     background-color: rgba(251, 249, 249, 0.15);
 
 }
+
+#loginButton {
+    background: #262730;
+    border-radius: 25px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.9vw;
+    line-height: 23px;
+    color: #FBF9F9;
+    cursor: pointer;
+    width: 6vw;
+    height: 3vh;
+    margin: 1vh;
+}
+
+#btnChange {
+    width: 10vw;
+    height: auto;
+    border: none;
+    background: linear-gradient(178.99deg, #262730 0.86%, rgba(38, 39, 48, 0) 211.02%);
+    border-radius: 3px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1vw;
+    line-height: 38px;
+    color: #FBF9F9;
+    cursor: pointer;
+    position: relative;
+    top: 68%;
+    left: 5%;  
+}
