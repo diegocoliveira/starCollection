@@ -1,0 +1,31 @@
+#search {
+    background-image: url("../images/search.svg");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 2.5vh;
+    padding-left: 1.5vw;
+    border-radius: 20px;
+    margin-left: 1.5vw;
+    height: 2vh;
+    border: thin solid #000000;
+}
+
+#email {
+    padding-left: 1.5vw;
+    border-radius: 20px;
+    height: 2.5vh;
+    width: 13vw;
+    margin: 1vh;
+}
+
+#password {
+    background-image: url("../images/visibility_off.svg");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 2.5vh;
+    padding-left: 1.5vw;
+    border-radius: 20px;
+    height: 2.5vh;
+    width: 13vw;
+    margin: 1vh;
+}
