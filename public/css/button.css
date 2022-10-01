@@ -67,6 +67,22 @@
 
 }
 
+#btRmFt{
+
+    width: 5vw;
+
+    color: red;
+    background-color: #FBF9F9;
+    border: none;
+
+}
+
+#btRmFt:hover{
+
+    background-color: #b7b7b7;
+
+}
+
 .btn-primary {
 }
 
@@ -92,6 +108,7 @@
     border: none;
 
     font-size: 0.8em;
+    text-decoration: none;
 
 }
 

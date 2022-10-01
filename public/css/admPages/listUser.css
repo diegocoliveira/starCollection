@@ -1,21 +1,21 @@
 #userHeader{
 
-    height: 8vh;
+    height: 6vh;
 
 }
 
 #userListPage{
 
-    width: 80vw;
+    width: 62vw;
 
-    justify-content: space-between;
+    justify-content: space-around;
 
 }
 
 #divListUser{
 
-    width: 55vw;
-    height: 60vh;
+    width: 40vw;
+    height: 80vh;
     padding: 2vw;
 
     display: flex;
@@ -28,7 +28,7 @@
 
     
     width: 20vw;
-    height: 60vh;
+    height: 80vh;
     padding: 1vw;
 
     display: flex;
@@ -41,7 +41,7 @@
 
 .between{
 
-    width: 50vw;
+    width: 37vw;
 
     display: flex;
     flex-direction: row;

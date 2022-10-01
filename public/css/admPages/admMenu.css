@@ -1,12 +1,13 @@
 #admMenu{
 
-    height: 80vh;
+    height: 88vh;
     width: 15vw;
 
     background-color: #262730;
 
     display: flex;
     flex-direction: column;
+    align-self: flex-start;
     justify-content: space-between;
     
 }
@@ -36,9 +37,9 @@
 #signOut{
 
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
+
 }
 
 #outBt{
@@ -51,20 +52,22 @@
 
 #admMain{
 
-    width: 85vw;
-    height: 80vh;
+    width: 65vw;
+    height: 84vh;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
 
+    background-color: #ffffff;
+
 }
 
 .avatar{
 
-    width: 6vw;
-    height: 6vw;
+    width: 5vw;
+    height: 5vw;
 
     display: flex;
     align-items: center;

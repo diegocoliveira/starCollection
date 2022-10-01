@@ -1,11 +1,12 @@
 #admConfPage{
 
-    width: 45vw;
-    height: 70vh;
+    width: 60vw;
+    height: 82vh;
     padding: 2vw;
 
     display: flex;
     flex-direction: column;
+
 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
 
@@ -20,6 +21,25 @@
 
 }
 
+#inputImgPerfil{
+
+    color: transparent;
+
+}
+
+#imgConf{
+
+    max-width: 7vw;
+    max-height: 7vw;
+
+}
+
+.dataConfs{
+
+    min-width: 10vw;
+    text-align: center;
+
+}
 .headerConf {    
     
     height: 5vh;
@@ -28,8 +48,8 @@
 
 .confInfos{
 
-    width: 40vw;
-    height: 20vh;
+    width: 60vw;
+    height: 25vh;
 
     justify-content: space-between;
 

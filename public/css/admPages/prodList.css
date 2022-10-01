@@ -1,17 +1,19 @@
 #prodHeader{
 
     height: 8vh;
+    align-self: flex-start;
 
 }
 
 #prodList{
 
-    width: 80vw;
-    height: 60vh;
+    width: 60vw;
+    height: 75vh;
     padding: 2vw;
 
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
 
