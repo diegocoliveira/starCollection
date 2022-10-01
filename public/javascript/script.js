@@ -2,6 +2,7 @@ import login from "./pagesLogin/login.js";
 import forgot from "./pagesLogin/forgot.js";
 import signup from "./pagesLogin/signup.js";
 import index from "./pageHome/index.js";
+import { createMenu } from "./admPages/createAdmPage.mjs";
 
 const mainContent = document.getElementById('root');
 
@@ -15,7 +16,6 @@ function route (){
             mainContent.innerHTML = index();
             break;
         case '#login':
-            console.log(login());
             mainContent.innerHTML = login();
             break;
         case '#forgot':
@@ -23,6 +23,9 @@ function route (){
             break;
         case '#signup':
             mainContent.innerHTML = signup();
+            break;
+        case '#admPage':
+            createMenu();
             break;
         default:
             mainContent.innerHTML = index();

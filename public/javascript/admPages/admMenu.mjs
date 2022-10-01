@@ -1,12 +1,13 @@
-export const admMenu = `
-<aside id="admMenu">
-<div>
-<div id="perfil">
-    <div class="avatar"></div>
-    <h2 class="font2">NAME</h2>
-</div>
-<nav>
-<div id="subMenu">
+export class AdmMenu{
+
+    menu = `<aside id="admMenu">
+    <div>
+    <div id="perfil">
+        <img src="./images/person3.svg" class="avatar" alt="user icon">
+        <h2 class="font2">NAME</h2>
+    </div>
+    <nav>
+    <div id="subMenu">
     <button id="dashBt" class="options , font2">
         <div class="iconAdm">
             <img src="./images/home.svg" alt="home icon">
@@ -31,15 +32,17 @@ export const admMenu = `
         </div>
         Configurações
     </button>
-</div>
-</nav>
-</div>
-<div id="signOut">
-    <button id="outBt" class="options , font2">
-        <img src="./images/signOut.svg" alt="sign out icon">
-        Sign Out
-    </button>
-</div>
-</aside>
-<main id="admMain">
-</main>`;
+    </div>
+    </nav>
+    </div>
+    <a id="outBt" class="options , font2" href="#">
+        <div id="signOut">
+            <img src="./images/signOut.svg" alt="sign out icon">
+            <p>Sign Out</p>
+        </div>
+    </a>
+    </aside>`;
+
+    admMain = `<section id="admMain"></section>`;
+
+}

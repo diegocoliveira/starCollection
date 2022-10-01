@@ -1,28 +1,36 @@
-import { admMenu } from "./admMenu.mjs";
+import { AdmMenu } from "./admMenu.mjs";
 import { Dashboard } from "./dashBoard.mjs";
 import { RegProd } from "./regProds.mjs";
 import { Line } from "../line.mjs";
 import { readURL } from "../preview.js";
 import { Clear } from "../clearPages.js";
 import { ProdList } from "./prodList.mjs";
+import { UserListPage } from "./userList.mjs";
+import { ConfAdmPage } from "./confAdm.mjs";
 
 const clear = new Clear();
 const dashBoard = new Dashboard();
 const regProd = new RegProd();
 const line = new Line();
+const admMenu = new AdmMenu();
 const prodListPage = new ProdList();
+const userListPage = new UserListPage();
+const confAdmPage = new ConfAdmPage();
 
-function createMenu() {
-    const body = document.querySelector('#body');
+export function createMenu() {
 
-    clear.bodyClear();
-    body.innerHTML += admMenu;
+    clear.rootClear();
+    root.innerHTML = admMenu.menu + admMenu.admMain;
 
     const dashBt = document.querySelector("#dashBt");
     const registBt = document.querySelector("#registBt");
+    const userBt = document.querySelector("#userBt");
+    const confBt = document.querySelector("#confBt");
 
     dashBt.addEventListener("click", dashBoardCreate);
     registBt.addEventListener("click", registerCreate);
+    userBt.addEventListener("click", userListCreate);
+    confBt.addEventListener("click", confCreate);
 }
 
 function dashBoardCreate(){
@@ -94,4 +102,33 @@ function listProdCreate(){
     backBt.addEventListener("click", registerCreate);
 }
 
-createMenu();
+function userListCreate() {
+    const main = document.querySelector("#admMain");
+    clear.mainClear();
+    main.innerHTML += userListPage.userHeader;
+
+    const divListUser = document.querySelector("#divListUser");
+    divListUser.innerHTML += line.line3;
+    divListUser.innerHTML += userListPage.userView + line.line4;
+
+    const userList = document.querySelector("#userListPage");
+    userList.innerHTML += userListPage.newUserDiv;
+
+    const divNewUser = document.querySelector("#divNewUser");
+    divNewUser.innerHTML += userListPage.newUserView;
+}
+
+function confCreate() {
+    const main = document.querySelector("#admMain");
+    clear.mainClear();
+    main.innerHTML = confAdmPage.confPage;
+
+    const inputImgPerfil = document.querySelector("#inputImgPerfil");
+    inputImgPerfil.addEventListener('change', function(){readURL(this, 'imgConf')});
+    
+    const btRmFt = document.querySelector("#btRmFt");
+    btRmFt.addEventListener('click', () => {
+        const imgConf = document.querySelector("#imgConf");
+        imgConf.src = './images/person3.svg';
+    });
+}

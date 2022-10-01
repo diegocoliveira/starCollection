@@ -1,8 +1,8 @@
 export class Clear{
 
-    bodyClear(){
-        const body = document.querySelector('#body');
-        body.innerHTML = '';
+    rootClear(){
+        const root = document.querySelector('#root');
+        root.innerHTML = '';
     }
 
     mainClear() {

@@ -1,6 +1,6 @@
 .line{
 
-    width: 75vw;
+    width: 55vw;
     height: 3px;
     background: #262730;
 
@@ -8,7 +8,32 @@
 
 .line2{
 
-    width: 75vw;
+    width: 55vw;
+    height: 1px;
+    background: #262730;
+
+}
+
+.line3{
+
+    width: 37vw;
+    height: 3px;
+    background: #262730;
+
+}
+
+
+.line4{
+
+    width: 37vw;
+    height: 1px;
+    background: #262730;
+
+}
+
+.line5{
+
+    width: 40vw;
     height: 1px;
     background: #262730;
 
