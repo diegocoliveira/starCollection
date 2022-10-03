@@ -8,6 +8,8 @@ import { ProdList } from "./prodList.mjs";
 import { UserListPage } from "./userList.mjs";
 import { ConfAdmPage } from "./confAdm.mjs";
 
+import FunkoAPI from "../api/funko-api.mjs";
+
 const clear = new Clear();
 const dashBoard = new Dashboard();
 const funkoCreate = new FunkoCreate();
@@ -83,9 +85,9 @@ function register() {
     const file = document.querySelector("#input-file");
     const btListProd = document.querySelector("#btListProds");
     const resultFile = document.querySelector("#result-file");
-    //const btnAdd = document.querySelector("#btn-add");
+    const btnAdd = document.querySelector("#btn-add");
 
-    //btnAdd.onclick = create;
+    btnAdd.onclick = create;
     btListProd.addEventListener("click", listProdCreate);
 
     file.addEventListener("change", function () {
@@ -96,9 +98,38 @@ function register() {
         }
     });
 
-    function create() {
+    async function create() {
+        const inputFile = document.querySelector("#input-file");
+        const txtName = document.querySelector("#txt-name");
+        const txtDescription = document.querySelector("#txt-description");
+        const category = document.querySelector("#select-category");
         const result = document.querySelector("#result");
-        result.innerHTML = "Produto cadastrado com sucesso";
+        result.innerHTML = "";
+        const formData = new FormData();
+        const funkoAPI = FunkoAPI();
+        try {
+            if (inputFile.files[0] == undefined) {
+                result.innerHTML = "Selecione uma imagem";
+                return;
+            }
+            if (inputFile.files[0].size > 5 * 1024 * 1024) {
+                result.innerHTML = "A imagem ultrapassou o tamanho maximo de 5 MB";
+                return;
+            }
+            if (txtName.value == "" && txtName.value.length < 3) {
+                result.innerHTML = "O nome do Funko deve conter no minimo 3 caracteres";
+                return;
+            }
+            formData.append("file", inputFile.files[0]);
+            formData.append("name", txtName.value);
+            formData.append("description", txtDescription.value);
+            formData.append("category", category.value);
+            await funkoAPI.create(formData);
+            result.innerHTML = "Funko cadastrado com sucesso";
+        } catch (error) {
+            result.innerHTML = error.message;
+            console.log(error);
+        }
     }
 }
 

@@ -2,12 +2,18 @@ import dotenv from "dotenv";
 import Express from "express";
 import Router from "./src/routers/router.mjs";
 
+import Multer from "multer";
+const upload = Multer({ dest: "repository/avatar" });
+
 dotenv.config({ path: "./env/.env" });
 
 const port = process.env.PORT || 8080;
 const app = Express();
 const router = Router(Express);
 
+const jsonErrorHandler = (err, req, res, next) => {
+    res.status(500).send({ error: err.message });
+};
 
 app.use(Express.json());
 app.use(Express.urlencoded({ extended: true }));
@@ -15,6 +21,7 @@ app.use(Express.urlencoded({ extended: true }));
 app.use("/", Express.static("public"));
 app.use("/repository", Express.static("repository"));
 app.use("/api", router);
+app.use(jsonErrorHandler);
 
 //Status 404 - caso nenhum endpoint seja encontrado
 app.use(function (req, res, next) {
