@@ -1,13 +1,19 @@
-export class RegProd{
+export default class FunkoCreate {
+    html = `
+    <div class="title" >
+        <h2>CADASTRO DE FUNKO</h2>
+        
+    </div>
 
-    regPage = `
     <section id="regProd">
-    <div>                
-        <h3>Funko Imagem</h3>
+    
+    <div class="file">                
+        <h3 class="font1, bold">Funko Imagem</h3>
         <div id="fkImg">
             <img id="fk" src="./images/cam.svg"/>
         </div>
-        <input id="inputImg" type='file'/>
+        <input id="input-file" type='file' name="file" accept="image/*"/>
+        <p id="result-file" class="font1 , error , low"></p>
     </div>
     <div id="infoProds">
         <div>        
@@ -21,8 +27,8 @@ export class RegProd{
             <div class="register">
             <select name="rarityProd" id="rarityProd">
                 <option value="comum">Comum</option>
-                <option value="rare">Raro</option>
-                <option value="legendary">Lendário</option>
+                <option value="raro">Raro</option>
+                <option value="lendário">Lendário</option>
             <select/>                    
             </div>
         </div>
@@ -33,9 +39,11 @@ export class RegProd{
             </div>
         </div>
         <div id="btsProd">
-            <button id="btRegister" class="font2" type="submit">Cadatrar Produto</button>
-            <button id="btListProds" class="font2" type="button">Produtos Cadastrados</button>
+            <button id="btn-add" class="btn-primary" type="submit">Cadastrar</button>
+            <button id="btListProds" class="btn-alternate" type="button">Listar</button>
         </div>
+        <div id="result" class="font1 , error"> </div>
     </div>
+    
     </section>`;
 }
