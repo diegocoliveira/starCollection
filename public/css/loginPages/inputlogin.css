@@ -16,6 +16,9 @@
     height: 2.5vh;
     width: 13vw;
     margin: 1vh;
+    background: #F0F0F0;
+    border: 2px solid #F0F0F0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
 }
 
 #password {
@@ -28,4 +31,7 @@
     height: 2.5vh;
     width: 13vw;
     margin: 1vh;
+    background: #F0F0F0;
+    border: 2px solid #F0F0F0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
 }

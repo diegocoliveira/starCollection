@@ -5,7 +5,16 @@
     font-family: "Distant Galaxy";
     font-size: 1.4vw;
 }
-
+.fontStarWars{
+    font-family: "Distant Galaxy";
+    font-size: 1.4vw;
+    color: #ffffff;
+}
+.fontStarWarsBlack{
+    font-family: "Distant Galaxy";
+    font-size: 1.4vw;
+    color: #000000;
+}
 .font1 {
     margin: 0;
     font-family: "Roboto", sans-serif;

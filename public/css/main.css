@@ -6,6 +6,9 @@
 @import url("./line.css");
 @import url("./admPages/mainAdm.css");
 @import url("./mainclient.css");
+@import url("./home.css");
+@import url("./loginPages/login.css");
+@import url("./loginPages/inputlogin.css");
 
 * {
     margin: 0;
