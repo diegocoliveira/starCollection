@@ -121,8 +121,8 @@ function userListCreate() {
     main.innerHTML += userListPage.userHeader;
 
     const divListUser = document.querySelector("#divListUser");
-    divListUser.innerHTML += line.line3;
-    divListUser.innerHTML += userListPage.userView + line.line4;
+    divListUser.innerHTML += line.line1;
+    divListUser.innerHTML += userListPage.userView + line.line2;
 
     const userList = document.querySelector("#userListPage");
     userList.innerHTML += userListPage.newUserDiv;

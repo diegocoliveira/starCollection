@@ -4,7 +4,7 @@ export class ProdList{
     <section id="prodList">
         <div id="prodHeader" class="flex">
             <button id="backBt" class="whiteBt"><img src="./images/arrow.svg" alt="arrow icon"></button>
-            <h2 class="font1">Produtos Cadastrados</h2>
+            <h2 class="fontStarWarsBlack">Produtos Cadastrados</h2>
         </div>
         <div class="infoBetween">
             <div>
