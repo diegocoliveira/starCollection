@@ -17,7 +17,7 @@ export default () => {
             <input type="email" placeholder="e.g.: example@gmail.com" id="email">
 
             <p class="pLogin">Por favor, insira sua senha</p>
-            <input type="password" placeholder="Digite sua senha" id="password">
+            <input type="password" placeholder="**********" id="password">
             <p><a id="forgot" href="/#forgot">Esqueceu sua senha?</a></p>
 
             <input type="submit" value="Sign In" id="loginButton">

@@ -3,8 +3,8 @@ export class AdmMenu{
     menu = `<aside id="admMenu">
     <div>
     <div id="perfil">
-        <img src="./images/person3.svg" class="avatar" alt="user icon">
-        <h2 class="font2">NAME</h2>
+        <img src="./images/person-circleWhite.png" class="avatar" alt="user icon">
+        <h2 class="fontStarWars">Maria Sky</h2>
     </div>
     <nav>
     <div id="subMenu">
