@@ -1,35 +1,37 @@
-.font1{
+.title {
+    width: 100%;
+    padding-bottom: 1vh;
+    border-bottom: #000000 1px solid;
+    font-family: "Distant Galaxy";
+    font-size: 1.4vw;
+}
 
+.font1 {
     margin: 0;
     font-family: "Roboto", sans-serif;
     color: #000000;
-
 }
 
-.font2{
-
+.font2 {
     margin: 0;
     font-family: "Roboto", sans-serif;
     color: #ffffff;
-
 }
 
-.font3{
-
+.font3 {
     margin: 0;
     font-family: "Roboto", sans-serif;
-    color: #6B6767;
-
+    color: #6b6767;
 }
 
-.bold{
-
+.bold {
     font-weight: 700;
-
 }
 
-.low{
-
+.low {
     font-size: small;
+}
 
+.error {
+    color: #d20801;
 }

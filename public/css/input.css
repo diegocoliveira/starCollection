@@ -1,22 +1,28 @@
-input{
-
+input {
     height: 4vh;
     background-color: transparent;
     border: none;
-
 }
 
-select{
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+}
 
+select {
     height: 4vh;
     background-color: transparent;
     border: none;
-
 }
 
-textarea{
-
+textarea {
     border: none;
     background-color: transparent;
+}
 
+.file {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
 }

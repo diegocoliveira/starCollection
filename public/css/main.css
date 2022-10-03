@@ -23,21 +23,21 @@ body {
     background-color: #0f0f13;
 }
 
-.flex{
-
+.flex {
     display: flex;
     align-items: center;
-
 }
 
-/*main,
-form {
-    width: 70vw; /*metade da seção da direta (84vw)
-    padding: 3vh 3vw;
-    display: flex;
-    gap: 2vh;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    box-shadow: -0.5vw 1vh 2vmax 0.2vmax black;
-}*/
+.titleH2 {
+    font-family: "Distant Galaxy";
+    font-size: 1.4vw;
+    text-align: center;
+}
+
+.bar {
+    width: 50%;
+    height: 1px;
+    background: #000000;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
