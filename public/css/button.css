@@ -64,8 +64,8 @@ button {
 }
 
 .options {
-    height: 6vh;
-    width: 15vw;
+    height: 5%;
+    width: 100%;
 
     display: flex;
     align-items: center;
@@ -73,6 +73,7 @@ button {
 
     background-color: #262730;
     border: none;
+    border-radius: 0px;
 
     font-size: 0.8em;
     text-decoration: none;

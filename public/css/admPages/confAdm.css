@@ -1,7 +1,7 @@
 #admConfPage{
 
-    width: 60vw;
-    height: 82vh;
+    width: 100%;
+    height: 100%;
     padding: 2vw;
 
     display: flex;
@@ -14,8 +14,7 @@
 
 #infoDiv{
 
-    width: 20vw;
-    height: 12vh;
+    width: 35%;
 
     justify-content: space-evenly;
 
@@ -37,19 +36,15 @@
 .dataConfs{
 
     min-width: 10vw;
-    text-align: center;
-
-}
-.headerConf {    
-    
-    height: 5vh;
 
 }
 
 .confInfos{
 
-    width: 60vw;
-    height: 25vh;
+    width: 100%;
+    height: 50%;
+
+    align-items: center;
 
     justify-content: space-between;
 
