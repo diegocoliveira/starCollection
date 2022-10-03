@@ -17,8 +17,8 @@ export class UserListPage{
     userView = `
     <div class="between">
         <div class="flex">
-            <img class="avatar" src="" alt="">
-            <p class="font1 , bold">NAME</p>
+            <img class="avatar" src="./images/personBlack.svg" alt="">
+            <p class="fontStarWarsBlack">NAME</p>
         </div>
         <button id="blockBt" class="whiteBt">
             <img src="./images/user-block.svg" alt="block icon">
@@ -34,8 +34,8 @@ export class UserListPage{
 
     newUserView = `
     <div class="newList , flex">
-        <img class="avatar" src="" alt="">
-        <p class="font1 , bold">NAME</p>
+        <img class="avatar" src="./images/personBlack.svg" alt="">
+        <p class="fontStarWarsBlack">NAME</p>
     </div>`;
 
 }
