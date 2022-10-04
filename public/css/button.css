@@ -1,11 +1,11 @@
-button {
+/* button {
     width: 14vw;
     height: 4vh;
     border-radius: 25px;
     color: #ffffff;
     border: none;
     cursor: pointer;
-}
+} */
 
 .btn-primary {
     background: #262730;
@@ -60,6 +60,18 @@ button {
 }
 
 #btRmFt:hover {
+    background-color: #b7b7b7;
+}
+
+#btRmFtclient{
+    height: 3vh;
+    color: red;
+    background-color: #fbf9f9;
+    border: none;
+    
+}
+
+#btRmFtclient:hover {
     background-color: #b7b7b7;
 }
 

@@ -20,7 +20,7 @@ export default () => {
             <input type="password" placeholder="**********" id="password">
             <p><a id="forgot" href="/#forgot">Esqueceu sua senha?</a></p>
 
-            <input type="submit" value="Sign In" id="loginButton">
+           <a href="/#clientConfig"> <input type="submit" value="Sign In" id="loginButton"></a>
             
            
             </div>

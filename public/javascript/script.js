@@ -3,9 +3,11 @@ import forgot from "./pagesLogin/forgot.js";
 import signup from "./pagesLogin/signup.js";
 import index from "./pageHome/index.js";
 import { createMenu } from "./admPages/createAdmPage.mjs";
+// import clientPage from "./pagesClient/pageClient.js";
 
 const mainContent = document.getElementById('root');
-
+// const menu = document.getElementById('clientRight');
+// const leftContent = document.getElementById('clientLeft');
 
 function route (){
     
