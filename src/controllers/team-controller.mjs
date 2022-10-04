@@ -1,7 +1,7 @@
 import TeamServices from "../services/team-services.mjs";
 import Team from "../model/team.mjs";
 
-export default function TeamConTroller() {
+export default function TeamController() {
     const services = new TeamServices();
 
     async function create(req, res) {

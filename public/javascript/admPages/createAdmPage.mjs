@@ -1,19 +1,21 @@
 import { AdmMenu } from "./admMenu.mjs";
 import { Dashboard } from "./dashBoard.mjs";
 import FunkoCreate from "./funko-create-html.mjs";
+import FunkoList from "./funko-list-html.mjs";
 import { Line } from "../line.mjs";
 import { readURL } from "../preview.js";
 import { Clear } from "../clearPages.js";
-import { ProdList } from "./prodList.mjs";
+
 import { UserListPage } from "./userList.mjs";
 import { ConfAdmPage } from "./confAdm.mjs";
+
+import FunkoAPI from "../api/funko-api.mjs";
 
 const clear = new Clear();
 const dashBoard = new Dashboard();
 const funkoCreate = new FunkoCreate();
 const line = new Line();
 const admMenu = new AdmMenu();
-const prodListPage = new ProdList();
 const userListPage = new UserListPage();
 const confAdmPage = new ConfAdmPage();
 
@@ -83,10 +85,10 @@ function register() {
     const file = document.querySelector("#input-file");
     const btListProd = document.querySelector("#btListProds");
     const resultFile = document.querySelector("#result-file");
-    //const btnAdd = document.querySelector("#btn-add");
+    const btnAdd = document.querySelector("#btn-add");
 
-    //btnAdd.onclick = create;
-    btListProd.addEventListener("click", listProdCreate);
+    btnAdd.onclick = create;
+    btListProd.addEventListener("click", list);
 
     file.addEventListener("change", function () {
         readURL(this, "fk");
@@ -96,23 +98,92 @@ function register() {
         }
     });
 
-    function create() {
+    async function create() {
+        const inputFile = document.querySelector("#input-file");
+        const preview = document.querySelector("#fk");
+        const txtName = document.querySelector("#txt-name");
+        const txtDescription = document.querySelector("#txt-description");
+        const category = document.querySelector("#select-category");
         const result = document.querySelector("#result");
-        result.innerHTML = "Produto cadastrado com sucesso";
+        result.innerHTML = "";
+        const formData = new FormData();
+        const funkoAPI = FunkoAPI();
+        try {
+            if (inputFile.files[0] == undefined) {
+                result.innerHTML = "Selecione uma imagem";
+                return;
+            }
+            if (inputFile.files[0].size > 5 * 1024 * 1024) {
+                result.innerHTML = "A imagem ultrapassou o tamanho maximo de 5 MB";
+                return;
+            }
+            if (txtName.value == "" && txtName.value.length < 3) {
+                result.innerHTML = "O nome do Funko deve conter no minimo 3 caracteres";
+                return;
+            }
+            formData.append("file", inputFile.files[0]);
+            formData.append("name", txtName.value);
+            formData.append("description", txtDescription.value);
+            formData.append("category", category.value);
+            await funkoAPI.create(formData);
+            inputFile.value = "";
+            txtName.value = "";
+            txtDescription.value = "";
+            category.value = "comum";
+            result.innerHTML = "Funko cadastrado com sucesso";
+            preview.src = "./images/cam.svg";
+        } catch (error) {
+            result.innerHTML = error.message;
+            console.log(error);
+        }
     }
 }
 
-function listProdCreate() {
+//todo: criar alert de confirmação de exclusão
+//todo: criar modal de edição
+async function list() {
     const main = document.querySelector("#admMain");
+    const funkoList = FunkoList();
+    const funkoAPI = FunkoAPI();
     clear.mainClear();
-    main.innerHTML += prodListPage.prodHeader;
-
+    main.innerHTML += funkoList.header();
     const prodList = document.querySelector("#prodList");
     prodList.innerHTML += line.line1;
-    prodList.innerHTML += prodListPage.prodInfos + line.line2;
+    try {
+        const list = await funkoAPI.list();
+        for (let index = 0; index < list.length; index++) {
+            prodList.innerHTML += funkoList.row(list[index]);
+            prodList.innerHTML += line.line2;
+        }
+    } catch (error) {
+        console.log(error);
+        alert(error.message);
+    }
 
+    //const funko = { id: "b6f2dcc0-2570-42f2-8cac-ab69da8edeb4", name: "Ahsoka", category: "comum" };
+    //prodList.innerHTML += funkoList.row(funko) + line.line2;
+
+    const buttons = document.querySelectorAll(".button-delete");
+    for (let index = 0; index < buttons.length; index++) {
+        buttons[index].addEventListener("click", remove);
+    }
     const backBt = document.querySelector("#backBt");
     backBt.addEventListener("click", register);
+
+    async function remove(e) {
+        const id = e.target.id;
+        const name = e.target.name;
+        try {
+            if (confirm(`Deseja realmente excluir o Funko "${name}"?`) == true) {
+                await funkoAPI.remove(id);
+                alert("Funko excluído com sucesso");
+                list();
+            }
+        } catch (error) {
+            console.log(error);
+            alert(error.message);
+        }
+    }
 }
 
 function userListCreate() {

@@ -4,6 +4,7 @@ button {
     border-radius: 25px;
     color: #ffffff;
     border: none;
+    cursor: pointer;
 }
 
 .btn-primary {
@@ -29,13 +30,12 @@ button {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-
     background-color: #fbf9f9;
     border: none;
 }
 
 .whiteBt:hover {
-    background-color: #b7b7b7;
+    /* background-color: #b7b7b7; */
 }
 
 .btPhoto {

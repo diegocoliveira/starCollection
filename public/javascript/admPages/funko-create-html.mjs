@@ -18,16 +18,16 @@ export default class FunkoCreate {
 
     <div id="infoProds">
         <div>        
-            <label for="nameProd" class="font1 , bold">Nome</label>
+            <label for="txt-name" class="font1 , bold">Nome</label>
             <div class="register">
-                <input type="text" name="nameProd" id="nameProd" placeholder="Nome do Funko"/>                    
+                <input type="text" name="name" id="txt-name" placeholder="Nome do Funko"/>                    
             </div>
         </div>
 
         <div>
-            <label for="rarityProd" class="font1 , bold">Raridade</label>
+            <label for="select-category" class="font1 , bold">Categoria</label>
             <div class="register">
-            <select name="rarityProd" id="rarityProd">
+            <select name="category" id="select-category">
                 <option value="comum">Comum</option>
                 <option value="raro">Raro</option>
                 <option value="lendário">Lendário</option>
@@ -36,9 +36,9 @@ export default class FunkoCreate {
         </div>
 
         <div>
-            <label for="descProd" class="font1 , bold">Descrição</label>
+            <label for="txt-description" class="font1 , bold">Descrição</label>
             <div class="register">
-            <textarea name="descProd" id="descProd" cols="30" rows="10"  placeholder="Descrição do Funko"></textarea>
+            <textarea name="description" id="txt-description" cols="30" rows="10"  placeholder="Descrição do Funko"></textarea>
             </div>
         </div>
 
