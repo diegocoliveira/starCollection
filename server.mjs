@@ -8,6 +8,10 @@ const port = process.env.PORT || 8080;
 const app = Express();
 const router = Router(Express);
 
+const jsonErrorHandler = (err, req, res, next) => {
+    console.log(err);
+    res.status(500).send({ error: err.message });
+};
 
 app.use(Express.json());
 app.use(Express.urlencoded({ extended: true }));
@@ -15,6 +19,7 @@ app.use(Express.urlencoded({ extended: true }));
 app.use("/", Express.static("public"));
 app.use("/repository", Express.static("repository"));
 app.use("/api", router);
+app.use(jsonErrorHandler);
 
 //Status 404 - caso nenhum endpoint seja encontrado
 app.use(function (req, res, next) {
