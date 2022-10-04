@@ -13,7 +13,8 @@ export default function Upload() {
         },
         filename: function (req, file, cb) {
             const ext = file.originalname.split(".").pop();
-            cb(null, file.originalname);
+            const filename = `${uuid()}.${ext}`;
+            cb(null, filename);
         },
     });
 

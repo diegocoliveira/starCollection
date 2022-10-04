@@ -13,6 +13,10 @@ export default function Router(express) {
     router.delete("/team/:id", team().remove);
 
     router.post("/funko", upload.single("file"), funko().create);
+    router.get("/funko", funko().list);
+    router.get("/funko/:id", funko().get);
+    router.put("/funko/:id", funko().update);
+    router.delete("/funko/:id", funko().remove);
 
     return router;
 }

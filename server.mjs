@@ -2,9 +2,6 @@ import dotenv from "dotenv";
 import Express from "express";
 import Router from "./src/routers/router.mjs";
 
-import Multer from "multer";
-const upload = Multer({ dest: "repository/avatar" });
-
 dotenv.config({ path: "./env/.env" });
 
 const port = process.env.PORT || 8080;
@@ -12,6 +9,7 @@ const app = Express();
 const router = Router(Express);
 
 const jsonErrorHandler = (err, req, res, next) => {
+    console.log(err);
     res.status(500).send({ error: err.message });
 };
 

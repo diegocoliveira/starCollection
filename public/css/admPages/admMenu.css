@@ -61,7 +61,7 @@
     align-items: center;
     justify-content: space-evenly;
 
-    border-radius: 20px;
+    /* border-radius: 20px; */
 }
 
 .iconAdm {
@@ -71,11 +71,8 @@
     align-items: center;
     justify-content: center;
     padding: 1vw;
-
 }
 
-.headerAdm {    
-    
+.headerAdm {
     height: 5%;
-
 }
