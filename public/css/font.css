@@ -20,7 +20,14 @@
     font-family: "Roboto", sans-serif;
     color: #000000;
 }
-
+.font2Cliente{
+    font-family: "Roboto", sans-serif;
+    font-size: 0.8vw;
+    color: #ffffff;
+    margin: 0;
+    background-color: #262730;
+    border: none;
+}
 .font2 {
     margin: 0;
     font-family: "Roboto", sans-serif;

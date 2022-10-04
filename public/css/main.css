@@ -9,6 +9,8 @@
 @import url("./home.css");
 @import url("./loginPages/login.css");
 @import url("./loginPages/inputlogin.css");
+@import url("./clientPages/sideBarClient.css");
+@import url("./clientPages/clientConfig.css");
 
 * {
     margin: 0;

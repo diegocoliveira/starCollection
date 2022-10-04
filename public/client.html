@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./font/stylesheet.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css" />
+
+<body>
+
+    <main id="mainCenter">
+        <header>
+            <div id="navLeft">
+                <h1><a class="linkFormat" href="#" id="logo">S.C.</a></h1>
+                <input type="search" name="search" id="search" placeholder="BUSCA">
+            </div>
+
+            <nav id="navRight">
+                <a class="linkFormat" href="/#exchange">TROCA</a>
+
+                <div class="icons">
+                    <img src="./images/personBlack.svg" class="iconsImage">
+                    <a class="linkFormat" href="/#login" id="login">LOGIN</a>
+                </div>
+
+
+                <div class="icons">
+                    <a class="linkFormat" href="/#darkSide">DARK SIDE</a>
+                    <img src="./images/toggle_off.svg" class="iconsImage">
+                </div>
+            </nav>
+        </header>
+
+        <div id="root">
+
+            <aside id="clientRight">
+                <div>
+
+                    <div id="perfilClient">
+                        <img src="./images/person-circleWhite.png" class="avatar" alt="user icon">
+                        <h2 class="fontStarWars">Maria Sky</h2>
+                        <button id="collectionButton">Minha Coleção</button>
+                    </div>
+
+                    <div class="barClient"></div>
+
+                    <nav>
+
+                        <div id="subMenuClient">
+                            <button id="dashBt" class="optionsPrincipal , font2">
+                                <div class="iconAdm">
+                                    <img src="./images/trocas.svg" alt="home icon" id="trocas">
+                                </div>
+                                Minhas Trocas
+                            </button>
+
+
+                            <button class="optionsClient">concluídas</button>
+                            <button class="optionsClient">em andamento</button>
+                            <button class="optionsClient">recusadas</button>
+
+
+                            <button class="optionsPrincipal , font2">
+                                <div class="iconAdm">
+                                    <img src="./images/oferta.svg" alt="log icon" id="oferta">
+                                </div>
+                                Minhas Ofertas
+                            </button>
+
+
+                            <button class="optionsClient">recebidas</button>
+                            <button class="optionsClient">feitas</button>
+
+
+
+                            <button class="optionsPrincipal , font2">
+                                <div class="iconAdm">
+                                    <img src="./images/gear.svg" alt="gear icon">
+                                </div>
+                                Configurações
+                            </button>
+
+
+                        </div>
+                    </nav>
+                </div>
+                <a id="outBt" class="optionSignOut , font2" href="#">
+                    <div id="signOut">
+                        <img src="./images/signOut.svg" alt="sign out icon" class="iconSignOut">
+                        <p>Sign Out</p>
+                    </div>
+                </a>
+                </section>
+            </aside>
+
+            <section id="clientLeft"></section>
+    </main>
+
+    <script type="module" src="./javascript/pagesClient/pageClient.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+#perfilClient{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 35%;
+    margin-top: 2vh;
+}
+#collectionButton{
+    background: #fbf9f9;
+    border-radius: 10px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.7vw;
+    line-height: 23px;
+    color: #000000;
+    cursor: pointer;
+    width: 6vw;
+    height: 4vh;
+}
+
+.optionsClient{
+    height: 3vh;
+    width: 100%;
+    background-color: #262730;
+    border: none;;
+    font-size: 0.8em;
+    text-decoration: none;
+    color: #fbf9f9;
+}
+
+.optionsClient:hover {
+    background-color: rgba(251, 249, 249, 0.15);
+}
+
+.optionSignOut {
+    height: 8vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    background-color: #262730;
+    border: none;
+
+    font-size: 0.8em;
+    text-decoration: none;
+}
+
+.optionSignOut:hover {
+    background-color: rgba(251, 249, 249, 0.15);
+}
+
+.optionsPrincipal {
+    height: 7vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    background-color: #262730;
+    border: none;
+
+    font-size: 0.8em;
+    text-decoration: none;
+}
+
+.optionsPrincipal:hover {
+    background-color: rgba(251, 249, 249, 0.15);
+}
+
+
+.barClient {
+    width: 100%;
+    height: 1px;
+    background: #fbf9f9;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#clientLeft{
+    background-color: #fbf9f9;
+    width: 76.5%;
+    height: 98%;
+
+}
+
+#clientRight{
+    height: 98%;
+    width: 23.5%;
+
+    background-color: #262730;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/* #perfil {
+    height: 15vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+} */
+
+#subMenuClient {
+    height: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    font-size: 1.3rem;
+}

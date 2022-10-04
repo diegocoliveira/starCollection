@@ -23,7 +23,7 @@ export default () => {
             <input type="password" placeholder="**********" id="password">
             
 
-            <input type="submit" value="Sign Up" id="loginButton">
+            <a href="/#clientConfig><input type="submit" value="Sign Up" id="loginButton"></a>
             
            
             </div>
