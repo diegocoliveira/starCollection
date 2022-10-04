@@ -65,15 +65,16 @@
     border-radius: 20px;
 }
 
+
 .iconAdm {
-    width: 2vw;
+    width: 20%;
 
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 2vw;
-    margin-right: 0.5vw;
+    padding: 1vw;
 }
+
 .iconSignOut{
     display: flex;
     align-items: center;
