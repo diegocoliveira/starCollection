@@ -2,10 +2,10 @@ export class ConfAdmPage{
 
     confPage = `
     <section id="admConfPage">
-        <div>
-            <div class="headerConf">
-                <h2>Configurações</h2>
+            <div class="headerAdm">
+                <h2 class="fontStarWarsBlack">Configuracoes</h2>
             </div>
+            <div class="line2"></div>
             <div class="confInfos , flex">
                 <div id="infoDiv" class="flex">
                     <div class="greyDiv">
@@ -20,9 +20,10 @@ export class ConfAdmPage{
                 <input id="inputImgPerfil" type='file'/>
             </div>
             <div class="confInfos">
-                <div>
+                <div class="fontStarWarsBlack">
                     <h3>Dados Pessoais</h3>
                 </div>
+                <div class="line2"></div>
                 <div class="infoBetween">
                     <div class="flex">
                         <p class="font1 , bold , dataConfs">Name</p>
@@ -60,7 +61,6 @@ export class ConfAdmPage{
                     </button>
                 </div>
             </div>
-        </div>
     </section>  `;
 
 

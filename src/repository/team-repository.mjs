@@ -1,4 +1,3 @@
-import { v4 as uuid } from "uuid";
 import Team from "../model/team.mjs";
 
 export default class TeamRepository {

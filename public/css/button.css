@@ -30,13 +30,12 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-
     background-color: #fbf9f9;
     border: none;
 }
 
 .whiteBt:hover {
-    background-color: #b7b7b7;
+    /* background-color: #b7b7b7; */
 }
 
 .btPhoto {
@@ -77,8 +76,8 @@
 }
 
 .options {
-    height: 6vh;
-    width: 15vw;
+    height: 5%;
+    width: 100%;
 
     display: flex;
     align-items: center;
@@ -86,6 +85,7 @@
 
     background-color: #262730;
     border: none;
+    border-radius: 0px;
 
     font-size: 0.8em;
     text-decoration: none;
@@ -127,4 +127,3 @@
     top: 68%;
     left: 5%;
 }
-

@@ -42,7 +42,7 @@ export class Dashboard{
 
     recentTrades = `
         <section id="recentTrades">
-            <h1 class="font1">Trocas Recentes</h1>
+            <h1 class="fontStarWarsBlack">Trocas Recentes</h1>
             <div class="infoBetween">
                 <div id="infoTrades">
                     <h3 class="font1">Funko</h3>
@@ -64,7 +64,7 @@ export class Dashboard{
             </div>
         </div>`;
 
-    finished = '<img class="iconAdm" src="./images/statusFinished.svg" alt="finished icon"/>';
-    pending = '<img class="iconAdm" src="./images/statusPending.svg" alt="pending icon"/>';
-    refused = '<img class="iconAdm" src="./images/statusRefused.svg" alt="refused icon"/>';
+    finished = '<img class="iconStatus" src="./images/statusFinished.svg" alt="finished icon"/>';
+    pending = '<img class="iconStatus" src="./images/statusPending.svg" alt="pending icon"/>';
+    refused = '<img class="iconStatus" src="./images/statusRefused.svg" alt="refused icon"/>';
 }

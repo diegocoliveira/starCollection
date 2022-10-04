@@ -30,6 +30,7 @@ body {
 
 .flex {
     display: flex;
+    gap: 1vw;
     align-items: center;
 }
 
