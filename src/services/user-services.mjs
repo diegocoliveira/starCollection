@@ -1,11 +1,12 @@
 import Pool from "../repository/pool.mjs";
-import { validate as uuidValidate } from "uuid";
+import { v4 as uuid, validate as uuidValidate } from "uuid";
+import crypto from "crypto";
 import UserRepository from "../repository/user-repository.mjs";
 
-export default class UserServices{
+export default class UserServices {
     repository = new UserRepository();
 
-    async list(){
+    async list() {
         const pool = await Pool.get();
         let result = { data: [], error: null, status: 200 };
         try {
@@ -34,7 +35,7 @@ export default class UserServices{
         return result;
     }
 
-    async create(user, file){
+    async create(user) {
         const pool = await Pool.get();
         let result = { data: [], error: null, status: 200 };
         try {
@@ -53,18 +54,18 @@ export default class UserServices{
                 result.status = 400;
                 return result;
             }
-            if (!user.cidade) {
+            if (!user.city) {
                 result.error = new Error("city if required");
                 result.status = 400;
                 return result;
             }
-            if(!user.estado){
+            if (!user.state) {
                 result.error = new Error("state if required");
                 result.status = 400;
                 return result;
             }
-            user.id = file.filename.split(".")[0];
-            user.image = file.path;
+            user.id = uuid();
+            user.password = crypto.createHash("sha256").update(user.password).digest("hex");
             result = await this.repository.insert(pool, user);
         } catch (error) {
             console.log(error);
@@ -74,7 +75,7 @@ export default class UserServices{
         return result;
     }
 
-    async remove(id){
+    async remove(id) {
         const pool = await Pool.get();
         let result = { data: [], error: null, status: 200 };
         const client = await pool.connect();
@@ -96,7 +97,7 @@ export default class UserServices{
                 await fs.unlink(`repository/images/${id}.png`);
             }
             await client.query("COMMIT");
-        }catch (error) {
+        } catch (error) {
             result.error = error;
             result.status = 500;
             await client.query("ROLLBACK");

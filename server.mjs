@@ -2,6 +2,7 @@ import dotenv from "dotenv";
 import Express from "express";
 import Router from "./src/routers/router.mjs";
 
+
 dotenv.config({ path: "./env/.env" });
 
 const port = process.env.PORT || 8080;
@@ -44,6 +45,9 @@ app.use(function (req, res, next) {
     // default to plain-text. send()
     res.type("txt").send("Not found");
 });
+
+
+
 
 app.listen(port, () => {
     console.log(`Servidor criado no ambiente:${process.env.NODE_ENV} na porta:${port}`);

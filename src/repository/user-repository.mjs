@@ -6,9 +6,9 @@ export default class UserRepository{
         let error = null;
         const now = new Date();
         try {
-            const query = `INSERT INTO starcollection.user (id, name, email, password, cidade, estado, description, user_type, created_at)
+            const query = `INSERT INTO starcollection.user (id, name, email, password, city, state, description, user_type, created_at)
                 VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *`;
-            const values = [user.id, user.name, user.email, user.password, user.cidade, user.estado, user.description, user.user_type, now];
+            const values = [user.id, user.name, user.email, user.password, user.city, user.state, user.description, user.userType, now];
             const result =  await pool.query(query, values);
             if (result.rowCount > 0) {
                 data = new User();
@@ -16,10 +16,10 @@ export default class UserRepository{
                 data.name = result.rows[0].name;
                 data.email = result.rows[0].email;
                 data.password = result.rows[0].password;
-                data.cidade = result.rows[0].cidade;
-                data.estado = result.rows[0].estado;
+                data.city = result.rows[0].city;
+                data.state = result.rows[0].state;
                 data.description = result.rows[0].description;
-                data.user_type = result.rows[0].user_type;
+                data.userType = result.rows[0].user_type;
                 data.createdAt = result.rows[0].created_at;
             }
         } catch (err) {
@@ -33,9 +33,9 @@ export default class UserRepository{
         let error = null;
         const now = new Date();
         try {
-            const query = `UPDATE starcollection.user SET name = $1, email = $2, password = $3, cidade = $4, estado = $5, 
+            const query = `UPDATE starcollection.user SET name = $1, email = $2, password = $3, city = $4, state = $5, 
                 description = $6, updated_at = $7`;
-            const values = [user.name, user.email, user.password, user.cidade, user.estado, user.description, now];
+            const values = [user.name, user.email, user.password, user.city, user.state, user.description, now];
             const result =  await pool.query(query, values);
             if (result.rowCount > 0) {
                 data = new User();
@@ -43,10 +43,10 @@ export default class UserRepository{
                 data.name = result.rows[0].name;
                 data.email = result.rows[0].email;
                 data.password = result.rows[0].password;
-                data.cidade = result.rows[0].cidade;
-                data.estado = result.rows[0].estado;
+                data.city = result.rows[0].city;
+                data.state = result.rows[0].state;
                 data.description = result.rows[0].description;
-                data.user_type = result.rows[0].user_type;
+                data.userType = result.rows[0].user_type;
                 data.createdAt = result.rows[0].created_at;
                 data.updatedAt = result.rows[0].updated_at;
             }
@@ -70,10 +70,10 @@ export default class UserRepository{
                 data.name = result.rows[0].name;
                 data.email = result.rows[0].email;
                 data.password = result.rows[0].password;
-                data.cidade = result.rows[0].cidade;
-                data.estado = result.rows[0].estado;
+                data.city = result.rows[0].city;
+                data.state = result.rows[0].state;
                 data.description = result.rows[0].description;
-                data.user_type = result.rows[0].user_type;
+                data.userType = result.rows[0].user_type;
                 data.createdAt = result.rows[0].created_at;
                 data.updatedAt = result.rows[0].updated_at;
                 data.deletedAt = result.rows[0].deleted_at;
@@ -97,10 +97,10 @@ export default class UserRepository{
                 data.name = result.rows[0].name;
                 data.email = result.rows[0].email;
                 data.password = result.rows[0].password;
-                data.cidade = result.rows[0].cidade;
-                data.estado = result.rows[0].estado;
+                data.city = result.rows[0].city;
+                data.state = result.rows[0].state;
                 data.description = result.rows[0].description;
-                data.user_type = result.rows[0].user_type;
+                data.userType = result.rows[0].user_type;
                 data.createdAt = result.rows[0].created_at;
                 data.updatedAt = result.rows[0].updated_at;
                 data.deletedAt = result.rows[0].deleted_at;
@@ -124,10 +124,10 @@ export default class UserRepository{
                 user.name = row.name;
                 user.email = row.email;
                 user.password = row.password;
-                user.cidade = row.cidade;
-                user.estado = row.estado;
+                user.city = row.city;
+                user.state = row.state;
                 user.description = row.description;
-                user.user_type = row.user_type;
+                user.userType = row.user_type;
                 user.createdAt = row.created_at;
                 user.updatedAt = row.updated_at;
                 data.push(user);
@@ -152,10 +152,10 @@ export default class UserRepository{
                     user.name = row.name;
                     user.email = row.email;
                     user.password = row.password;
-                    user.cidade = row.cidade;
-                    user.estado = row.estado;
+                    user.city = row.city;
+                    user.state = row.state;
                     user.description = row.description;
-                    user.user_type = row.user_type;
+                    user.userType = row.user_type;
                     user.createdAt = row.created_at;
                     user.updatedAt = row.updated_at;
                     return user;
