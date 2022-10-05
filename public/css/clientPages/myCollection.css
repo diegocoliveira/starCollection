@@ -1,0 +1,83 @@
+#myCollectionPage {
+    width: 100%;
+    height: 100%;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+}
+
+.containTrocas{
+    display: flex;
+    flex-direction: column;
+    height: 15%;
+    padding: 1% 0 0 4%;
+}
+
+.divCollectionClient{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    align-items: center;
+}
+.divCollectionClientText{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.clientName{
+    font-size: 2vh;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    margin: 1vh 0 0.5vh 0;;
+}
+
+.clientCity{
+    font-size: 1.5vh;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    margin: 0 0 0 0;
+}
+
+.divCollectionTop{
+    padding: 0 4% 0 4%;
+    height: 85%;
+    background-color: #fbf9f9;
+    display: flex;
+    flex-direction: column;
+}
+.fontCollectionFunko{
+    font-size: 2vh;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    margin: 1vh 0 1vh 1vw;
+}
+.divCollectionFunkos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.divFunko{
+    display: flex;
+    flex-direction: column;
+    width: 10vw;
+    height: 25vh;
+    margin: 1% 0 1% 0;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    background-color: #fbf9f9;
+    cursor: pointer;
+}
