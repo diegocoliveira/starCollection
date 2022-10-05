@@ -8,7 +8,7 @@ export default class FunkoCreate {
     <section id="regProd">
     
     <div id="inputImg" class="file">                
-        <h3 class="font1, bold">Funko Imagem</h3>
+        <h3 class="fontRegister, bold">Funko Imagem</h3>
         <div id="fkImg">
             <img id="fk" src="./images/cam.svg"/>
         </div>
@@ -17,15 +17,16 @@ export default class FunkoCreate {
     </div>
 
     <div id="infoProds">
-        <div>        
-            <label for="txt-name" class="font1 , bold">Nome</label>
+
+        <div class="subinfoProds">        
+            <label for="txt-name" class="fontRegister , bold">Nome</label>
             <div class="register">
                 <input type="text" name="name" id="txt-name" placeholder="Nome do Funko"/>                    
             </div>
         </div>
 
-        <div>
-            <label for="select-category" class="font1 , bold">Categoria</label>
+        <div class="subinfoProds">
+            <label for="select-category" class="fontRegister , bold">Categoria</label>
             <div class="register">
             <select name="category" id="select-category">
                 <option value="comum">Comum</option>
@@ -35,18 +36,19 @@ export default class FunkoCreate {
             </div>
         </div>
 
-        <div>
-            <label for="txt-description" class="font1 , bold">Descrição</label>
+        <div class="subinfoProds">
+            <label for="txt-description" class="fontRegister , bold">Descrição</label>
             <div class="register">
             <textarea name="description" id="txt-description" cols="30" rows="10"  placeholder="Descrição do Funko"></textarea>
             </div>
         </div>
 
-        <div id="btsProd">
-            <button id="btn-add" class="btn-primary registeBt" type="submit">Cadastrar</button>
-            <button id="btListProds" class="btn-alternate registeBt" type="button">Listar</button>
+        <div class="subinfoProds">
+            <div id="btsProd">
+                <button id="btn-add" class="btn-primary registeBt" type="submit">Cadastrar</button>
+                <button id="btListProds" class="btn-alternate registeBt" type="button">Listar</button>
+            </div>
         </div>
-
         <div id="result" class="font1 , error"> </div>
         
     </div>
