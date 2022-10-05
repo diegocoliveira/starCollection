@@ -59,7 +59,7 @@ header {
 #mainRight {
     background-image: url("../images/Fretwell_Emulation_-119-1_ 1.png");
     background-repeat: no-repeat;
-   background-size: contain;
+    background-size: contain;
     width: 100%;
     height: 100%;
     margin-top: 0.8vh;

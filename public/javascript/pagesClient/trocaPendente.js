@@ -8,7 +8,7 @@ const clientTrocaPendente = `
 
     <div class="trocasPage">
     <img id="gearClientImg" src="./images/repeatBlack.svg " alt="">
-    <p>Minhas Trocas</p>
+    <p>minhas trocas</p>
     </div>
 
     <div class="minhasTrocas">
@@ -33,11 +33,14 @@ const clientTrocaPendente = `
         <div id="tableClientTrade">
 
         <div class="emAndamento">
+                <div class="dataPedidoTroca">
                 <h4>Darth Vader (usuário R) x Stormtrooper (usuário A)</h4>
                 <div>
                 <label class="labelTroca">proposta feita em:</label>
                 <input type="date" class="inputTroca" value="2021-08-01">
                 </div>
+                </div>
+                
                 <input type="submit" class="btnTrocaAzul" value="Concluir">
                 <input type="submit" class="btnTrocaVermelho" value="Cancelar">
         </div>

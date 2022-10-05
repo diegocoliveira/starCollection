@@ -8,7 +8,7 @@ const clientTrocaConcl = `
 
     <div class="trocasPage">
     <img id="gearClientImg" src="./images/repeatBlack.svg " alt="">
-    <p>Minhas Trocas</p>
+    <p>minhas trocas</p>
     </div>
 
     <div class="minhasTrocas">
