@@ -1,5 +1,6 @@
 import team from "../controllers/team-controller.mjs";
 import funko from "../controllers/funko-controller.mjs";
+import user from "../controllers/user-controller.mjs";
 import Upload from "../services/upload.mjs";
 
 export default function Router(express) {
@@ -17,6 +18,8 @@ export default function Router(express) {
     router.get("/funko/:id", funko().get);
     router.put("/funko/:id", funko().update);
     router.delete("/funko/:id", funko().remove);
+
+    router.post("/user", user().create);
 
     return router;
 }
