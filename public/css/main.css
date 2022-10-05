@@ -1,17 +1,16 @@
-@import url("./modal.css");
 @import url("./button.css");
 @import url("./input.css");
 @import url("./table.css");
 @import url("./font.css");
 @import url("./line.css");
 @import url("./admPages/mainAdm.css");
-@import url("./mainclient.css");
 @import url("./home.css");
 @import url("./loginPages/login.css");
 @import url("./loginPages/inputlogin.css");
 @import url("./clientPages/sideBarClient.css");
 @import url("./clientPages/clientConfig.css");
 @import url("./clientPages/clientTrocas.css");
+@import url("./exchangePage/exchangePage.css");
 @import url("./clientPages/myCollection.css");
 
 * {
