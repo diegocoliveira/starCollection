@@ -6,7 +6,7 @@ const clientConfig = `
 
     <div class="headerConfClient">
     <img id="gearClientImg" src="./images/configuracao3.svg " alt="">
-        <p>Configurações</p>
+        <p>configurações</p>
     </div>
 
     <div class="confInfosClient">
