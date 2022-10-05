@@ -1,5 +1,5 @@
 input {
-    height: 4vh;
+    height: 5vh;
     background-color: transparent;
     border: none;
 }
@@ -11,12 +11,15 @@ select:focus {
 }
 
 select {
-    height: 4vh;
+    height: 5vh;
     background-color: transparent;
     border: none;
 }
 
 textarea {
+
+    resize: none;
+
     border: none;
     background-color: transparent;
 }
