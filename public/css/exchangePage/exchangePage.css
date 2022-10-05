@@ -1,0 +1,47 @@
+#exchangePage{
+
+    width: 100%;
+    height: 98%;
+
+    background-color: #FFFFFF;
+
+}
+
+#filterDiv{
+
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+#offerDiv{
+
+    width: 100%;
+    height: 94%;
+    padding: 1vw;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    overflow-y: auto;
+
+}
+
+.funkoImg{
+
+    width: 23%;
+    height: 55%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border: 1px solid black;
+}
+
+.funkoImg > img{
+
+    width: 95%;
+
+}

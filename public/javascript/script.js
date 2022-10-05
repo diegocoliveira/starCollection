@@ -3,6 +3,7 @@ import forgot from "./pagesLogin/forgot.js";
 import signup from "./pagesLogin/signup.js";
 import index from "./pageHome/index.js";
 import { createMenu } from "./admPages/createAdmPage.mjs";
+import {createExchange} from "./exchangePage/createExchange.js";
 // import clientPage from "./pagesClient/pageClient.js";
 
 const mainContent = document.getElementById('root');
@@ -28,6 +29,9 @@ function route (){
             break;
         case '#admPage':
             createMenu();
+            break;
+        case '#exchange':
+            createExchange();
             break;
         default:
             mainContent.innerHTML = index();
