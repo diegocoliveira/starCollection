@@ -24,6 +24,9 @@
 
     color: transparent;
 
+    display: flex;
+    align-self: center;
+
 }
 
 #imgConf{

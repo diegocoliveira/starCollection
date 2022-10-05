@@ -7,7 +7,7 @@ export default class FunkoCreate {
 
     <section id="regProd">
     
-    <div class="file">                
+    <div id="inputImg" class="file">                
         <h3 class="font1, bold">Funko Imagem</h3>
         <div id="fkImg">
             <img id="fk" src="./images/cam.svg"/>
@@ -43,8 +43,8 @@ export default class FunkoCreate {
         </div>
 
         <div id="btsProd">
-            <button id="btn-add" class="btn-primary" type="submit">Cadastrar</button>
-            <button id="btListProds" class="btn-alternate" type="button">Listar</button>
+            <button id="btn-add" class="btn-primary registeBt" type="submit">Cadastrar</button>
+            <button id="btListProds" class="btn-alternate registeBt" type="button">Listar</button>
         </div>
 
         <div id="result" class="font1 , error"> </div>

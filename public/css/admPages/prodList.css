@@ -1,11 +1,14 @@
 #prodHeader {
-    height: 8vh;
+    height: 8%;
+
+    display: flex;
     align-self: flex-start;
+    align-items: center;
 }
 
 #prodList {
     width: 100%;
-    height: 75vh;
+    height: 100%;
     padding: 2vw;
 
     display: flex;
@@ -16,7 +19,7 @@
 }
 
 .infoProd {
-    width: 20vw;
+    width: 35%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;

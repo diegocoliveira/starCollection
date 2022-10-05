@@ -1,12 +1,3 @@
-/* button {
-    width: 14vw;
-    height: 4vh;
-    border-radius: 25px;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
-} */
-
 .btn-primary {
     background: #262730;
 }
@@ -23,10 +14,16 @@
     background-color: #d208019e;
 }
 
-.whiteBt {
-    width: 2vw;
-    height: 2vw;
+.registeBt {
+    width: 40%;
+    height: 5vh;
+    border-radius: 25px;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
 
+.whiteBt {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -35,7 +32,7 @@
 }
 
 .whiteBt:hover {
-    /* background-color: #b7b7b7; */
+    background-color: #b7b7b7;
 }
 
 .btPhoto {
