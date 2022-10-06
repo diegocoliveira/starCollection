@@ -91,8 +91,6 @@ export default class UserServices {
             }
             password = crypto.createHash("sha256").update(password).digest("hex");
             result = await this.repository.authenticate(pool, email, password);
-
-            
         } catch (error) {
             result.error = error;
             result.status = 500;

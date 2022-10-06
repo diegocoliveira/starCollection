@@ -13,14 +13,14 @@ export default () => {
             <div class="bar"></div>
 
             <p class="pLogin">Por favor, insira o seu e-mail</p>
-            <input type="email" placeholder="e.g.: example@gmail.com" id="email">
+            <input type="email" placeholder="e.g.: example@gmail.com" id="input-email">
 
             <p class="pLogin">Por favor, insira sua senha</p>
-            <input type="password" placeholder="**********" id="password">
+            <input type="password" placeholder="**********" id="input-password">
             <p><a id="forgot" href="/#forgot">Esqueceu sua senha?</a></p>
 
-          <input type="submit" value="Sign In" id="btn-login"/>
-            
+            <input type="submit" value="Sign In" id="btn-login"/>
+            <div id="result" class="font1 , error"> </div>
            
             </div>
             </section>

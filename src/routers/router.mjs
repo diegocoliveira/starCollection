@@ -20,6 +20,7 @@ export default function Router(express) {
     router.delete("/funko/:id", funko().remove);
 
     router.post("/user", user().create);
+    router.post("/authentication", user().authenticate);
 
     /*Apenas para teste*/
     router.get("/setcookie", function (req, res) {
