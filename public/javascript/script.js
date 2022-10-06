@@ -4,11 +4,16 @@ import signup from "./pagesLogin/signup.js";
 import index from "./pageHome/index.js";
 import { createMenu } from "./admPages/createAdmPage.mjs";
 import { createExchange } from "./exchangePage/createExchange.js";
-// import clientPage from "./pagesClient/pageClient.js";
+import createCollection from "./pagesClient/createClientPage.js";
+import minhasOfertas from "./pagesClient/minhasOfertas.js";
+import trocaPendente from "./pagesClient/trocaPendente.js";
+import trocaConcluida from "./pagesClient/trocaConcluida.js";
+import trocaRecusada from "./pagesClient/trocaRecusada.js";
+import clientConfig from "./pagesClient/pageClient.js";
+
 
 const mainContent = document.getElementById("root");
-// const menu = document.getElementById('clientRight');
-// const leftContent = document.getElementById('clientLeft');
+
 
 function route() {
     const hash = window.location.hash;
@@ -31,6 +36,27 @@ function route() {
             break;
         case "#exchange":
             createExchange();
+            break;
+        case "#collection":
+           createCollection();
+            break;
+        case "#ofertasRecebidas":
+            minhasOfertas();
+            break;
+        case "#ofertasFeitas":
+            minhasOfertas();
+            break;
+        case "#pendente":
+            trocaPendente();
+            break;
+        case "#concluida":
+            trocaConcluida();
+            break;
+        case "#recusada":
+            trocaRecusada();
+            break;
+        case "#configuracao":
+            clientConfig();
             break;
         default:
             mainContent.innerHTML = index();

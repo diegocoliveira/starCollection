@@ -1,8 +1,10 @@
-const mainContent = document.getElementById('clientLeft');
+import client from "./client.js";
+
+const mainContent = document.getElementById("root");
 
 const minhasOfertas = `
 <section id="clientConfPage">
-<div class="containTrocas">
+<div class="containTrocasDiv">
 
     <div class="headerTrocaClient">
 
@@ -60,9 +62,10 @@ const minhasOfertas = `
 </div>
 </section>
 `;
+   
 
-mainContent.innerHTML = minhasOfertas;
-
-export default () => {
-    return minhasOfertas;
+export default () => { 
+    mainContent.innerHTML = client();
+    const clientLeft = document.querySelector("#clientLeft");
+    clientLeft.innerHTML = minhasOfertas;
 };

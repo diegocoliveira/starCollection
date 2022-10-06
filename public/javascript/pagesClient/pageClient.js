@@ -1,4 +1,6 @@
-const mainContent = document.getElementById('clientLeft');
+import client from "./client.js";
+
+const mainContent = document.getElementById("root");
 
 const clientConfig = `
 <section id="clientConfPage">
@@ -9,7 +11,7 @@ const clientConfig = `
         <p>configurações</p>
     </div>
 
-    <div class="confInfosClient">
+    <div class="confInfosClientTop">
         <div class="blueBar"></div>
 
         <div id="infoDivClient">
@@ -78,9 +80,13 @@ const clientConfig = `
 </section>
 
 `;
-
-mainContent.innerHTML = clientConfig;
-
-export default () => {
-    return clientConfig;
+function configClientPage(){
+    window.location.href = "/#configuracao";
+}
+export default () => { 
+    mainContent.innerHTML = client();
+    const clientLeft = document.querySelector("#clientLeft");
+    clientLeft.innerHTML = clientConfig;
+    const btnConfiClient = document.querySelector("#btnConfig");
+    btnConfiClient.addEventListener("click", configClientPage);
 };
