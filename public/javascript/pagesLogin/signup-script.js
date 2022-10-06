@@ -71,7 +71,7 @@ async function postClient(){
         formData.append("city", city.value);
         formData.append("type", 'client')
 
-        await userAPI.authentication(formData);
+        await userAPI.userCreate(formData);
 
         username.value = '';
         email.value == '';
