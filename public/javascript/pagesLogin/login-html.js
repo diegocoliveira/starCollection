@@ -1,5 +1,4 @@
 export default () => {
-
     const loginPage = `
     <section class="login">
             <div id="mainLeftLogin">
@@ -20,13 +19,12 @@ export default () => {
             <input type="password" placeholder="**********" id="password">
             <p><a id="forgot" href="/#forgot">Esqueceu sua senha?</a></p>
 
-           <a href="/#clientConfig"> <input type="submit" value="Sign In" id="loginButton"></a>
+          <input type="submit" value="Sign In" id="btn-login"/>
             
            
             </div>
             </section>
          `;
-
 
     return loginPage;
 };

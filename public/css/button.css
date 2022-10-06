@@ -92,7 +92,7 @@
     background-color: rgba(251, 249, 249, 0.15);
 }
 
-#loginButton {
+#btn-login {
     background: #262730;
     border-radius: 25px;
     font-family: "Roboto";
