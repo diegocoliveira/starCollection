@@ -43,7 +43,7 @@ export default function UserController() {
                 return;
             }
             const token = jwt.sign({ user: result.data }, process.env.JWT_SECRET);
-            res.cookie("session", token, { httpOnly: true, maxAge: process.env.MAXAGE, sameSite: "strict" });
+            res.cookie("session", token, { httpOnly: true, maxAge: process.env.MAXAGE, sameSite: "Strict" });
             res.status(200).json(result.data);
         } catch (error) {
             res.status(500).json({ error: error.message });
@@ -86,5 +86,5 @@ export default function UserController() {
         }
     }
 
-    return {create, authenticate, verifyToken, decodeToken, logout };
+    return { create, authenticate, verifyToken, decodeToken, logout };
 }

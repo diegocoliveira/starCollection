@@ -34,7 +34,7 @@ export default function admMenu(user) {
     </div>
     </nav>
     </div>
-    <a id="btn-logout" class="options , font2" href="#">
+    <a id="btn-logout" class="options , font2" >
         <div id="signOut">
             <img src="./images/signOut.svg" alt="sign out icon">
             <p>Sign Out</p>

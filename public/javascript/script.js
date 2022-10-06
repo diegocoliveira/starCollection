@@ -12,13 +12,19 @@ import trocaConcluida from "./pagesClient/trocaConcluida.js";
 import trocaRecusada from "./pagesClient/trocaRecusada.js";
 import clientConfig from "./pagesClient/pageClient.js";
 
-
 const mainContent = document.getElementById("root");
-
 
 async function route() {
     const hash = window.location.hash;
-    const clientsAuthorized = ["#exchange", "#collection"];
+    const clientsAuthorized = [
+        "#exchange",
+        "#collection",
+        "#ofertasRecebidas",
+        "#trocasPendentes",
+        "#trocasConcluidas",
+        "#trocasRecusadas",
+        "#configuracoes",
+    ];
     const admAuthorized = ["#admPage"];
     const user = await UserAPI().authorization();
     if (clientsAuthorized.includes(hash) && !user) {
@@ -48,25 +54,25 @@ async function route() {
             createExchange();
             break;
         case "#collection":
-           createCollection();
+            createCollection(user);
             break;
         case "#ofertasRecebidas":
-            minhasOfertas();
+            minhasOfertas(user);
             break;
         case "#ofertasFeitas":
-            minhasOfertas();
+            minhasOfertas(user);
             break;
         case "#pendente":
-            trocaPendente();
+            trocaPendente(user);
             break;
         case "#concluida":
-            trocaConcluida();
+            trocaConcluida(user);
             break;
         case "#recusada":
-            trocaRecusada();
+            trocaRecusada(user);
             break;
         case "#configuracao":
-            clientConfig();
+            clientConfig(user);
             break;
         default:
             mainContent.innerHTML = index();
