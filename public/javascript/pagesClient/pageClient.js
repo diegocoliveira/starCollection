@@ -83,8 +83,8 @@ const clientConfig = `
 function configClientPage(){
     window.location.href = "/#configuracao";
 }
-export default () => { 
-    mainContent.innerHTML = client();
+export default (user) => { 
+    mainContent.innerHTML = client(user);
     const clientLeft = document.querySelector("#clientLeft");
     clientLeft.innerHTML = clientConfig;
     const btnConfiClient = document.querySelector("#btnConfig");

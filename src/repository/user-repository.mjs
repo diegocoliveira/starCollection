@@ -6,9 +6,9 @@ export default class UserRepository{
         let error = null;
         const now = new Date();
         try {
-            const query = `INSERT INTO starcollection.user (id, name, email, password, city, state, description, user_type, created_at)
+            const query = `INSERT INTO starcollection.user (id, name, email, password, city, state, description, type, created_at)
                 VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *`;
-            const values = [user.id, user.name, user.email, user.password, user.city, user.state, user.description, user.userType, now];
+            const values = [user.id, user.name, user.email, user.password, user.city, user.state, user.description, user.type, now];
             const result =  await pool.query(query, values);
             if (result.rowCount > 0) {
                 data = new User();
@@ -19,7 +19,7 @@ export default class UserRepository{
                 data.city = result.rows[0].city;
                 data.state = result.rows[0].state;
                 data.description = result.rows[0].description;
-                data.userType = result.rows[0].user_type;
+                data.type = result.rows[0].type;
                 data.createdAt = result.rows[0].created_at;
             }
         } catch (err) {
@@ -46,7 +46,7 @@ export default class UserRepository{
                 data.city = result.rows[0].city;
                 data.state = result.rows[0].state;
                 data.description = result.rows[0].description;
-                data.userType = result.rows[0].user_type;
+                data.type = result.rows[0].type;
                 data.createdAt = result.rows[0].created_at;
                 data.updatedAt = result.rows[0].updated_at;
             }
@@ -73,7 +73,7 @@ export default class UserRepository{
                 data.city = result.rows[0].city;
                 data.state = result.rows[0].state;
                 data.description = result.rows[0].description;
-                data.userType = result.rows[0].user_type;
+                data.type = result.rows[0].type;
                 data.createdAt = result.rows[0].created_at;
                 data.updatedAt = result.rows[0].updated_at;
                 data.deletedAt = result.rows[0].deleted_at;
@@ -100,7 +100,7 @@ export default class UserRepository{
                 data.city = result.rows[0].city;
                 data.state = result.rows[0].state;
                 data.description = result.rows[0].description;
-                data.userType = result.rows[0].user_type;
+                data.type = result.rows[0].type;
                 data.createdAt = result.rows[0].created_at;
                 data.updatedAt = result.rows[0].updated_at;
                 data.deletedAt = result.rows[0].deleted_at;
@@ -127,7 +127,7 @@ export default class UserRepository{
                 user.city = row.city;
                 user.state = row.state;
                 user.description = row.description;
-                user.userType = row.user_type;
+                user.type = row.type;
                 user.createdAt = row.created_at;
                 user.updatedAt = row.updated_at;
                 data.push(user);
@@ -155,7 +155,7 @@ export default class UserRepository{
                     user.city = row.city;
                     user.state = row.state;
                     user.description = row.description;
-                    user.userType = row.user_type;
+                    user.type = row.type;
                     user.createdAt = row.created_at;
                     user.updatedAt = row.updated_at;
                     return user;
@@ -168,5 +168,26 @@ export default class UserRepository{
         return { data, error };
     }
 
-    
+    async authenticate(pool, email, password){
+        let data = [];
+        let error = null;
+        try{
+            const query = `SELECT * FROM starcollection.user WHERE deleted_at is null and email = $1 and password = $2`;
+            const values = [email, password];
+            const result = await pool.query(query, values);
+            if (result.rowCount > 0) {
+                data = new User();
+                data.id = result.rows[0].id;
+                data.name = result.rows[0].name;
+                data.email = result.rows[0].email;
+                data.city = result.rows[0].city;
+                data.state = result.rows[0].state;
+                data.type = result.rows[0].type;
+               
+            }
+        }catch (err) {
+            error = err;
+        }
+        return { data, error };
+    }
 }

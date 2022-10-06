@@ -50,8 +50,8 @@ const clientTrocaConcl = `
 </section>
 
 `;
-export default () => { 
-    mainContent.innerHTML = client();
+export default (user) => { 
+    mainContent.innerHTML = client(user);
     const clientLeft = document.querySelector("#clientLeft");
     clientLeft.innerHTML = clientTrocaConcl;
 };

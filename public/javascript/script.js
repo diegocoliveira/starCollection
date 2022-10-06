@@ -4,6 +4,7 @@ import signup from "./pagesLogin/signup.js";
 import index from "./pageHome/index.js";
 import { createMenu } from "./admPages/createAdmPage.mjs";
 import { createExchange } from "./exchangePage/createExchange.js";
+import UserAPI from "./api/user-api.mjs";
 import createCollection from "./pagesClient/createClientPage.js";
 import minhasOfertas from "./pagesClient/minhasOfertas.js";
 import trocaPendente from "./pagesClient/trocaPendente.js";
@@ -11,12 +12,27 @@ import trocaConcluida from "./pagesClient/trocaConcluida.js";
 import trocaRecusada from "./pagesClient/trocaRecusada.js";
 import clientConfig from "./pagesClient/pageClient.js";
 
-
 const mainContent = document.getElementById("root");
 
-
-function route() {
+async function route() {
     const hash = window.location.hash;
+    const clientsAuthorized = [
+        "#exchange",
+        "#collection",
+        "#ofertasRecebidas",
+        "#trocasPendentes",
+        "#trocasConcluidas",
+        "#trocasRecusadas",
+        "#configuracoes",
+    ];
+    const admAuthorized = ["#admPage"];
+    const user = await UserAPI().authorization();
+    if (clientsAuthorized.includes(hash) && !user) {
+        window.location.hash = "#login";
+    }
+    if (admAuthorized.includes(hash) && user.type != "administrador") {
+        window.location.hash = "#login";
+    }
     mainContent.innerHTML = "";
     switch (hash) {
         case "#":
@@ -32,31 +48,31 @@ function route() {
             mainContent.innerHTML = signup();
             break;
         case "#admPage":
-            createMenu();
+            createMenu(user);
             break;
         case "#exchange":
             createExchange();
             break;
         case "#collection":
-           createCollection();
+            createCollection(user);
             break;
         case "#ofertasRecebidas":
-            minhasOfertas();
+            minhasOfertas(user);
             break;
         case "#ofertasFeitas":
-            minhasOfertas();
+            minhasOfertas(user);
             break;
         case "#pendente":
-            trocaPendente();
+            trocaPendente(user);
             break;
         case "#concluida":
-            trocaConcluida();
+            trocaConcluida(user);
             break;
         case "#recusada":
-            trocaRecusada();
+            trocaRecusada(user);
             break;
         case "#configuracao":
-            clientConfig();
+            clientConfig(user);
             break;
         default:
             mainContent.innerHTML = index();

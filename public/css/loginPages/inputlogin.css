@@ -10,7 +10,7 @@
     border: thin solid #000000;
 }
 
-#email {
+#input-email {
     padding-left: 1.5vw;
     border-radius: 20px;
     height: 2.5vh;
@@ -20,7 +20,7 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
 }
 
-#password {
+#input-password {
     background-image: url("../images/visibility_off.svg");
     background-repeat: no-repeat;
     background-position: right;
