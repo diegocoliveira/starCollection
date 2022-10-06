@@ -17,7 +17,7 @@ export default () => {
             <input type="email" placeholder="e.g.: R2-D2@gmail.com" id="email">
             
 
-            <input type="submit" value="Send" id="loginButton">
+            <input class="btn-pages-login" type="submit" value="Send" id="loginButton">
             
            
             </div>
