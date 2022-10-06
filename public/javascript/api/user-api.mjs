@@ -1,11 +1,7 @@
 export default function UserAPI() {
     async function userCreate(data){
         const options = { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) };
-        const response = await fetch("/user", options);
-        
-        if (response.status == 401) {
-            throw new Error("Dados inválidos");
-        }
+        const response = await fetch("/api/user", options);
 
         if (!response.ok || !response.status == 200) {
             const message = await response.json();
@@ -57,5 +53,5 @@ export default function UserAPI() {
         return true;
     }
 
-    return { userCreate ,authentication, authorization, logout };
+    return { userCreate, authentication, authorization, logout };
 }

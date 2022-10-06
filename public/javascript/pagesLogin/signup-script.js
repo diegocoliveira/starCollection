@@ -46,10 +46,10 @@ async function postClient(){
     const city = document.querySelector("#city");
     const result = document.querySelector("#result");
     const userAPI = new UserAPI;
-    const formData = new FormData();
+    const form = {};
     try {
-        if (username.value == '' || username.value.length < 3) {
-            result.innerHTML = "O nome do usuário deve conter no minimo 3 caracteres";
+        if (username.value == '' || username.value.length < 4) {
+            result.innerHTML = "O nome do usuário deve conter no minimo 4 caracteres";
             return;
         }
         if (email.value == '') {
@@ -64,14 +64,13 @@ async function postClient(){
             result.innerHTML = "O campo estado é obrigatorio";
             return;
         }
-        formData.append("name", username.value);
-        formData.append("email", email.value);
-        formData.append("password", password.value);
-        formData.append("state", state.value);
-        formData.append("city", city.value);
-        formData.append("type", 'client')
-
-        await userAPI.userCreate(formData);
+        form.name = username.value;
+        form.email = email.value;
+        form.password = password.value;
+        form.state = state.value;
+        form.city = city.value;
+        form.type = "cliente";
+        await userAPI.userCreate(form);
 
         username.value = '';
         email.value == '';
