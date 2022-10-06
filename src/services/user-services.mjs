@@ -75,34 +75,27 @@ export default class UserServices {
         return result;
     }
 
-    async remove(id) {
+    async authenticate(email, password) {
         const pool = await Pool.get();
         let result = { data: [], error: null, status: 200 };
-        const client = await pool.connect();
         try {
-            if (!uuidValidate(id)) {
-                result.error = new Error("Invalid id");
+            if (!email) {
+                result.error = new Error("email if required");
                 result.status = 400;
                 return result;
             }
-            await client.query("BEGIN");
-            result = await this.repository.get(client, id);
-            if (result.error) {
-                throw result.error;
+            if (!password || password.length < 8) {
+                result.error = new Error("password must be at least 8 characters");
+                result.status = 400;
+                return result;
             }
-            if (result.data.length > 0) {
-                result = await this.repository.deleteSoft(client, id);
-            } else {
-                result = await this.repository.deleteHard(client, id);
-                await fs.unlink(`repository/images/${id}.png`);
-            }
-            await client.query("COMMIT");
+            password = crypto.createHash("sha256").update(password).digest("hex");
+            result = await this.repository.authenticate(pool, email, password);
+
+            
         } catch (error) {
             result.error = error;
             result.status = 500;
-            await client.query("ROLLBACK");
-        } finally {
-            client.release();
         }
         return result;
     }

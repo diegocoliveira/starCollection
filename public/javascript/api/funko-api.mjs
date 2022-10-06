@@ -38,5 +38,6 @@ export default function FunkoAPI() {
         return data;
     }
 
+
     return { create, remove, list };
 }

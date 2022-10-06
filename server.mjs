@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 import Express from "express";
 import Router from "./src/routers/router.mjs";
-
+import cookieParser from "cookie-parser";
 
 dotenv.config({ path: "./env/.env" });
 
@@ -16,6 +16,7 @@ const jsonErrorHandler = (err, req, res, next) => {
 
 app.use(Express.json());
 app.use(Express.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 app.use("/", Express.static("public"));
 app.use("/repository", Express.static("repository"));
@@ -45,9 +46,6 @@ app.use(function (req, res, next) {
     // default to plain-text. send()
     res.type("txt").send("Not found");
 });
-
-
-
 
 app.listen(port, () => {
     console.log(`Servidor criado no ambiente:${process.env.NODE_ENV} na porta:${port}`);
