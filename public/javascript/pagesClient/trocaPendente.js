@@ -1,8 +1,10 @@
-const mainContent = document.getElementById('clientLeft');
+import client from "./client.js";
+
+const mainContent = document.getElementById("root");
 
 const clientTrocaPendente = `
 <section id="clientConfPage">
-<div class="containTrocas">
+<div class="containTrocasDiv">
 
     <div class="headerTrocaClient">
 
@@ -12,9 +14,9 @@ const clientTrocaPendente = `
     </div>
 
     <div class="minhasTrocas">
-    <button class="btnTrocas">em andamento</button>
-    <button class="btnTrocasWhite">concluídas</button>
-    <button class="btnTrocasWhite">recusadas</button>
+    <button class="btnTrocas"><a class="linkFormatTrocas" href="/#pendente">em andamento</a></button>
+    <button class="btnTrocasWhite"><a class="linkFormat" href="/#concluida">concluídas</a></button>
+    <button class="btnTrocasWhite"><a class="linkFormat" href="/#recusada">recusadas</a></button>
     </div>
 
     </div>
@@ -51,9 +53,9 @@ const clientTrocaPendente = `
 </div>
 </section>
 `;
-
-mainContent.innerHTML = clientTrocaPendente;
-
-export default () => {
-    return clientTrocaPendente;
+    
+export default () => { 
+    mainContent.innerHTML = client();
+    const clientLeft = document.querySelector("#clientLeft");
+    clientLeft.innerHTML = clientTrocaPendente;
 };

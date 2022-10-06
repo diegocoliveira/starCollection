@@ -1,66 +1,48 @@
-const mainContent = document.getElementById('clientLeft');
+export default function colecaoHtml() {
 
-const minhaColecao = `
-<section id="myCollectionPage">
+    function minhaColecao() {
+        return `
+        <section id="myCollectionPage">
 
-    <div class="containTrocas">
+            <div class="containTrocas">
 
-            <div class="divCollectionClient">
+                    <div class="divCollectionClient">
 
-                <img id="gearClientImg" src="./images/personBlack.svg " alt="">
-                
-                <div class="divCollectionClientText">
-                    <p class="clientName">Maria Sky</p>
-                    <p class="clientCity">Recife - PE</p>
-                </div>
-                
+                        <img id="gearClientImg" src="./images/personBlack.svg " alt="">
+                        
+                        <div class="divCollectionClientText">
+                            <p class="clientName">Maria Sky</p>
+                            <p class="clientCity">Recife - PE</p>
+                        </div>
+                        
+                    </div>
+
             </div>
 
-    </div>
+            <div class="divCollectionTop">
 
-    <div class="divCollectionTop">
+                <div class="barTrade"></div>
 
-        <div class="barTrade"></div>
+                <h2 class="fontCollectionFunko">Minha Coleção</h2>
 
-        <h2 class="fontCollectionFunko">Minha Coleção</h2>
+                <div class="barTrade"></div>
+            </div>
 
-        <div class="barTrade"></div>
+            <div class="divCollectionFunkos">
+           
+            </div>
+        </section>
+        `;
+            }
 
-        <div class="divCollectionFunkos">
+            function rowFunko(funko) {
+                return `
+                <div class="divFunko">
+                
+                <img class="imgCollectionFunko passarMouse" src="/repository/images/${funko.id}.png" alt="${funko.name}" title="${funko.name}"></img>
+                </div>
 
-            <div class="divFunko"></div>
-            <div class="divFunko"></div>
-            <div class="divFunko"></div>
-            <div class="divFunko"></div>
-
-            <div class="divFunko"></div>
-            <div class="divFunko"></div>
-            <div class="divFunko"></div>
-            <div class="divFunko"></div>
-
-            <div class="divFunko"></div>
-            <div class="divFunko"></div>
-            <div class="divFunko"></div>
-            <div class="divFunko"></div>
-
-            <div class="divFunko"></div>
-            <div class="divFunko"></div>
-            <div class="divFunko"></div>
-            <div class="divFunko"></div>
-
-            <div class="divFunko"></div>
-            <div class="divFunko"></div>
-            <div class="divFunko"></div>
-            <div class="divFunko"></div>
-
-        </div>
-    </div>
-   
-</section>
-`;
-
-mainContent.innerHTML = minhaColecao;
-
-export default () => {
-    return minhaColecao;
+            `;
+            }
+            return { minhaColecao, rowFunko };
 };

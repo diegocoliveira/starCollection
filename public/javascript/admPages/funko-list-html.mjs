@@ -10,10 +10,10 @@ export default function FunkoList() {
                         <div class="flex">
                             <p class="font1 , bold">Nome</p>
                         </div>
-                        <div class="infoProd">
-                            <p class="font1 , bold">Raridade</p>
-                            <p class="font1 , bold">Editar</p>
-                            <p class="font1 , bold">Excluir</p>
+                        <div class="infoProd listProd">
+                            <p class="font1 , bold listRarity">Raridade</p>
+                            <p class="font1 , bold listEditDelete">Editar</p>
+                            <p class="font1 , bold listEditDelete">Excluir</p>
                         </div>
                     </div>
                 </section>`;
@@ -21,20 +21,30 @@ export default function FunkoList() {
 
     function row(funko) {
         return `
-                <div class="infoBetween">
-                    <div class="flex">
-                        <img id="imgProd" class="avatar" src="/repository/images/${funko.id}.png" alt="${funko.name}">
-                        <p id="nameProd" class="font1 , bold" >${funko.name}</p>
-                    </div>
-        <div class="infoProd">      
-            <p id="rarityProd">${funko.category}</p>
+    <div class="infoBetween">
+
+        <div class="flex listFunkoName">
+            <img id="imgProd" class="avatar" src="/repository/images/${funko.id}.png" alt="${funko.name}">
+            <p id="nameProd" class="font1 , bold" >${funko.name}</p>
+        </div>
+
+        <div class="infoProd infoProdList">      
+                    
+            <p id="rarityProd" class="listRarityRow">${funko.category}</p>
+
+            <div class="infoProd listEditDelete">  
             <button id="" class="whiteBt">
                 <img src="./images/edit.svg" alt="edit icon">
             </button>
+        </div>
+
+        <div class="infoProd listEditDelete">  
             <button class="whiteBt , button-delete">
                 <img id="${funko.id}"  name="${funko.name}" src="./images/trash.svg" alt="trash icon">
             </button>
+
         </div>
+
     </div>`;
     }
 

@@ -42,7 +42,18 @@
 .confInfosClient {
 
     padding: 2vw;
-    height: 55%;
+    height: 70%;
+    background-color: #fbf9f9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 5%;
+}
+.confInfosClientTop{
+    padding: 2vw;
+    height: 30%;
     background-color: #fbf9f9;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
     justify-content: space-between;
@@ -124,4 +135,13 @@
     justify-content: center;
     margin-left: 2vw;
     margin-right: 0.5vw;
+}
+.linkFormatTrocas{
+    text-decoration: none;
+    color: #fbf9f9;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.75vw;
+    line-height: 23px;
 }
