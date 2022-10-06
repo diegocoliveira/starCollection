@@ -1,11 +1,11 @@
-export default function menuLateralClient(){
+export default function menuLateralClient(user) {
     return `
             <aside id="clientRight">
                 <div>
 
                     <div id="perfilClient">
                         <img src="./images/person-circleWhite.png" class="avatar" alt="user icon">
-                        <h2 class="fontStarWars">Maria Sky</h2>
+                        <h2 class="fontStarWars">${user.name}</h2>
                      
                         <button id="collectionButton"><a class="linkFormat" href="/#collection">Minha Coleção</a></button>
                     </div>
@@ -51,12 +51,13 @@ export default function menuLateralClient(){
                         </div>
                     </nav>
                 </div>
-                <a id="outBt" class="optionSignOut , font2" href="#">
-                    <div id="signOut">
-                        <img src="./images/signOut.svg" alt="sign out icon" class="iconSignOut">
+                <a id="btn-logout" class="options , font2" >
+                     <div id="signOut">
+                        <img src="./images/signOut.svg" alt="sign out icon">
                         <p>Sign Out</p>
                     </div>
                 </a>
+                
                 </section>
             </aside>
 

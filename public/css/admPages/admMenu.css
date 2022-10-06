@@ -33,11 +33,11 @@
     justify-content: center;
 }
 
-#outBt {
+#btn-logout {
     width: 100%;
-
     display: flex;
     justify-content: space-evenly;
+    cursor: pointer;
 }
 
 #admMain {
@@ -64,7 +64,6 @@
     /* border-radius: 20px; */
 }
 
-
 .iconAdm {
     width: 20%;
 
@@ -78,7 +77,7 @@
     height: 5%;
 }
 
-.iconSignOut{
+.iconSignOut {
     display: flex;
     align-items: center;
     justify-content: center;

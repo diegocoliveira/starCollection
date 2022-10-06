@@ -47,6 +47,7 @@ app.use(function (req, res, next) {
     res.type("txt").send("Not found");
 });
 
+
 app.listen(port, () => {
     console.log(`Servidor criado no ambiente:${process.env.NODE_ENV} na porta:${port}`);
 });

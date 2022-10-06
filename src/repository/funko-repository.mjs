@@ -101,7 +101,7 @@ export default class FunkoRepository {
         let error = null;
 
         try {
-            const query = "SELECT * FROM starcollection.funko where deleted_at is null";
+            const query = "SELECT * FROM starcollection.funko where deleted_at is null order by name";
             const result = await pool.query(query);
             for (let i = 0; i < result.rows.length; i++) {
                 const row = result.rows[i];

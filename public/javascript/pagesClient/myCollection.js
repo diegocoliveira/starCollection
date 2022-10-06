@@ -1,6 +1,5 @@
 export default function colecaoHtml() {
-
-    function minhaColecao() {
+    function minhaColecao(user) {
         return `
         <section id="myCollectionPage">
 
@@ -11,8 +10,8 @@ export default function colecaoHtml() {
                         <img id="gearClientImg" src="./images/personBlack.svg " alt="">
                         
                         <div class="divCollectionClientText">
-                            <p class="clientName">Maria Sky</p>
-                            <p class="clientCity">Recife - PE</p>
+                            <p class="clientName">${user.name}</p>
+                            <p class="clientCity">${user.city} - ${user.state}</p>
                         </div>
                         
                     </div>
@@ -33,16 +32,16 @@ export default function colecaoHtml() {
             </div>
         </section>
         `;
-            }
+    }
 
-            function rowFunko(funko) {
-                return `
+    function rowFunko(funko) {
+        return `
                 <div class="divFunko">
                 
                 <img class="imgCollectionFunko passarMouse" src="/repository/images/${funko.id}.png" alt="${funko.name}" title="${funko.name}"></img>
                 </div>
 
             `;
-            }
-            return { minhaColecao, rowFunko };
-};
+    }
+    return { minhaColecao, rowFunko };
+}

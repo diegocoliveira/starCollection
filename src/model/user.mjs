@@ -9,7 +9,7 @@ export default class User {
         this.state = "";
         this.link = "";
         this.description = "";
-        this.userType = "";
+        this.type = "";
         this.createdAt = null;
         this.updatedAt = null;
         this.deletedAt = null;

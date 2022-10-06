@@ -7,21 +7,21 @@
     justify-content: center;
 }
 
-.containTrocas{
+.containTrocas {
     width: 100%;
     display: flex;
     flex-direction: column;
     height: 15%;
     padding: 1% 0 0 4%;
 }
-.containTrocasDiv{
+.containTrocasDiv {
     width: 100%;
     display: flex;
     flex-direction: column;
     height: 90%;
     padding: 1% 0 0 4%;
 }
-.divCollectionClient{
+.divCollectionClient {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -29,7 +29,7 @@
     justify-content: flex-start;
     align-items: center;
 }
-.divCollectionClientText{
+.divCollectionClientText {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -37,34 +37,34 @@
     justify-content: center;
 }
 
-.clientName{
+.clientName {
     font-size: 2vh;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 600;
-    margin: 1vh 0 0.5vh 0;;
+    margin: 1vh 0 0.5vh 0;
 }
 
-.clientCity{
+.clientCity {
     font-size: 1.5vh;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 400;
     margin: 0 0 0 0;
 }
 
-.divCollectionTop{
+.divCollectionTop {
     padding: 0 4% 0 4%;
     height: 15%;
     background-color: #fbf9f9;
     display: flex;
     flex-direction: column;
 }
-.fontCollectionFunko{
+.fontCollectionFunko {
     font-size: 2vh;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 600;
     margin: 1vh 0 1vh 1vw;
 }
-.divCollectionFunkos{
+.divCollectionFunkos {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -75,11 +75,11 @@
     align-items: center;
     overflow-x: auto;
     overflow-y: scroll;
-    scrollbar-width: thin;          /* "auto" or "thin" */
-    scrollbar-color: #fbf9f9 #01017C;   /* scroll thumb and track */
+    scrollbar-width: thin; /* "auto" or "thin" */
+    scrollbar-color: #fbf9f9 #01017c; /* scroll thumb and track */
 }
 
-.divFunko{
+.divFunko {
     display: flex;
     flex-direction: column;
     width: 10vw;
@@ -91,27 +91,32 @@
     background-image: url("../../images/moldura.svg");
     background-repeat: no-repeat;
     background-size: contain;
+    filter: grayscale(1);
 }
-.imgCollectionFunko{
+.imgCollectionFunko {
     width: 50%;
     height: 65%;
     object-fit: contain;
     align-items: center;
 }
-  .divCollectionFunkos::-webkit-scrollbar {
-    width: 12px;               /* width of the entire scrollbar */
-  }
-  
-  .divCollectionFunkos::-webkit-scrollbar-track {
-    background: #01017C;        /* color of the tracking area */
-  }
-  
-  .divCollectionFunkos::-webkit-scrollbar-thumb {
-    background-color: #fbf9f9;    /* color of the scroll thumb */
-    border-radius: 20px;       /* roundness of the scroll thumb */
-    border: 3px solid #01017C;  /* creates padding around scroll thumb */
-  }
+.divCollectionFunkos::-webkit-scrollbar {
+    width: 12px; /* width of the entire scrollbar */
+}
 
-  .mostrarNome{display: none;}
+.divCollectionFunkos::-webkit-scrollbar-track {
+    background: #01017c; /* color of the tracking area */
+}
 
-  .passarMouse:hover .mostrarNome{display: block;}
+.divCollectionFunkos::-webkit-scrollbar-thumb {
+    background-color: #fbf9f9; /* color of the scroll thumb */
+    border-radius: 20px; /* roundness of the scroll thumb */
+    border: 3px solid #01017c; /* creates padding around scroll thumb */
+}
+
+.mostrarNome {
+    display: none;
+}
+
+.passarMouse:hover .mostrarNome {
+    display: block;
+}
