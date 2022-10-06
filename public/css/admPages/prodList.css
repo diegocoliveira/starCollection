@@ -24,3 +24,53 @@
     align-items: center;
     justify-content: space-evenly;
 }
+
+.infoProdList {
+    width: 40%;
+}
+
+.listFunkoDiv{
+
+    width: 100%;
+    padding: 1%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-x: auto;
+    overflow-y: scroll;
+    scrollbar-width: thin;          /* "auto" or "thin" */
+    scrollbar-color: #fbf9f9 #01017C;   /* scroll thumb and track */
+}
+.listFunkoDiv::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+  
+  .listFunkoDiv::-webkit-scrollbar-track {
+    background: #01017C;        /* color of the tracking area */
+  }
+  
+  .listFunkoDiv::-webkit-scrollbar-thumb {
+    background-color: #fbf9f9;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid #01017C;  /* creates padding around scroll thumb */
+  }
+  .listProd {
+    width: 38%;
+  }
+  .listRarity {
+    width: 40%;
+  }
+
+  .listRarityRow {
+    width: 40%;
+    text-align: center;
+  }
+
+  .listEditDelete {
+    width: 30%;
+  }
+
+  .listFunkoName {
+    width: 62%;
+  }

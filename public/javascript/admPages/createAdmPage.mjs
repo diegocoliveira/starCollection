@@ -170,12 +170,15 @@ async function list() {
     main.innerHTML += funkoList.header();
     const prodList = document.querySelector("#prodList");
     prodList.innerHTML += line.line1;
+    const listFunkoDiv = document.createElement("div");
+    listFunkoDiv.className = "listFunkoDiv";
     try {
         const list = await funkoAPI.list();
         for (let index = 0; index < list.length; index++) {
-            prodList.innerHTML += funkoList.row(list[index]);
-            prodList.innerHTML += line.line2;
+            listFunkoDiv.innerHTML += funkoList.row(list[index]);
+            listFunkoDiv.innerHTML += line.line2;
         }
+        prodList.appendChild(listFunkoDiv);
     } catch (error) {
         console.log(error);
         alert(error.message);
