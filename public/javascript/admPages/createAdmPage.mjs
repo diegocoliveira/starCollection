@@ -1,4 +1,4 @@
-import { AdmMenu } from "./admMenu.mjs";
+import admMenu from "./adm-menu-html.mjs";
 import { Dashboard } from "./dashBoard.mjs";
 import FunkoCreate from "./funko-create-html.mjs";
 import FunkoList from "./funko-list-html.mjs";
@@ -10,28 +10,49 @@ import { UserListPage } from "./userList.mjs";
 import { ConfAdmPage } from "./confAdm.mjs";
 
 import FunkoAPI from "../api/funko-api.mjs";
+import UserAPI from "../api/user-api.mjs";
 
 const clear = new Clear();
 const dashBoard = new Dashboard();
 const funkoCreate = new FunkoCreate();
 const line = new Line();
-const admMenu = new AdmMenu();
 const userListPage = new UserListPage();
 const confAdmPage = new ConfAdmPage();
 
-export function createMenu() {
+let user;
+
+export function createMenu(_user) {
+    user = _user;
     clear.rootClear();
-    root.innerHTML = admMenu.menu + admMenu.admMain;
+    root.innerHTML = admMenu(user);
 
     const dashBt = document.querySelector("#dashBt");
     const registBt = document.querySelector("#registBt");
     const userBt = document.querySelector("#userBt");
     const confBt = document.querySelector("#confBt");
+    const btnLogout = document.querySelector("#btn-logout");
 
     dashBt.addEventListener("click", dashBoardCreate);
     registBt.addEventListener("click", register);
     userBt.addEventListener("click", userListCreate);
     confBt.addEventListener("click", confCreate);
+    btnLogout.onclick = logout;
+
+    dashBoardCreate();
+}
+
+function logout() {
+    const userAPI = UserAPI();
+    try {
+        if (userAPI.logout()) {
+            window.location.href = "/#";
+        } else {
+            alert("Erro ao fazer logout");
+        }
+    } catch (error) {
+        console.log(error);
+        alert(error.message);
+    }
 }
 
 function dashBoardCreate() {

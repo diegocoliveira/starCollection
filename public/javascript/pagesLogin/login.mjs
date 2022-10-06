@@ -12,12 +12,10 @@ async function login() {
     const userAPI = new UserAPI();
     try {
         result.innerHTML = "";
-
         if (!inputPassword.value || inputPassword.value.length < 8) {
             result.innerHTML = new Error("A senha precisa ter no mínimo 8 caracteres");
             return;
         }
-
         user = await userAPI.authentication({ email: inputEmail.value, password: inputPassword.value });
 
         if (user.type == "administrador") {
@@ -29,7 +27,7 @@ async function login() {
         result.innerHTML = "Perfil não encontrado";
     } catch (error) {
         console.log(error);
-        result.innerHTML = error;
+        result.innerHTML = error.message;
     }
 }
 

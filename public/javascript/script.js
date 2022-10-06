@@ -4,14 +4,24 @@ import signup from "./pagesLogin/signup.js";
 import index from "./pageHome/index.js";
 import { createMenu } from "./admPages/createAdmPage.mjs";
 import { createExchange } from "./exchangePage/createExchange.js";
+import UserAPI from "./api/user-api.mjs";
 // import clientPage from "./pagesClient/pageClient.js";
 
 const mainContent = document.getElementById("root");
 // const menu = document.getElementById('clientRight');
 // const leftContent = document.getElementById('clientLeft');
 
-function route() {
+async function route() {
     const hash = window.location.hash;
+    const clientsAuthorized = ["#exchange", "#collection"];
+    const admAuthorized = ["#admPage"];
+    const user = await UserAPI().authorization();
+    if (clientsAuthorized.includes(hash) && !user) {
+        window.location.hash = "#login";
+    }
+    if (admAuthorized.includes(hash) && user.type != "administrador") {
+        window.location.hash = "#login";
+    }
     mainContent.innerHTML = "";
     switch (hash) {
         case "#":
@@ -27,7 +37,7 @@ function route() {
             mainContent.innerHTML = signup();
             break;
         case "#admPage":
-            createMenu();
+            createMenu(user);
             break;
         case "#exchange":
             createExchange();

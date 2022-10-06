@@ -2,7 +2,7 @@ export default () => {
     const loginPage = `
     <section class="login">
             <div id="mainLeftLogin">
-             <img src="./images/rey.png" alt="rey" class="imagePagesLogin">  
+             <img src="./images/rey.png" alt="rey"  class="imagePagesLogin">  
             </div>
 
             <div id="mainRightLogin">

@@ -21,22 +21,8 @@ export default function Router(express) {
 
     router.post("/user", user().create);
     router.post("/authentication", user().authenticate);
-
-    /*Apenas para teste*/
-    router.get("/setcookie", function (req, res) {
-        // setting cookies
-        res.cookie("username", "diego", { maxAge: 1000 * 60 * 60 * 24 * 7, httpOnly: true, sameSite: "strict" });
-        return res.send("Cookie has been set");
-    });
-
-    router.get("/getcookie", function (req, res) {
-        const username = req.cookies["username"];
-        if (username) {
-            return res.send(username);
-        }
-
-        return res.send("No cookie found");
-    });
+    router.get("/authorization", user().verifyToken, user().decodeToken);
+    router.get("/logout", user().logout);
 
     return router;
 }

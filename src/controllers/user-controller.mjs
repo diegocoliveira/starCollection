@@ -42,13 +42,49 @@ export default function UserController() {
                 res.status(401).json({ error: "incorrect username or password" });
                 return;
             }
-            const token = jwt.sign({ id: result.data}, process.env.JWT_SECRET);
-            res.cookie("session", token, { httpOnly: true, maxAge:process.env.JWT_SECRET, sameSite: "strict" });
+            const token = jwt.sign({ user: result.data }, process.env.JWT_SECRET);
+            res.cookie("session", token, { httpOnly: true, maxAge: process.env.MAXAGE, sameSite: "strict" });
             res.status(200).json(result.data);
         } catch (error) {
             res.status(500).json({ error: error.message });
         }
     }
 
-    return { authenticate, create };
+    async function verifyToken(req, res, next) {
+        try {
+            const token = req.cookies.session;
+            if (!token) {
+                res.status(401).json({ error: "not authorized" });
+                return;
+            }
+            const data = jwt.verify(token, process.env.JWT_SECRET);
+            req.user = data.user;
+            next();
+        } catch (error) {
+            res.status(500).json({ error: error.message });
+        }
+    }
+
+    async function decodeToken(req, res) {
+        try {
+            if (!req.user) {
+                res.status(401).json({ error: "not authorized" });
+                return;
+            }
+            res.status(200).json(req.user);
+        } catch (error) {
+            res.status(500).json({ error: error.message });
+        }
+    }
+
+    async function logout(req, res) {
+        try {
+            res.clearCookie("session");
+            res.status(200).json({ message: "logged out" });
+        } catch (error) {
+            res.status(500).json({ error: error.message });
+        }
+    }
+
+    return {create, authenticate, verifyToken, decodeToken, logout };
 }
