@@ -124,3 +124,18 @@
     top: 68%;
     left: 5%;
 }
+
+.btn-pages-login {
+    background: #262730;
+    border-radius: 25px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.9vw;
+    line-height: 23px;
+    color: #fbf9f9;
+    cursor: pointer;
+    width: 6vw;
+    height: 3vh;
+    margin: 1vh;
+}
