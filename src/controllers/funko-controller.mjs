@@ -30,7 +30,7 @@ export default function FunkoController() {
             funko.name = req.body.name;
             funko.category = req.body.category;
             funko.description = req.body.description;
-            const result = await services.update(funko, file);
+            const result = await services.update(funko);
             if (result.error) {
                 res.status(result.status || 500).json({ error: result.error.message });
                 return;

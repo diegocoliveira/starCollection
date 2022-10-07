@@ -184,8 +184,59 @@ async function list() {
         alert(error.message);
     }
 
+    async function edit(e){
+
+        const id = e.target.id;
+        const name = e.target.name;
+        const description = e.target.alt;
+        console.log(e.target)
+        console.log("name",e.target.name, "descrição" , e.target.alt)
+        const infoProd = e.path[4];
+        const nameProd = infoProd.querySelector("#nameProd");
+        const rarityProd = infoProd.querySelector("#rarityProd");
+        const button_edit = infoProd.querySelector(".button-edit").querySelector(`img`);
+        const listFunkoName = infoProd.querySelector(".listFunkoName");
+        const data = {};
+
+        try {
+            if (button_edit.getAttribute('src') == `./images/edit.svg`) {
+                nameProd.innerHTML = `<input type="text" name="name" id="edit-name" value="${name}" />`;
+                rarityProd.innerHTML = `
+                <select name="category" id="select-category">
+                    <option value="comum">Comum</option>
+                    <option value="raro">Raro</option>
+                    <option value="lendário">Lendário</option>
+                <select/>`;
+                listFunkoName.innerHTML += `<textarea name="description" id="txt-description" cols="30" rows="10"  
+                placeholder="Descrição do Funko">${description}</textarea>`;
+                button_edit.setAttribute('src', './images/check-square.svg');
+            } else{
+                const edit_name = nameProd.querySelector("#edit-name"); 
+                const select_category = rarityProd.querySelector("#select-category");
+                const txt_description = listFunkoName.querySelector("#txt-description");
+
+                if (confirm(`Deseja realmente editar o Funko "${name}"?`) == true) {
+                    data.id = id;
+                    data.name = edit_name.value;
+                    data.category = select_category.value;
+                    data.description = txt_description.value;
+                    await funkoAPI.update(data);
+                    alert("Funko editado com sucesso");
+                    list();
+                }
+            }
+        } catch (error) {
+            console.log(error);
+            alert(error.message);
+        }
+    }
+
     //const funko = { id: "b6f2dcc0-2570-42f2-8cac-ab69da8edeb4", name: "Ahsoka", category: "comum" };
     //prodList.innerHTML += funkoList.row(funko) + line.line2;
+    const editBts = document.querySelectorAll(".button-edit");
+    for(let index = 0; index < editBts.length; index++) {
+        editBts[index].addEventListener("click", edit);
+    }
 
     const buttons = document.querySelectorAll(".button-delete");
     for (let index = 0; index < buttons.length; index++) {

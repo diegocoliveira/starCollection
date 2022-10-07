@@ -33,8 +33,8 @@ export default function FunkoList() {
             <p id="rarityProd" class="listRarityRow">${funko.category}</p>
 
             <div class="infoProd listEditDelete">  
-            <button id="" class="whiteBt">
-                <img src="./images/edit.svg" alt="edit icon">
+            <button id="" class="whiteBt , button-edit">
+                <img id="${funko.id}"  name="${funko.name}" src="./images/edit.svg" alt="${funko.description}">
             </button>
         </div>
 
