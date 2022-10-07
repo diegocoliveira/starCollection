@@ -13,11 +13,11 @@ export default function Router(express) {
     router.put("/team/:id", team().update);
     router.delete("/team/:id", team().remove);
 
-    router.post("/funko", upload.single("file"), funko().create);
-    router.get("/funko", funko().list);
-    router.get("/funko/:id", funko().get);
-    router.put("/funko/:id", funko().update);
-    router.delete("/funko/:id", funko().remove);
+    router.post("/funko", user().verifyToken, upload.single("file"), funko().create);
+    router.get("/funko", user().verifyToken, funko().list);
+    router.get("/funko/:id", user().verifyToken, funko().get);
+    router.put("/funko/:id", user().verifyToken, funko().update);
+    router.delete("/funko/:id", user().verifyToken, funko().remove);
 
     router.post("/user", user().create);
     router.post("/authentication", user().authenticate);
