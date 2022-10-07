@@ -90,7 +90,7 @@
 
 }
 
-.carrossel{
+.carousel{
     width: 90%;
     height: 40%;
     display: flex;
@@ -101,7 +101,7 @@
     padding: 10px;
 }
 
-.carrosselItem{
+.carouselItem{
     height: 70%;
 
     background-color: rgb(219, 219, 219);
