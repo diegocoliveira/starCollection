@@ -38,6 +38,18 @@ export default function FunkoAPI() {
         return data;
     }
 
+    async function update(data){
+        console.log(data);
+        const options = { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) };
+        const response = await fetch(`/api/funko/${data.id}`, options);
+        if (!response.ok || response.status !== 200) {
+            const message = await response.json();
+            console.log(message);
+            throw new Error(message);
+        }
+        const funko = await response.json();
+        return funko;
+    }
 
-    return { create, remove, list };
+    return { create, remove, list, update };
 }
