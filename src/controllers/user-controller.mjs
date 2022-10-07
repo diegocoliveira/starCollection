@@ -18,8 +18,7 @@ export default function UserController() {
             user.city = req.body.city;
             user.state = req.body.state;
             user.description = req.body.description;
-            user.userType = req.body.userType;
-
+            user.type = req.body.type;
             const result = await services.create(user);
             if (result.error) {
                 res.status(result.status || 500).json({ error: result.error.message });

@@ -1,6 +1,6 @@
 import login from "./pagesLogin/login.mjs";
 import forgot from "./pagesLogin/forgot.js";
-import signup from "./pagesLogin/signup.js";
+import createSignup from "./pagesLogin/signup-script.js";
 import index from "./pageHome/index.js";
 import { createMenu } from "./admPages/createAdmPage.mjs";
 import { createExchange } from "./exchangePage/createExchange.js";
@@ -45,7 +45,7 @@ async function route() {
             mainContent.innerHTML = forgot();
             break;
         case "#signup":
-            mainContent.innerHTML = signup();
+            createSignup();
             break;
         case "#admPage":
             createMenu(user);

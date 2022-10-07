@@ -82,8 +82,8 @@
 .divFunko {
     display: flex;
     flex-direction: column;
-    width: 10vw;
-    height: 25vh;
+    width: 20%;
+    height: 35%;
     margin: 1% 0 1% 0;
     justify-content: center;
     align-items: center;
@@ -91,6 +91,7 @@
     background-image: url("../../images/moldura.svg");
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: center;
     filter: grayscale(1);
 }
 .imgCollectionFunko {

@@ -24,7 +24,6 @@ async function login() {
         if (user.type == "cliente") {
             window.location.href = "/#collection";
         }
-        result.innerHTML = "Perfil não encontrado";
     } catch (error) {
         console.log(error);
         result.innerHTML = error.message;

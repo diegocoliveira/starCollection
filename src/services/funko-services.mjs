@@ -73,6 +73,7 @@ export default class FunkoServices {
         let result = { data: [], error: null, status: 200 };
         try {
             if (!funko.name || funko.name.length < 4) {
+                console.log(funko.name.length)
                 result.error = new Error("name must be at least 4 characters");
                 result.status = 400;
                 return result;
