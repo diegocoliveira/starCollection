@@ -30,6 +30,20 @@ export default function UserController() {
         }
     }
 
+    async function list(req, res) {
+        try {
+            const result = await services.list();
+            if (result.error) {
+                res.status(result.status || 500).json({ error: result.error.message });
+                return;
+            }
+            res.status(200).json(result.data);
+        } catch (error) {
+            console.log(error);
+            res.status(500).json({ error: error.message });
+        }
+    }
+
     async function authenticate(req, res) {
         try {
             const result = await services.authenticate(req.body.email, req.body.password);
@@ -85,5 +99,5 @@ export default function UserController() {
         }
     }
 
-    return { create, authenticate, verifyToken, decodeToken, logout };
+    return { create, list, authenticate, verifyToken, decodeToken, logout };
 }

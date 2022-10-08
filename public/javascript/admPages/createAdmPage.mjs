@@ -14,10 +14,7 @@ import UserAPI from "../api/user-api.mjs";
 
 const clear = new Clear();
 const dashBoard = new Dashboard();
-const funkoCreate = new FunkoCreate();
 const line = new Line();
-const userListPage = new UserListPage();
-const confAdmPage = new ConfAdmPage();
 
 let user;
 
@@ -101,6 +98,8 @@ function statusList() {
 function register() {
     const main = document.querySelector("#admMain");
     clear.mainClear();
+    
+    const funkoCreate = new FunkoCreate();
     main.innerHTML += funkoCreate.html;
 
     const file = document.querySelector("#input-file");
@@ -259,31 +258,34 @@ async function list() {
     }
 }
 
-/*function userListCreate() {
+async function userListCreate() {
+    const userListPage = new UserListPage();
+    const userAPI = UserAPI();
+
     const main = document.querySelector("#admMain");
     clear.mainClear();
-    main.innerHTML += userListPage.userHeader;
-    const userAPI = UserAPI();
-    const list = userAPI.userList();
-    console.log(list)
-    for (let index = 0; index < array.length; index++) {
-        const element = array[index];
-        
-    }
+    main.innerHTML = userListPage.userHeader;
+    
+    const userListDiv = document.querySelector("#userListPage");
+    userListDiv.innerHTML += userListPage.newUserDiv;
+
+    const list = await userAPI.userList();
     const divListUser = document.querySelector("#divListUser");
     divListUser.innerHTML += line.line1;
-    divListUser.innerHTML += userListPage.userView + line.line2;
 
-    const userList = document.querySelector("#userListPage");
-    userList.innerHTML += userListPage.newUserDiv;
+    for (let index = 0; index < list.length; index++) {
+        divListUser.innerHTML += userListPage.userView(list[index]) + line.line2;
+    }
 
-    const divNewUser = document.querySelector("#divNewUser");
-    divNewUser.innerHTML += userListPage.newUserView;
-}*/
+   /* const divNewUser = document.querySelector("#divNewUser");
+    divNewUser.innerHTML += userListPage.newUserView;*/
+}
 
 function confCreate() {
     const main = document.querySelector("#admMain");
     clear.mainClear();
+
+    const confAdmPage = new ConfAdmPage();
     main.innerHTML = confAdmPage.confPage;
 
     const inputImgPerfil = document.querySelector("#inputImgPerfil");
