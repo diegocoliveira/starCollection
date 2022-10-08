@@ -22,6 +22,7 @@ textarea {
 
     border: none;
     background-color: transparent;
+    overflow-y: hidden;
 }
 
 .file {
