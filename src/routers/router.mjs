@@ -20,6 +20,8 @@ export default function Router(express) {
     router.delete("/funko/:id", funko().remove);
 
     router.post("/user", user().create);
+    router.get("/user-list", user().list);
+
     router.post("/authentication", user().authenticate);
     router.get("/authorization", user().verifyToken, user().decodeToken);
     router.get("/logout", user().logout);

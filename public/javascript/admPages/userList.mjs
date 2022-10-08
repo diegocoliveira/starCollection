@@ -14,16 +14,17 @@ export class UserListPage{
     </section>`;
     
 
-    userView = `
-    <div class="between">
-        <div class="flex">
-            <img class="avatar" src="./images/personBlack.svg" alt="">
-            <p class="fontStarWarsBlack">NAME</p>
-        </div>
-        <button id="blockBt" class="whiteBt">
-            <img src="./images/user-block.svg" alt="block icon">
-        </button>
-    </div>`;
+    userView(user){
+        return `<div class="between">
+            <div class="flex">
+                <img class="avatar" src="./images/personBlack.svg" alt="">
+                <p class="fontStarWarsBlack">${user.name}</p>
+            </div>
+            <button id="blockBt" class="whiteBt">
+                <img src="./images/user-block.svg" alt="block icon">
+            </button>
+        </div>`;
+    }
 
     newUserDiv = `
     <div id="divNewUser">

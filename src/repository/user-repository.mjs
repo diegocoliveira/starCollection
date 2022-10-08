@@ -10,6 +10,7 @@ export default class UserRepository{
                 VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *`;
             const values = [user.id, user.name, user.email, user.password, user.city, user.state, user.description, user.type, now];
             const result =  await pool.query(query, values);
+            console.log(result)
             if (result.rowCount > 0) {
                 data = new User();
                 data.id = result.rows[0].id;
@@ -115,8 +116,8 @@ export default class UserRepository{
         let data = [];
         let error = null;
         try{
-            const query = `SELECT * FROM starcollection.user WHERE delete_at is null`;
-            const result = pool.query(query);
+            const query = `SELECT * FROM starcollection.user WHERE deleted_at is null`;
+            const result = await pool.query(query);
             for (let index = 0; index < result.rows.length; index++) {
                 const row = result.rows[index];
                 const user = new User();
@@ -144,7 +145,7 @@ export default class UserRepository{
         try{
             const query = `SELECT * FROM starcollection.user  where deleted_at is null and id = $1`;
             const values = [id];
-            const result = pool.query(query, values);
+            const result = await pool.query(query, values);
             if (result.rowCount > 0) {
                 data = result.rows.map((row) => {
                     const user = new User();
