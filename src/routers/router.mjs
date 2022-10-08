@@ -21,6 +21,7 @@ export default function Router(express) {
 
     router.post("/user", user().create);
     router.get("/user-list", user().list);
+    router.delete("/user/:id", user().remove);
 
     router.post("/authentication", user().authenticate);
     router.get("/authorization", user().verifyToken, user().decodeToken);

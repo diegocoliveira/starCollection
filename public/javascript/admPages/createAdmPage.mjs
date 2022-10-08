@@ -270,15 +270,44 @@ async function userListCreate() {
     userListDiv.innerHTML += userListPage.newUserDiv;
 
     const list = await userAPI.userList();
+    console.log(list[0].createdAt)
     const divListUser = document.querySelector("#divListUser");
+    const newUserDiv = document.querySelector("#divNewUser");
+
     divListUser.innerHTML += line.line1;
 
     for (let index = 0; index < list.length; index++) {
         divListUser.innerHTML += userListPage.userView(list[index]) + line.line2;
+        const date = Date.now();
+        console.log(list[index].createdAt)
+        let dif = ((date - Date.parse(list[index].createdAt))/36288000000)* 1000
+        if (dif < 7 ) {
+            newUserDiv.innerHTML += userListPage.newUserView(list[index]) + line.line2;
+        }
     }
 
-   /* const divNewUser = document.querySelector("#divNewUser");
-    divNewUser.innerHTML += userListPage.newUserView;*/
+    const divUsers = document.querySelectorAll(".between");
+    for (let index = 1; index < divUsers.length; index++) {
+        const blockBt = divUsers[index].querySelector("button");
+        blockBt.addEventListener('click', ()=>{blockUser(blockBt)});
+    }
+
+    async function blockUser(e){
+        const id = e.id;
+        const name = e.name;
+        try {
+            if (confirm(`Deseja realmente excluir o Funko "${name}"?`) == true) {
+                await userAPI.removeUser(id);
+                alert("Funko excluído com sucesso");
+                userListCreate();
+            }
+        } catch (error) {
+            console.log(error);
+            alert(error.message);
+        }
+    }
+
+
 }
 
 function confCreate() {
