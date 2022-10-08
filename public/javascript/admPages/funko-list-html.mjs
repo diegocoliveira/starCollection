@@ -24,7 +24,7 @@ export default function FunkoList() {
     <div class="infoBetween">
 
         <div class="flex listFunkoName">
-            <img id="imgProd" class="avatar" src="/repository/images/${funko.id}.png" alt="${funko.name}">
+            <img id="imgProd" class="avatar" src="/repository/images/${funko.id}.png" alt="${funko.description}">
             <p id="nameProd" class="font1 , bold" >${funko.name}</p>
         </div>
 
@@ -33,8 +33,8 @@ export default function FunkoList() {
             <p id="rarityProd" class="listRarityRow">${funko.category}</p>
 
             <div class="infoProd listEditDelete">  
-            <button id="" class="whiteBt , button-edit">
-                <img id="${funko.id}"  name="${funko.name}" src="./images/edit.svg" alt="${funko.description}">
+            <button id="${funko.id}" class="whiteBt , button-edit">
+                <img id="${funko.id}"  name="${funko.name}" src="./images/edit.svg" alt="edit icon">
             </button>
         </div>
 
