@@ -43,15 +43,18 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin-top: 1vh;
 
 }
 
 .newList{
 
-    width: 40%;
+    width: 80%;
     padding: 1vw;
+<<<<<<< HEAD
 
     justify-content: space-between;
 
+=======
+    
+>>>>>>> 6278d6e067fee106f31827ba7bdca7798f82fb79
 }

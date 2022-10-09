@@ -75,6 +75,39 @@ export default class UserServices {
         return result;
     }
 
+    async remove(id) {
+        const pool = await Pool.get();
+        let result = { data: [], error: null, status: 200 };
+        const client = await pool.connect();
+        try {
+            if (!uuidValidate(id)) {
+                result.error = new Error("Invalid id");
+                result.status = 400;
+                return result;
+            }
+            await client.query("BEGIN");
+            result = await this.repository.get(client, id);
+            
+            if (result.error) {
+                throw result.error;
+            }
+
+            if (result.data.length > 0) {
+                result = await this.repository.deleteSoft(client, id);
+            } else {
+                result = await this.repository.deleteHard(client, id);
+            }
+            await client.query("COMMIT");
+        } catch (error) {
+            result.error = error;
+            result.status = 500;
+            await client.query("ROLLBACK");
+        } finally {
+            client.release();
+        }
+        return result;
+    }
+
     async authenticate(email, password) {
         const pool = await Pool.get();
         let result = { data: [], error: null, status: 200 };

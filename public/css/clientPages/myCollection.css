@@ -115,10 +115,3 @@
     border: 3px solid #01017c; /* creates padding around scroll thumb */
 }
 
-.mostrarNome {
-    display: none;
-}
-
-.passarMouse:hover .mostrarNome {
-    display: block;
-}

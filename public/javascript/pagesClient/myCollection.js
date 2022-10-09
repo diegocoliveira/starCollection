@@ -38,7 +38,7 @@ export default function colecaoHtml() {
         return `
                 <div class="divFunko">
                 
-                <img class="imgCollectionFunko passarMouse" src="/repository/images/${funko.id}.png" alt="${funko.name}" title="${funko.name}"></img>
+                <img class="imgCollectionFunko" src="/repository/images/${funko.id}.png" alt="${funko.name}" title="${funko.name}"></img>
                 </div>
 
             `;
