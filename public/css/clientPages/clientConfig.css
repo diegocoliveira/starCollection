@@ -109,6 +109,12 @@
 .dataConfsClient{
     text-align: start;
     min-width: 10vw;
+    margin-bottom: 1.5vh;
+}
+dataConfsClientEdit{
+    text-align: end;
+    min-width: 10vw;
+    margin-bottom: 1.5vh;
 }
 .infoBetweenClient{
     display: flex;

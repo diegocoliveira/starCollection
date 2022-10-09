@@ -13,7 +13,7 @@ export class Dashboard{
                     </div>
                     <div class="infoDashboard">
                         <div class="iconAdm">
-                            <img src="./images/hammer.svg" alt="hammer icon">
+                            <img src="./images/tagsBlack.svg" alt="tag icon">
                         </div>
                         <div class="info">
                             <p id="quantOffer" class="font1">0</p>
@@ -42,16 +42,16 @@ export class Dashboard{
 
     recentTrades = `
         <section id="recentTrades">
-            <h1 class="fontStarWarsBlack">Trocas Recentes</h1>
-            <div class="infoBetween">
+            <h1 class="fontTroca">Trocas Recentes</h1>
+            <div class="statusTrocas">
                 <div id="infoTrades">
-                    <h3 class="font1">Funko</h3>
-                    <div class="iconAdm">
-                        <img src="./images/repeat.svg" alt="repeat icon">
-                    </div>
+                    <h3 class="fonteFunko">Funko</h3>
+                   
+                        <img src="./images/repeat.svg" alt="repeat icon" class="iconAdm">
+                    
                 </div>
                 <div>
-                    <h3>Status</h3>
+                    <h3 class="fonteStatus">Status</h3>
                 </div>
             </div>
         </section>`;

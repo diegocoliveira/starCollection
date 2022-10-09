@@ -81,9 +81,10 @@
 
 .divFunko {
     display: flex;
-    flex-direction: column;
-    width: 20%;
-    height: 35%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 25%;
+    height: 45%;
     margin: 1% 0 1% 0;
     justify-content: center;
     align-items: center;

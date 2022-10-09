@@ -28,23 +28,28 @@ export default function menuLateralClient(user) {
                             <button class="optionsClient"><a class="linkFormatTrocas" href="/#recusada">recusadas</a></button>
 
 
-                            <button class="optionsPrincipal , font2">
+                    
+
+                            <a class="optionsPrincipal , font2" id="btnOfertas" href="/#ofertas">
+
                                 <div class="iconClient">
-                                    <img src="./images/oferta.svg" alt="log icon" id="oferta">
+                                    <img src="./images/tags.svg" alt="log icon" id="oferta">
                                 </div>
+
                                 Minhas Ofertas
-                            </button>
 
-
-                            <button class="optionsClient"><a class="linkFormatTrocas" href="/#ofertasRecebidas">recebidas</a></button>
-                            <button class="optionsClient"><a class="linkFormatTrocas" href="/#ofertasFeitas">feitas</a></button>
+                                </a>
+                        
 
 
                             <a class="optionsPrincipal , font2" id="btnConfig" href="/#configuracao">
+
                             <div class="iconClient">
                               <img src="./images/gear.svg" alt="gear icon">
                             </div>
+
                                 Configurações
+
                             </a>
 
 
@@ -54,7 +59,7 @@ export default function menuLateralClient(user) {
                 <a id="btn-logout" class="options , font2" >
                      <div id="signOut">
                         <img src="./images/signOut.svg" alt="sign out icon">
-                        <p>Sign Out</p>
+                        <p>Sair</p>
                     </div>
                 </a>
                 

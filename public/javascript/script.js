@@ -19,7 +19,7 @@ async function route() {
     const clientsAuthorized = [
         "#exchange",
         "#collection",
-        "#ofertasRecebidas",
+        "#ofertas",
         "#trocasPendentes",
         "#trocasConcluidas",
         "#trocasRecusadas",
@@ -56,10 +56,7 @@ async function route() {
         case "#collection":
             createCollection(user);
             break;
-        case "#ofertasRecebidas":
-            minhasOfertas(user);
-            break;
-        case "#ofertasFeitas":
+        case "#ofertas":
             minhasOfertas(user);
             break;
         case "#pendente":
