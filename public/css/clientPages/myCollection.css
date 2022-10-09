@@ -94,6 +94,11 @@
     background-position: center;
     filter: grayscale(1);
 }
+
+.my-item {
+    filter: grayscale(0);
+}
+
 .imgCollectionFunko {
     width: 50%;
     height: 65%;
@@ -113,4 +118,3 @@
     border-radius: 20px; /* roundness of the scroll thumb */
     border: 3px solid #01017c; /* creates padding around scroll thumb */
 }
-
