@@ -75,6 +75,105 @@ export default class UserServices {
         return result;
     }
 
+    async updateName(user){
+        const pool = await Pool.get();
+        let result = { data: [], error: null, status: 200 };
+        try {
+            if (!user.name || user.name.length < 4) {
+                result.error = new Error("name must be at least 4 characters");
+                result.status = 400;
+                return result;
+            }
+            if (!uuidValidate(user.id)) {
+                result.error = new Error("Invalid id");
+                result.status = 400;
+                return result;
+            }
+            result = await this.repository.updateName(pool, user);
+        } catch (error) {
+            console.log(error);
+            result.error = error;
+            result.status = 500;
+        }
+        return result;
+    }
+
+    async updateEmail(user){
+        const pool = await Pool.get();
+        let result = { data: [], error: null, status: 200 };
+        try {
+            if (!user.email) {
+                result.error = new Error("email if required");
+                result.status = 400;
+                return result;
+            }
+            if (!uuidValidate(user.id)) {
+                result.error = new Error("Invalid id");
+                result.status = 400;
+                return result;
+            }
+            result = await this.repository.updateEmail(pool, user);
+        } catch (error) {
+            console.log(error);
+            result.error = error;
+            result.status = 500;
+        }
+        return result;
+    }
+
+    async updatePassword(user){
+        const pool = await Pool.get();
+        let result = { data: [], error: null, status: 200 };
+        try {
+            if (!user.password || user.password.length < 8) {
+                result.error = new Error("password must be at least 8 characters");
+                result.status = 400;
+                return result;
+            }
+            if (!uuidValidate(user.id)) {
+                result.error = new Error("Invalid id");
+                result.status = 400;
+                return result;
+            }
+            user.password = crypto.createHash("sha256").update(user.password).digest("hex");
+            result = await this.repository.updatePassword(pool, user);
+        } catch (error) {
+            console.log(error);
+            result.error = error;
+            result.status = 500;
+        }
+        return result;
+    }
+
+    async updateCity(user){
+        const pool = await Pool.get();
+        let result = { data: [], error: null, status: 200 };
+        try {
+            if (!user.city) {
+                result.error = new Error("city if required");
+                result.status = 400;
+                return result;
+            }
+            if (!user.state) {
+                result.error = new Error("state if required");
+                result.status = 400;
+                return result;
+            }
+            if (!uuidValidate(user.id)) {
+                result.error = new Error("Invalid id");
+                result.status = 400;
+                return result;
+            }
+            user.password = crypto.createHash("sha256").update(user.password).digest("hex");
+            result = await this.repository.updateCity(pool, user);
+        } catch (error) {
+            console.log(error);
+            result.error = error;
+            result.status = 500;
+        }
+        return result;
+    }
+
     async remove(id) {
         const pool = await Pool.get();
         let result = { data: [], error: null, status: 200 };

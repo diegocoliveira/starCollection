@@ -44,6 +44,99 @@ export default function UserController() {
         }
     }
 
+    async function updateName(req, res) {
+        if (req.body.type !== "administrador") {
+            res.status(403).json({ error: "Not Allowed" });
+            return;
+        }
+
+        try {
+            const user = new User();
+            user.id = req.params.id;
+            user.name = req.body.name;
+            const result = await services.updateName(user);
+            if (result.error) {
+                res.status(result.status || 500).json({ error: result.error.message });
+                return;
+            }
+            res.status(200).json(result.data);
+        } catch (error) {
+            console.log(error);
+            res.status(500).json({ error: error.message });
+        }
+
+    }
+
+    async function updateEmail(req, res) {
+        if (req.body.type !== "administrador") {
+            res.status(403).json({ error: "Not Allowed" });
+            return;
+        }
+
+        try {
+            const user = new User();
+            user.id = req.params.id;
+            user.email = req.body.email;
+            const result = await services.updateEmail(user);
+            if (result.error) {
+                res.status(result.status || 500).json({ error: result.error.message });
+                return;
+            }
+            res.status(200).json(result.data);
+        } catch (error) {
+            console.log(error);
+            res.status(500).json({ error: error.message });
+        }
+
+    }
+
+    async function updatePassword(req, res) {
+        if (req.body.type !== "administrador") {
+            res.status(403).json({ error: "Not Allowed" });
+            return;
+        }
+
+        try {
+            const user = new User();
+            user.id = req.params.id;
+            user.password = req.body.password;
+            const result = await services.updatePassword(user);
+            if (result.error) {
+                res.status(result.status || 500).json({ error: result.error.message });
+                return;
+            }
+            res.status(200).json(result.data);
+        } catch (error) {
+            console.log(error);
+            res.status(500).json({ error: error.message });
+        }
+
+    }
+
+    async function updateCity(req, res) {
+        if (req.body.type !== "administrador") {
+            res.status(403).json({ error: "Not Allowed" });
+            return;
+        }
+
+        try {
+            const user = new User();
+            user.id = req.params.id;
+            user.city = req.body.city;
+            user.state = req.body.state;
+            const result = await services.updateCity(user);
+            if (result.error) {
+                res.status(result.status || 500).json({ error: result.error.message });
+                return;
+            }
+            res.status(200).json(result.data);
+        } catch (error) {
+            console.log(error);
+            res.status(500).json({ error: error.message });
+        }
+
+    }
+
     async function remove(req, res){
         try {
             const result = await services.remove(req.params.id);
@@ -113,5 +206,5 @@ export default function UserController() {
         }
     }
 
-    return { create, list, remove, authenticate, verifyToken, decodeToken, logout };
+    return { create, list, updateName, updateEmail, updatePassword, updateCity, remove, authenticate, verifyToken, decodeToken, logout };
 }
