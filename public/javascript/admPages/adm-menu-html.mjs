@@ -5,6 +5,7 @@ export default function admMenu(user) {
         <img src="./images/person-circleWhite.png" class="avatar" alt="user icon">
         <h2 class="fontStarWars">${user.name}</h2>
     </div>
+    <div class="barClient"></div>
     <nav>
     <div id="subMenu">
     <button id="dashBt" class="options , font2">

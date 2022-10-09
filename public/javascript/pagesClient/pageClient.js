@@ -60,16 +60,16 @@ const clientConfig = `
 
 
         <div class="infoBetweenClient">
-            <button class="whiteBt">
+            <button class="whiteBt dataConfsClientEdit">
                 <img id="editName" src="./images/edit.svg " alt="">
             </button>
-            <button class="whiteBt">
+            <button class="whiteBt dataConfsClientEdit">
                 <img id="editName" src="./images/edit.svg " alt="">
             </button>
-            <button class="whiteBt">
+            <button class="whiteBt dataConfsClientEdit">
                 <img id="editName" src="./images/edit.svg " alt="">
             </button>
-            <button class="whiteBt">
+            <button class="whiteBt dataConfsClientEdit">
                 <img id="editName" src="./images/edit.svg " alt="">
             </button>
         </div>

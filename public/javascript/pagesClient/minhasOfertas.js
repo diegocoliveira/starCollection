@@ -9,7 +9,7 @@ const minhasOfertas = `
     <div class="headerTrocaClient">
 
     <div class="trocasPage">
-    <img id="gearClientImg" src="./images/hammer.svg " alt="">
+    <img id="gearClientImg" src="./images/tagsBlack.svg " alt="">
     <p>minhas ofertas</p>
     </div>
 

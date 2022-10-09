@@ -9,15 +9,15 @@ export default () => {
             <div id="mainRightLogin">
             
             <h2 class="titleH2">Esqueceu a Senha?</h2>
-            <p class="pSignup"><a id="signup" href="/#login">Login</a></p>
+            <p class="pSignup"><a id="signup" href="/#login">Conecte-se</a></p>
 
             <div class="bar"></div>
 
             <p class="pLogin">Por favor, insira o seu e-mail</p>
-            <input type="email" placeholder="e.g.: R2-D2@gmail.com" id="email">
+            <input type="email" placeholder="e.g.: R2-D2@gmail.com" id="emailForgot">
             
 
-            <input class="btn-pages-login" type="submit" value="Send" id="loginButton">
+            <input class="btn-pages-login" type="submit" value="Envie" id="loginButton">
             
            
             </div>

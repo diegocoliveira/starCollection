@@ -8,7 +8,7 @@ export default () => {
             <div id="mainRightLogin">
             
             <h2 class="titleH2">Login</h2>
-            <p class="pSignup">Não tem uma conta?  <a id="signup" href="/#signup">Sign Up</a></p>
+            <p class="pSignup">Não tem uma conta?  <a id="signup" href="/#signup">Cadastre-se</a></p>
 
             <div class="bar"></div>
 
@@ -19,7 +19,7 @@ export default () => {
             <input type="password" placeholder="**********" id="input-password">
             <p><a id="forgot" href="/#forgot">Esqueceu sua senha?</a></p>
 
-            <input type="submit" value="Sign In" id="btn-login"/>
+            <input type="submit" value="Entrar" id="btn-login"/>
             <div id="result" class="font1 , error"> </div>
            
             </div>

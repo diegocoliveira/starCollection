@@ -62,7 +62,5 @@ export class ConfAdmPage{
                     </div>
                 </div>
         </section>  `;
-    
     }
-
 }

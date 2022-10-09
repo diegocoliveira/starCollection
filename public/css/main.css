@@ -34,7 +34,12 @@ body {
     gap: 1vw;
     align-items: center;
 }
-
+.flexListUser {
+    display: flex;
+    gap: 1vw;
+    align-items: center;
+    justify-content: center;
+}
 .titleH2 {
     font-family: "Distant Galaxy";
     font-size: 1.4vw;

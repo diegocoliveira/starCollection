@@ -36,6 +36,7 @@ export default function colecaoHtml() {
 
     function rowFunko(item) {
         return `
+
                 <div class="divFunko , ${item.id != null ? "my-item" : ""}">
                     <img class="imgCollectionFunko" id="${item.id || ""}" data-funko-id="${item.funko.id}" 
                         src="/repository/images/${item.funko.id}.png" alt="${item.funko.name}" title="${item.funko.name}"></img>
