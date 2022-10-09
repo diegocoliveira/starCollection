@@ -20,7 +20,7 @@ export class UserListPage{
                 <img class="avatar" src="./images/personBlack.svg" alt="">
                 <p class="fontStarWarsBlack">${user.name}</p>
             </div>
-            <button id="blockBt" class="whiteBt">
+            <button id="${user.id}" name="${user.name}" class="whiteBt">
                 <img src="./images/user-block.svg" alt="block icon">
             </button>
         </div>`;
@@ -34,10 +34,11 @@ export class UserListPage{
         <div class="line2"></div>
     </div>`;
 
-    newUserView = `
-    <div class="newList , flex">
-        <img class="avatar" src="./images/personBlack.svg" alt="">
-        <p class="fontStarWarsBlack">NAME</p>
-    </div>`;
+    newUserView(user){
+        return `<div class="newList , flex">
+            <img class="avatar" src="./images/personBlack.svg" alt="">
+            <p class="fontStarWarsBlack">${user.name}</p>
+        </div>`;
 
+    } 
 }

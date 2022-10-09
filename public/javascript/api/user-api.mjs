@@ -26,6 +26,18 @@ export default function UserAPI() {
         }
     }
 
+    async function removeUser(id){
+        const options = { method: "DELETE", headers: { "Content-Type": "application/json" } };
+        const response = await fetch(`/api/user/${id}`, options);
+        if (!response.ok || response.status !== 200) {
+            const message = await response.json();
+            throw new Error(message.error);
+        }
+        const data = await response.json();
+        return data;
+
+    }
+
     async function authentication(data) {
         const options = { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) };
         const response = await fetch("/api/authentication", options);
@@ -68,5 +80,5 @@ export default function UserAPI() {
         return true;
     }
 
-    return { userCreate, userList, authentication, authorization, logout };
+    return { userCreate, userList, removeUser, authentication, authorization, logout };
 }
