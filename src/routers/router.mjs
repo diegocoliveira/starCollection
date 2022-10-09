@@ -28,7 +28,10 @@ export default function Router(express) {
     router.put("/user-city/:id", user().updateCity);
     router.delete("/user/:id", user().remove);
 
+    router.post("/collection", user().verifyToken, collection().insert);
     router.get("/collection", user().verifyToken, collection().list);
+    router.put("/collection/:id", user().verifyToken, collection().update);
+    router.delete("/collection/:id", user().verifyToken, collection().remove);
 
     router.post("/authentication", user().authenticate);
     router.get("/authorization", user().verifyToken, user().decodeToken);

@@ -34,13 +34,16 @@ export default function colecaoHtml() {
         `;
     }
 
-    function rowFunko(funko) {
+    function rowFunko(item) {
         return `
-                <div class="divFunko ${funko.category}">
-                
-                <img class="imgCollectionFunko" src="/repository/images/${funko.id}.png" alt="${funko.name}" title="${funko.name}"></img>
 
-                <button class="btnCollectionFunko" id="btnCollectionFunko${funko.id}"><img src="./images/btnNoChange.png" alt="Adicionar a coleção" class="btnImageChange"></button>
+                <div class="divFunko , ${item.id != null ? "my-item" : ""}">
+                    <img class="imgCollectionFunko" id="${item.id || ""}" data-funko-id="${item.funko.id}" 
+                        src="/repository/images/${item.funko.id}.png" alt="${item.funko.name}" title="${item.funko.name}"></img>
+                    <button class="exchange" data-exchange="${item.isExchange}" data-funko-name="${item.funko.name}"  
+                            style="${item.id != null ? "" : "display:none"}"  id="${item.id || ""}"">
+                            ${item.isExchange ? "Em Oferta" : "______"}
+                    </button>
                 </div>
 
             `;

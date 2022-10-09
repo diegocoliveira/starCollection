@@ -93,6 +93,7 @@
     background-position: center;
     filter: grayscale(1);
 }
+
 .comum{
     background-image: url("../../images/borderComum.png");
 }
@@ -101,6 +102,10 @@
 }
 .lendário{
     background-image: url("../../images/borderLendario.png");
+}
+
+.my-item {
+    filter: grayscale(0);
 }
 
 .imgCollectionFunko {
