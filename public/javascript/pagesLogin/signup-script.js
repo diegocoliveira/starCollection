@@ -25,7 +25,7 @@ function selectAdd(req) {
     }
 }
 
-async function requestUF() {
+export async function requestUF() {
     const state = document.querySelector("#state");
     const ibgeApi = new IbgeApi();
     try {

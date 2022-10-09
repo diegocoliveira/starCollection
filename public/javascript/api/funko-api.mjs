@@ -45,7 +45,7 @@ export default function FunkoAPI() {
         if (!response.ok || response.status !== 200) {
             const message = await response.json();
             console.log(message);
-            throw new Error(message);
+            throw new Error(message.error);
         }
         const funko = await response.json();
         return funko;
