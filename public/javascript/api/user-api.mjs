@@ -1,5 +1,5 @@
 export default function UserAPI() {
-    async function userCreate(data){
+    async function userCreate(data) {
         const options = { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) };
         const response = await fetch("/api/user", options);
 
@@ -14,7 +14,7 @@ export default function UserAPI() {
     async function userList() {
         try {
             const options = { method: "GET", headers: { "Content-Type": "application/json" } };
-            const response = await fetch("/api/user-list", options);
+            const response = await fetch("/api/user", options);
             if (!response.ok || response.status !== 200) {
                 const message = await response.json();
                 throw new Error(message.error);
@@ -24,7 +24,6 @@ export default function UserAPI() {
         } catch (error) {
             console.log(error);
         }
-
     }
 
     async function removeUser(id){

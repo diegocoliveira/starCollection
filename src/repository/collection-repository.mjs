@@ -25,4 +25,34 @@ export default class CollectionRepository {
         }
         return { data, error };
     }
+
+    async getAll(pool, userId) {
+        let data = [];
+        let error = null;
+        try {
+            const query = `SELECT collection.id, collection.is_exchange, funko.id as funko_id, funko.name, funko.category
+                             FROM "starcollection".collection 
+                       RIGHT JOIN "starcollection".funko on collection.funko_id = funko.id 
+                              AND collection.user_id = $1
+                            WHERE collection.deleted_at IS NULL
+                              AND funko.deleted_at IS NULL
+                        ORDER BY funko.name ASC;`;
+            const values = [userId];
+            const result = await pool.query(query, values);
+            for (let i = 0; i < result.rows.length; i++) {
+                const row = result.rows[i];
+                const collection = new Collection();
+                collection.id = row.id;
+                collection.userId = userId;
+                collection.isExchange = row.is_exchange;
+                collection.funko.id = row.funko_id;
+                collection.funko.name = row.name;
+                collection.funko.category = row.category;
+                data.push(collection);
+            }
+        } catch (err) {
+            error = err;
+        }
+        return { data, error };
+    }
 }

@@ -1,19 +1,21 @@
-import FunkoAPI from "../api/funko-api.mjs";
 import myCollectionHtml from "./myCollection.js";
 import client from "./client.js";
 import UserAPI from "../api/user-api.mjs";
+import CollectionAPI from "../api/collection-api.mjs";
 
 const mainContent = document.getElementById("root");
 
 async function createCollection() {
     const divAllFunkos = document.querySelector(".divCollectionFunkos");
-    const funkoAPI = FunkoAPI();
+    const api = CollectionAPI();
 
     try {
-        const funkos = await funkoAPI.list();
+        const data = await api.list();
 
-        for (let i = 0; i < funkos.length; i++) {
-            divAllFunkos.innerHTML += myCollectionHtml().rowFunko(funkos[i]);
+        for (let i = 0; i < data.length; i++) {
+            console.log(data[i].funko);
+            console.log(data[i].funko.id);
+            divAllFunkos.innerHTML += myCollectionHtml().rowFunko(data[i].funko);
         }
     } catch (error) {
         console.log(error);

@@ -19,6 +19,11 @@ export default function Upload() {
     });
 
     function fileFilter(req, file, cb) {
+        if (req.user.type !== "administrador") {
+            cb(null, false);
+            return;
+        }
+        
         if (file.mimetype.split("/")[0] === "image") {
             cb(null, true);
         } else {
