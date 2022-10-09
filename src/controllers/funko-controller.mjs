@@ -5,6 +5,11 @@ export default function FunkoController() {
     const services = new FunkoServices();
 
     async function create(req, res) {
+        if (req.user.type !== "administrador") {
+            res.status(403).json({ error: "Not Allowed" });
+            return;
+        }
+
         try {
             const funko = new Funko();
             funko.name = req.body.name;
@@ -23,7 +28,12 @@ export default function FunkoController() {
         }
     }
 
-    async function update(req, res){
+    async function update(req, res) {
+        if (req.user.type !== "administrador") {
+            res.status(403).json({ error: "Not Allowed" });
+            return;
+        }
+
         try {
             const funko = new Funko();
             funko.id = req.params.id;
@@ -42,7 +52,12 @@ export default function FunkoController() {
         }
     }
 
-    async function remove(req, res){
+    async function remove(req, res) {
+        if (req.user.type !== "administrador") {
+            res.status(403).json({ error: "Not Allowed" });
+            return;
+        }
+
         try {
             const result = await services.remove(req.params.id);
             if (result.error) {
@@ -56,7 +71,12 @@ export default function FunkoController() {
         }
     }
 
-    async function get(req, res){
+    async function get(req, res) {
+        if (req.user.type !== "administrador") {
+            res.status(403).json({ error: "Not Allowed" });
+            return;
+        }
+
         try {
             const result = await services.get(req.params.id);
             if (result.error) {
@@ -72,6 +92,11 @@ export default function FunkoController() {
 
     async function list(req, res) {
         try {
+            if (req.user.type !== "administrador") {
+                res.status(403).json({ error: "Not Allowed" });
+                return;
+            }
+
             const result = await services.list();
             if (result.error) {
                 res.status(result.status || 500).json({ error: result.error.message });
@@ -83,8 +108,6 @@ export default function FunkoController() {
             res.status(500).json({ error: error.message });
         }
     }
-
-
 
     return { create, update, remove, get, list };
 }
