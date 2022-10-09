@@ -29,26 +29,79 @@ export default class UserRepository{
         return { data, error };
     }
 
-    async update(pool, user){
+    async updateName(pool, user){
         let data = [];
         let error = null;
         const now = new Date();
         try {
-            const query = `UPDATE starcollection.user SET name = $1, email = $2, password = $3, city = $4, state = $5, 
-                description = $6, updated_at = $7`;
-            const values = [user.name, user.email, user.password, user.city, user.state, user.description, now];
+            const query = `UPDATE starcollection.user SET name = $1, updated_at = $2 WHERE id = $3 RETURNING *`;
+            const values = [user.name, now, user.id];
             const result =  await pool.query(query, values);
             if (result.rowCount > 0) {
                 data = new User();
-                data.id = result.rows[0].id;
+                data.name = result.rows[0].name;
+                data.updatedAt = result.rows[0].updated_at;
+            }
+        } catch (err) {
+            error = err;
+        }
+        return { data, error };
+    }
+
+    async updateEmail(pool, user){
+        let data = [];
+        let error = null;
+        const now = new Date();
+        try {
+            const query = `UPDATE starcollection.user SET email = $1, updated_at = $2 WHERE id = $3 RETURNING *`;
+            const values = [user.email, now, user.id];
+            const result =  await pool.query(query, values);
+            if (result.rowCount > 0) {
+                data = new User();
+                data.email = result.rows[0].email;
+                data.updatedAt = result.rows[0].updated_at;
+            }
+        } catch (err) {
+            error = err;
+        }
+        return { data, error };
+    }
+
+    async updatePassword(pool, user){
+        let data = [];
+        let error = null;
+        const now = new Date();
+        try {
+            const query = `UPDATE starcollection.user SET password = $1, updated_at = $2 WHERE id = $3 RETURNING *`;
+            const values = [user.password, now, user.id];
+            const result =  await pool.query(query, values);
+            if (result.rowCount > 0) {
+                data = new User();
                 data.name = result.rows[0].name;
                 data.email = result.rows[0].email;
                 data.password = result.rows[0].password;
                 data.city = result.rows[0].city;
                 data.state = result.rows[0].state;
-                data.description = result.rows[0].description;
-                data.type = result.rows[0].type;
-                data.createdAt = result.rows[0].created_at;
+                data.updatedAt = result.rows[0].updated_at;
+            }
+        } catch (err) {
+            error = err;
+        }
+        return { data, error };
+    }
+
+    async updateCity(pool, user){
+        let data = [];
+        let error = null;
+        const now = new Date();
+        try {
+            const query = `UPDATE starcollection.user SET city = $1, state = $2, updated_at = $3 WHERE id = $4 RETURNING *`;
+            const values = [user.city, user.state, now, user.id];
+            const result =  await pool.query(query, values);
+            if (result.rowCount > 0) {
+                data = new User();
+                data.city = result.rows[0].city;
+                data.state = result.rows[0].state;
                 data.updatedAt = result.rows[0].updated_at;
             }
         } catch (err) {

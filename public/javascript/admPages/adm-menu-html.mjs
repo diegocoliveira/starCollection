@@ -11,7 +11,7 @@ export default function admMenu(user) {
         <div class="iconAdm">
             <img src="./images/home.svg" alt="home icon">
         </div>
-        Dashboard
+        Painel de Controle
     </button>
     <button id="registBt" class="options , font2">
         <div class="iconAdm">
@@ -37,7 +37,7 @@ export default function admMenu(user) {
     <a id="btn-logout" class="options , font2" >
         <div id="signOut">
             <img src="./images/signOut.svg" alt="sign out icon">
-            <p>Sign Out</p>
+            <p>Sair</p>
         </div>
     </a>
     </aside>

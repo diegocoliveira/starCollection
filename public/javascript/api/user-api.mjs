@@ -26,6 +26,62 @@ export default function UserAPI() {
         }
     }
 
+    async function updateName(data) {
+        try{
+            const options = { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) };
+            const response = await fetch(`/api/user-name/${data.id}`, options);
+            if (!response.ok || response.status !== 200) {
+                const message = await response.json();
+                console.log(message);
+                throw new Error(message.error);
+            }
+        }catch (error) {
+            throw new Error(error);
+        }
+    }
+
+    async function updateEmail(data) {
+        try{
+            const options = { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) };
+            const response = await fetch(`/api/user-email/${data.id}`, options);
+            if (!response.ok || response.status !== 200) {
+                const message = await response.json();
+                console.log(message);
+                throw new Error(message.error);
+            }
+        }catch (error) {
+            throw new Error(error);
+        }
+    }
+
+    async function updatePassword(data) {
+        try{
+            const options = { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) };
+            const response = await fetch(`/api/user-password/${data.id}`, options);
+            if (!response.ok || response.status !== 200) {
+                const message = await response.json();
+                console.log(message);
+                throw new Error(message.error);
+            }
+        }catch (error) {
+            throw new Error(error);
+        }
+    }
+
+    async function updateCity(data) {
+        try{
+            const options = { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) };
+            const response = await fetch(`/api/user-city/${data.id}`, options);
+            if (!response.ok || response.status !== 200) {
+                const message = await response.json();
+                console.log(message);
+                throw new Error(message.error);
+            }
+        }catch (error) {
+            throw new Error(error);
+        }
+    }
+
     async function removeUser(id){
         const options = { method: "DELETE", headers: { "Content-Type": "application/json" } };
         const response = await fetch(`/api/user/${id}`, options);
@@ -80,5 +136,5 @@ export default function UserAPI() {
         return true;
     }
 
-    return { userCreate, userList, removeUser, authentication, authorization, logout };
+    return { userCreate, userList, updateName, updateEmail, updatePassword, updateCity, removeUser, authentication, authorization, logout };
 }
