@@ -36,9 +36,11 @@ export default function colecaoHtml() {
 
     function rowFunko(funko) {
         return `
-                <div class="divFunko">
+                <div class="divFunko ${funko.category}">
                 
                 <img class="imgCollectionFunko" src="/repository/images/${funko.id}.png" alt="${funko.name}" title="${funko.name}"></img>
+
+                <button class="btnCollectionFunko" id="btnCollectionFunko${funko.id}"><img src="./images/btnNoChange.png" alt="Adicionar a coleção" class="btnImageChange"></button>
                 </div>
 
             `;

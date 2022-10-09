@@ -4,7 +4,7 @@ export class UserListPage{
     <section id="userListPage" class="flex">
         <div id="divListUser">
             <div class="headerAdm">
-                <h2 class="fontStarWarsBlack">Lista de Usuarios</h2>
+                <h2 class="fontTroca">Lista de Usuários</h2>
             </div>
             <div class="between">
                 <p class="font1 , bold">Nome</p>
@@ -18,7 +18,7 @@ export class UserListPage{
         return `<div class="between">
             <div class="flex">
                 <img class="avatar" src="./images/personBlack.svg" alt="">
-                <p class="fontStarWarsBlack">${user.name}</p>
+                <p class="fontStarWarsBlackUsers">${user.name}</p>
             </div>
             <button id="${user.id}" name="${user.name}" class="whiteBt">
                 <img src="./images/user-block.svg" alt="block icon">
@@ -29,24 +29,15 @@ export class UserListPage{
     newUserDiv = `
     <div id="divNewUser">
         <div class="headerAdm"> 
-            <h2 class="fontStarWarsBlack">Novos Usuarios</h2>
+            <h2 class="fontTroca">Novos Usuários</h2>
         </div>
         <div class="line2"></div>
     </div>`;
 
-<<<<<<< HEAD
-    newUserView = `
-    <div class="newList , flexListUser">
-        <img class="avatar" src="./images/personBlack.svg" alt="">
-        <p class="fontStarWarsBlack">NAME</p>
-    </div>`;
-=======
     newUserView(user){
-        return `<div class="newList , flex">
+        return `<div class="newListNewUsers , flex">
             <img class="avatar" src="./images/personBlack.svg" alt="">
-            <p class="fontStarWarsBlack">${user.name}</p>
+            <p class="fontStarWarsBlackUsers">${user.name}</p>
         </div>`;
->>>>>>> 6278d6e067fee106f31827ba7bdca7798f82fb79
-
     } 
 }

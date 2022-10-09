@@ -50,11 +50,10 @@
 
     width: 80%;
     padding: 1vw;
-<<<<<<< HEAD
-
     justify-content: space-between;
+}
 
-=======
-    
->>>>>>> 6278d6e067fee106f31827ba7bdca7798f82fb79
+.newListNewUsers{
+    width: 80%;
+    padding: 1vw;
 }
