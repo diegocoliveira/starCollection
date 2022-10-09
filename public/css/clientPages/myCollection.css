@@ -106,13 +106,13 @@
 
 .my-item {
     filter: grayscale(0);
+    justify-content: flex-end !important;
 }
 
 .imgCollectionFunko {
     height: 50%;
     object-fit: contain;
     align-items: center;
-    margin-top: 8vh;
 }
 .divCollectionFunkos::-webkit-scrollbar {
     width: 12px; /* width of the entire scrollbar */
@@ -129,16 +129,23 @@
 }
 
 .btnCollectionFunko{
-    width: 100%;
-    height: 100%;
+    width: 17%;
+    height: 17%;
+    position: relative;
+    top: 4.5%;
     background-color: transparent;
     border: none;
     outline: none;
     cursor: pointer;
-    margin-bottom: 1vh;
+    margin-bottom: 3%;
+    z-index: 5;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
-.btnImageChange{
-    width: 18%;
-    position: relative;
-    bottom: -30%
+.btnChange{
+    background-image: url("../../images/btnChange.png");
+}
+.btnNoChange{
+    background-image: url("../../images/btnNoChange.png");
 }
