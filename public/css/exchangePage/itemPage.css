@@ -90,7 +90,7 @@
 
 }
 
-.carousel{
+.SelectedFunko{
     width: 90%;
     height: 40%;
     display: flex;
@@ -101,14 +101,14 @@
     padding: 10px;
 }
 
-.carouselItem{
+/* .carouselItem{
     height: 70%;
 
     background-color: rgb(219, 219, 219);
 
     padding: 2%;
 
-}
+} */
 
 #exchangeButton{
     border-radius: 60px;
