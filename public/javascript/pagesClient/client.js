@@ -1,6 +1,5 @@
 export default function menuLateralClient(user) {
-    return `
-            <aside id="clientRight">
+    return `<aside id="clientRight">
                 <div>
 
                     <div id="perfilClient">
@@ -66,6 +65,5 @@ export default function menuLateralClient(user) {
                 </section>
             </aside>
 
-            <section id="clientLeft"></section>
-  `;
+            <section id="clientLeft"></section>`;
 }
