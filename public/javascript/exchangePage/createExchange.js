@@ -17,7 +17,7 @@ async function insertExnchanged() {
         offerDiv.innerHTML += exchangePage.funkoFigure(result[index]);
     }
 
-    const funkoImg = offerDiv.querySelectorAll(".funkoImg");
+    const funkoImg = offerDiv.querySelectorAll(".funkoImgChange");
     for (let index = 0; index < funkoImg.length; index++) {
         funkoImg[index].addEventListener('click', ()=>{
             window.location.href = '#funkoExchange';
