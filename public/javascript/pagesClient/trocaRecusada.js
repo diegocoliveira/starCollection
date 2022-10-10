@@ -17,6 +17,7 @@ const clientTrocaRecusada = `
     <button class="btnTrocasWhite"><a class="linkFormat" href="/#pendente">em andamento</a></button>
     <button class="btnTrocasWhite"><a class="linkFormat" href="/#concluida">concluídas</a></button>
     <button class="btnTrocas"><a class="linkFormatTrocas" href="/#recusada">recusadas</a></button>
+    
     </div>
 
     </div>
