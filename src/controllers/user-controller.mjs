@@ -45,7 +45,7 @@ export default function UserController() {
     }
 
     async function updateName(req, res) {
-        if (req.user.type !== "administrador") {
+        if (req.user.type !== "administrador" && req.user.type !== "cliente") {
             res.status(403).json({ error: "Not Allowed" });
             return;
         }
@@ -68,7 +68,7 @@ export default function UserController() {
     }
 
     async function updateEmail(req, res) {
-        if (req.user.type !== "administrador") {
+        if (req.user.type !== "administrador" && req.user.type !== "cliente") {
             res.status(403).json({ error: "Not Allowed" });
             return;
         }
@@ -91,7 +91,7 @@ export default function UserController() {
     }
 
     async function updatePassword(req, res) {
-        if (req.user.type !== "administrador") {
+        if (req.user.type !== "administrador" && req.user.type !== "cliente") {
             res.status(403).json({ error: "Not Allowed" });
             return;
         }
@@ -114,10 +114,10 @@ export default function UserController() {
     }
 
     async function updateCity(req, res) {
-        if (req.user.type !== "administrador") {
+        if (req.user.type !== "administrador" && req.user.type !== "cliente") {
             res.status(403).json({ error: "Not Allowed" });
             return;
-        }
+        } 
 
         try {
             const user = new User();

@@ -29,7 +29,7 @@ export default function UserAPI() {
     async function updateName(data) {
         try{
             const options = { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) };
-            const response = await fetch(`/api/user-name/${data.id}`, options);
+            const response = await fetch(`/api/user_name/${data.id}`, options);
             if (!response.ok || response.status !== 200) {
                 const message = await response.json();
                 console.log(message);
@@ -43,7 +43,7 @@ export default function UserAPI() {
     async function updateEmail(data) {
         try{
             const options = { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) };
-            const response = await fetch(`/api/user-email/${data.id}`, options);
+            const response = await fetch(`/api/user_email/${data.id}`, options);
             if (!response.ok || response.status !== 200) {
                 const message = await response.json();
                 console.log(message);
@@ -57,7 +57,7 @@ export default function UserAPI() {
     async function updatePassword(data) {
         try{
             const options = { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) };
-            const response = await fetch(`/api/user-password/${data.id}`, options);
+            const response = await fetch(`/api/user_password/${data.id}`, options);
             if (!response.ok || response.status !== 200) {
                 const message = await response.json();
                 console.log(message);
@@ -71,7 +71,7 @@ export default function UserAPI() {
     async function updateCity(data) {
         try{
             const options = { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) };
-            const response = await fetch(`/api/user-city/${data.id}`, options);
+            const response = await fetch(`/api/user_city/${data.id}`, options);
             if (!response.ok || response.status !== 200) {
                 const message = await response.json();
                 console.log(message);

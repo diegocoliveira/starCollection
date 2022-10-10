@@ -12,6 +12,7 @@ import { ConfAdmPage } from "./confAdm.mjs";
 
 import FunkoAPI from "../api/funko-api.mjs";
 import UserAPI from "../api/user-api.mjs";
+import logout from "../logout.js";
 
 const clear = new Clear();
 const dashBoard = new Dashboard();
@@ -37,20 +38,6 @@ export function createMenu(_user) {
     btnLogout.onclick = logout;
 
     dashBoardCreate();
-}
-
-function logout() {
-    const userAPI = UserAPI();
-    try {
-        if (userAPI.logout()) {
-            window.location.href = "/#";
-        } else {
-            alert("Erro ao fazer logout");
-        }
-    } catch (error) {
-        console.log(error);
-        alert(error.message);
-    }
 }
 
 function dashBoardCreate() {
