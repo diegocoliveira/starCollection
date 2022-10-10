@@ -42,7 +42,7 @@ export default function colecaoHtml() {
                         src="/repository/images/${item.funko.id}.png" alt="${item.funko.name}" title="${item.funko.name}"></img>
 
 
-                    <button class="exchange btnCollectionFunko ${item.isExchange ? 'btnChange' : 'btnNoChange'}" data-exchange="${item.isExchange}" data-funko-name="${item.funko.name}"  
+                    <button class="btnCollectionFunko exchange ${item.isExchange ? 'btnChange' : 'btnNoChange'}" data-exchange="${item.isExchange}" data-funko-name="${item.funko.name}"  
                             style="${item.id != null ? "" : "display:none"}"  id="${item.id || ""}"">
                     </button>
                 </div>

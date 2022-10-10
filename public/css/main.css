@@ -12,7 +12,7 @@
 @import url("./clientPages/clientTrocas.css");
 @import url("./exchangePage/exchangePage.css");
 @import url("./clientPages/myCollection.css");
-
+@import url("./exchangePage/exchangePageFunko.css");
 * {
     margin: 0;
     padding: 0;
