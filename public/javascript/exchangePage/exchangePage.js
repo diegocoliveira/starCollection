@@ -13,7 +13,7 @@ export default class ExchangePage{
 
 
     funkoFigure(infos){
-        return `<figure class="funkoImg">
+        return `<figure class="funkoImgChange">
                     <img src="/repository/images/${infos.funko_id}.png" alt="">
                     <h3 class="font1 , bold">${infos.funko_name}</h3>
                     <h4 class="font1">${infos.user_name}</h4>

@@ -7,7 +7,7 @@ const mainContent = document.getElementById("root");
 
 function clientConfig(user){
     return `<section id="clientConfPage">
-    <div>
+    <div class="containerConfig">
     
         <div class="headerConfClient">
         <img id="gearClientImg" src="./images/configuracao3.svg " alt="">
@@ -15,7 +15,7 @@ function clientConfig(user){
         </div>
 
         <div class="confInfosClientTop">
-        <div class="blueBar"></div>
+        <div class="blueBar"><p class="dataPerson">Foto</p></div>
 
             <div id="infoDivClient">
     

@@ -6,10 +6,17 @@
     display: flex;
     flex-direction: column;
 }
-
+.containerConfig{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 5%;
+}
 #infoDivClient {
     width: 100%;
-    height: 60%;
+    height: 50%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -43,18 +50,18 @@
 .confInfosClient {
 
     padding: 2vw;
-    height: 70%;
+    height: 50%;
     background-color: #fbf9f9;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
     justify-content: space-between;
     display: flex;
     flex-direction: column;
     position: relative;
-    top: 5%;
+    top: 10%;
 }
 .confInfosClientTop{
     padding: 2vw;
-    height: 60%;
+    height: 50%;
     background-color: #fbf9f9;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
     justify-content: space-between;
