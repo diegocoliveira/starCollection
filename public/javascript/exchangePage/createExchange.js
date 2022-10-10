@@ -2,7 +2,6 @@ import ExchangePage from "./exchangePage.js";
 import CollectionAPI from "../api/collection-api.mjs";
 
 const exchangePage = new ExchangePage();
-//const infos = {fkName: 'FUNKO NAME', img: "./images/rey.png", username: "USER NAME"}
 export function createExchange() {
     const root = document.querySelector('#root');
     root.innerHTML = exchangePage.exchangeMain();
@@ -17,5 +16,11 @@ async function insertExnchanged() {
     for (let index = 0; index < result.length; index++) {
         offerDiv.innerHTML += exchangePage.funkoFigure(result[index]);
     }
-    
+
+    const funkoImg = offerDiv.querySelectorAll(".funkoImgChange");
+    for (let index = 0; index < funkoImg.length; index++) {
+        funkoImg[index].addEventListener('click', ()=>{
+            window.location.href = '#funkoExchange';
+        })
+    }
 }
