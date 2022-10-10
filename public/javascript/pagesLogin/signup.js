@@ -9,7 +9,7 @@ export default function signupPage() {
     <div id="mainRightLogin">
     
     <h2 class="titleH2">Criar Nova Conta</h2>
-    <p class="pSignup">Já é Registrado?  <a id="signup" href="/#login">Login</a></p>
+    <p class="pSignup">Já é Registrado?  <a id="signup" href="/#login">Conecte-se</a></p>
 
     <div class="bar"></div>
 
@@ -67,7 +67,7 @@ export default function signupPage() {
     <p class="pLogin">Por favor, insira sua cidade</p>
     <select name="cidade" id="city"></select>
 
-    <input class="btn-pages-login" type="submit" value="Sign Up" id="loginButton">
+    <input class="btn-pages-login" type="submit" value="Cadastre-se" id="loginButton">
     
     <div id="result" class="font1 , error"> </div>
 

@@ -5,13 +5,14 @@ export default function admMenu(user) {
         <img src="./images/person-circleWhite.png" class="avatar" alt="user icon">
         <h2 class="fontStarWars">${user.name}</h2>
     </div>
+    <div class="barClient"></div>
     <nav>
     <div id="subMenu">
     <button id="dashBt" class="options , font2">
         <div class="iconAdm">
             <img src="./images/home.svg" alt="home icon">
         </div>
-        Dashboard
+        Painel de Controle
     </button>
     <button id="registBt" class="options , font2">
         <div class="iconAdm">
@@ -37,7 +38,7 @@ export default function admMenu(user) {
     <a id="btn-logout" class="options , font2" >
         <div id="signOut">
             <img src="./images/signOut.svg" alt="sign out icon">
-            <p>Sign Out</p>
+            <p>Sair</p>
         </div>
     </a>
     </aside>

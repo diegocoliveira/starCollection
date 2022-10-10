@@ -48,9 +48,12 @@
 
 .newList{
 
-    width: 40%;
+    width: 80%;
     padding: 1vw;
-    
     justify-content: space-between;
+}
 
+.newListNewUsers{
+    width: 80%;
+    padding: 1vw;
 }

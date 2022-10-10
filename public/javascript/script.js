@@ -11,6 +11,8 @@ import trocaPendente from "./pagesClient/trocaPendente.js";
 import trocaConcluida from "./pagesClient/trocaConcluida.js";
 import trocaRecusada from "./pagesClient/trocaRecusada.js";
 import clientConfig from "./pagesClient/pageClient.js";
+import pageFunko from "./exchangePage/pageFunkoExchange.js";
+
 
 const mainContent = document.getElementById("root");
 
@@ -19,11 +21,13 @@ async function route() {
     const clientsAuthorized = [
         "#exchange",
         "#collection",
-        "#ofertasRecebidas",
+        "#ofertas",
         "#trocasPendentes",
         "#trocasConcluidas",
         "#trocasRecusadas",
         "#configuracoes",
+        "#funkoExchange"
+
     ];
     const admAuthorized = ["#admPage"];
     const user = await UserAPI().authorization();
@@ -56,10 +60,7 @@ async function route() {
         case "#collection":
             createCollection(user);
             break;
-        case "#ofertasRecebidas":
-            minhasOfertas(user);
-            break;
-        case "#ofertasFeitas":
+        case "#ofertas":
             minhasOfertas(user);
             break;
         case "#pendente":
@@ -73,6 +74,9 @@ async function route() {
             break;
         case "#configuracao":
             clientConfig(user);
+            break;
+        case "#funkoExchange":
+            pageFunko(user);
             break;
         default:
             mainContent.innerHTML = index();

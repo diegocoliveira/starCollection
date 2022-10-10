@@ -1,6 +1,6 @@
 #admMenu {
-    height: 100%;
-    width: 25%;
+    height: 99%;
+    width: 23.5%;
     background-color: #262730;
 
     display: flex;
@@ -11,8 +11,10 @@
 
 #perfil {
     height: 35%;
-
+    width: 100%;
+    margin-top: 2vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
 }
@@ -41,8 +43,8 @@
 }
 
 #admMain {
-    width: 75%;
-    height: 100%;
+    width: 76.5%;
+    height: 98%;
     padding: 2vw;
 
     display: flex;
@@ -50,7 +52,7 @@
     align-items: center;
     justify-content: space-evenly;
 
-    background-color: #ffffff;
+    background-color: #fbf9f9;
 }
 
 .avatar {

@@ -13,6 +13,7 @@
 @import url("./exchangePage/exchangePage.css");
 @import url("./clientPages/myCollection.css");
 @import url("./exchangePage/itemPage.css");
+@import url("./exchangePage/exchangePageFunko.css");
 
 * {
     margin: 0;
@@ -35,7 +36,12 @@ body {
     gap: 1vw;
     align-items: center;
 }
-
+.flexListUser {
+    display: flex;
+    gap: 1vw;
+    align-items: center;
+    justify-content: center;
+}
 .titleH2 {
     font-family: "Distant Galaxy";
     font-size: 1.4vw;

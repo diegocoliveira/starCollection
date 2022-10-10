@@ -82,21 +82,35 @@
 .divFunko {
     display: flex;
     flex-direction: column;
-    width: 20%;
-    height: 35%;
-    margin: 1% 0 1% 0;
+    width: 25%;
+    height: 45%;
+    margin: 0% 0 5% 0;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    background-image: url("../../images/moldura.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     filter: grayscale(1);
 }
+
+.comum{
+    background-image: url("../../images/borderComum.png");
+}
+.raro{
+    background-image: url("../../images/borderRaro.png");
+}
+.lendário{
+    background-image: url("../../images/borderLendario.png");
+}
+
+.my-item {
+    filter: grayscale(0);
+    justify-content: flex-end !important;
+}
+
 .imgCollectionFunko {
-    width: 50%;
-    height: 65%;
+    height: 50%;
     object-fit: contain;
     align-items: center;
 }
@@ -114,10 +128,24 @@
     border: 3px solid #01017c; /* creates padding around scroll thumb */
 }
 
-.mostrarNome {
-    display: none;
+.btnCollectionFunko{
+    width: 17%;
+    height: 17%;
+    position: relative;
+    top: 4.5%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-bottom: 3%;
+    z-index: 5;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
-
-.passarMouse:hover .mostrarNome {
-    display: block;
+.btnChange{
+    background-image: url("../../images/btnChange.png");
+}
+.btnNoChange{
+    background-image: url("../../images/btnNoChange.png");
 }

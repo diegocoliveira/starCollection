@@ -1,5 +1,5 @@
 #search {
-    background-image: url("../images/search.svg");
+    background-image: url("../../images/search.svg");
     background-repeat: no-repeat;
     background-position: right;
     background-size: 2.5vh;
@@ -31,7 +31,7 @@
 }
 
 #input-password {
-    background-image: url("../images/visibility_off.svg");
+    background-image: url("../../images/visibility_off.svg");
     background-repeat: no-repeat;
     background-position: right;
     background-size: 2.5vh;
@@ -43,7 +43,15 @@
     border: 2px solid #F0F0F0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
 }
-
+#emailForgot{
+    padding-left: 1.5vw;
+    border-radius: 20px;
+    height: 2.5vh;
+    margin: 1vh;
+    background: #F0F0F0;
+    border: 2px solid #F0F0F0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
+}
 #city {
     padding-left: 1.5vw;
     border-radius: 20px;
