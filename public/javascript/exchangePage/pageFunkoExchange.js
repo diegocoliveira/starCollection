@@ -60,7 +60,7 @@ export default function clientTroca(){
             for (let index = 0; index < funkos.length; index++) {
                 selectorFunko.innerHTML += `<option value="${funkos[index].id}">${funkos[index].name}</option>`;
             }
-            exchangeButton.addEventListener('click', createOffer);
+            exchangeButton.addEventListener('click', ()=>{createOffer('','')});
         }
     }
 
@@ -68,10 +68,10 @@ export default function clientTroca(){
         return id = _id;
     }
 
-    async function createOffer() {
+    async function createOffer(target, offered) {
         const offer = {};
-        offer.target = '';
-        offer.offered = '';
+        offer.target = target;
+        offer.offered = offered;
         await offerAPI().insert(offer);
     }
 
