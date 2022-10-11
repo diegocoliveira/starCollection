@@ -149,10 +149,10 @@ export default class CollectionRepository {
         return { data, error };
     }
 
-    async getExchange(pool){
+    async getExchange(pool) {
         let data = [];
         let error = null;
-        try{
+        try {
             const query = `SELECT collection.id, funko.id as funko_id, funko.name as funko_name, "user".name as user_name FROM starcollection.collection 
             RIGHT JOIN starcollection.funko ON funko.id = collection.funko_id
             RIGHT JOIN starcollection."user" ON "user".id = collection.user_id
