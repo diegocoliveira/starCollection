@@ -8,6 +8,12 @@ export default function FunkoAPI() {
         const options = { method: "POST", body: formData };
 
         const response = await fetch("/api/funko", options);
+
+        if (response.status == 401) {
+            window.location.href = "/#login";
+            throw new Error("Sua sessão expirou");
+        }
+
         if (!response.ok || !(response.status == 200 || response.status == 201)) {
             const message = await response.json();
             throw new Error(message.error);
@@ -19,6 +25,12 @@ export default function FunkoAPI() {
     async function remove(id) {
         const options = { method: "DELETE", headers: { "Content-Type": "application/json" } };
         const response = await fetch(`/api/funko/${id}`, options);
+
+        if (response.status == 401) {
+            window.location.href = "/#login";
+            throw new Error("Sua sessão expirou");
+        }
+
         if (!response.ok || response.status !== 200) {
             const message = await response.json();
             throw new Error(message.error);
@@ -30,6 +42,12 @@ export default function FunkoAPI() {
     async function list() {
         const options = { method: "GET", headers: { "Content-Type": "application/json" } };
         const response = await fetch("/api/funko", options);
+
+        if (response.status == 401) {
+            window.location.href = "/#login";
+            throw new Error("Sua sessão expirou");
+        }
+
         if (!response.ok || response.status !== 200) {
             const message = await response.json();
             throw new Error(message.error);
@@ -38,10 +56,16 @@ export default function FunkoAPI() {
         return data;
     }
 
-    async function update(data){
+    async function update(data) {
         console.log(data);
         const options = { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) };
         const response = await fetch(`/api/funko/${data.id}`, options);
+
+        if (response.status == 401) {
+            window.location.href = "/#login";
+            throw new Error("Sua sessão expirou");
+        }
+
         if (!response.ok || response.status !== 200) {
             const message = await response.json();
             console.log(message);
