@@ -64,7 +64,6 @@ export default function UserController() {
             console.log(error);
             res.status(500).json({ error: error.message });
         }
-
     }
 
     async function updateEmail(req, res) {
@@ -87,7 +86,6 @@ export default function UserController() {
             console.log(error);
             res.status(500).json({ error: error.message });
         }
-
     }
 
     async function updatePassword(req, res) {
@@ -110,14 +108,13 @@ export default function UserController() {
             console.log(error);
             res.status(500).json({ error: error.message });
         }
-
     }
 
     async function updateCity(req, res) {
         if (req.user.type !== "administrador" && req.user.type !== "cliente") {
             res.status(403).json({ error: "Not Allowed" });
             return;
-        } 
+        }
 
         try {
             const user = new User();
@@ -134,10 +131,9 @@ export default function UserController() {
             console.log(error);
             res.status(500).json({ error: error.message });
         }
-
     }
 
-    async function remove(req, res){
+    async function remove(req, res) {
         try {
             const result = await services.remove(req.params.id);
             if (result.error) {
@@ -163,7 +159,7 @@ export default function UserController() {
                 return;
             }
             const token = jwt.sign({ user: result.data }, process.env.JWT_SECRET);
-            res.cookie("session", token, { httpOnly: true, maxAge: process.env.MAXAGE, sameSite: "Strict" });
+            res.cookie("session", token, { secure: true, httpOnly: true, maxAge: process.env.MAXAGE, sameSite: "Strict" });
             res.status(200).json(result.data);
         } catch (error) {
             res.status(500).json({ error: error.message });

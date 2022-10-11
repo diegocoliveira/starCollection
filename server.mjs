@@ -2,10 +2,12 @@ import dotenv from "dotenv";
 import Express from "express";
 import Router from "./src/routers/router.mjs";
 import cookieParser from "cookie-parser";
+import fs from "fs/promises";
+import https from "https";
 
 dotenv.config({ path: "./env/.env" });
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 443;
 const app = Express();
 const router = Router(Express);
 
@@ -47,7 +49,12 @@ app.use(function (req, res, next) {
     res.type("txt").send("Not found");
 });
 
+const privateKey = await fs.readFile("sslcert/key.pem");
+const certificate = await fs.readFile("sslcert/cert.pem");
 
-app.listen(port, () => {
+const credentials = { key: privateKey, cert: certificate };
+
+https.createServer(credentials, app).listen(port, () => {
     console.log(`Servidor criado no ambiente:${process.env.NODE_ENV} na porta:${port}`);
 });
+
