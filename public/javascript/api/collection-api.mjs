@@ -85,5 +85,16 @@ export default function CollectionAPI() {
         return data;
     }
 
-    return { insert, update, remove, list, listExchange };
+    async function getExchangeble(id){
+        const options = { method: "GET", headers: { "Content-Type": "application/json" } };
+        const response = await fetch(`/api/tradeable/${id}`, options);
+        if (!response.ok || response.status !== 200) {
+            const message = await response.json();
+            throw new Error(message.error);
+        }
+        const data = await response.json();
+        return data;
+    }
+
+    return { insert, update, remove, list, listExchange, getExchangeble };
 }

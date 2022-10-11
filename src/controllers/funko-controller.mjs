@@ -109,5 +109,24 @@ export default function FunkoController() {
         }
     }
 
-    return { create, update, remove, get, list };
+    async function getUserFunko(req, res){
+        try {
+            if (req.user.type !== "administrador" && req.user.type !== "cliente") {
+                res.status(403).json({ error: "Not Allowed" });
+                return;
+            }
+
+            const result = await services.getUserFunko(req.params.id);
+            if (result.error) {
+                res.status(result.status || 500).json({ error: result.error.message });
+                return;
+            }
+            res.status(200).json(result.data);
+        } catch (error) {
+            console.log(error);
+            res.status(500).json({ error: error.message });
+        }
+    }
+
+    return { create, update, remove, get, list, getUserFunko };
 }
