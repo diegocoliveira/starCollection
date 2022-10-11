@@ -2,6 +2,7 @@ import team from "../controllers/team-controller.mjs";
 import funko from "../controllers/funko-controller.mjs";
 import user from "../controllers/user-controller.mjs";
 import collection from "../controllers/collection-controller.mjs";
+import offer from "../controllers/offer-controller.mjs";
 import Upload from "../services/upload.mjs";
 
 export default function Router(express) {
@@ -36,6 +37,8 @@ export default function Router(express) {
     router.get("/tradeable", collection().listExchange);
     router.get("/tradeable/:id", user().verifyToken, collection().getExchangeble);
     router.get("/user_funko/:id", user().verifyToken, funko().getUserFunko);
+
+    router.post("/offer", user().verifyToken, offer().create);
 
     router.post("/authentication", user().authenticate);
     router.get("/authorization", user().verifyToken, user().decodeToken);
