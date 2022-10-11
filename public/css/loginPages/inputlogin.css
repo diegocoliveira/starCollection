@@ -1,13 +1,40 @@
 #search {
-    background-image: url("../../images/search.svg");
-    background-repeat: no-repeat;
-    background-position: right;
     background-size: 2.5vh;
     padding-left: 1.5vw;
-    border-radius: 20px;
-    margin-left: 1.5vw;
-    height: 2vh;
-    border: thin solid #000000;
+    height: 3vh;
+    border: thin solid #262730;
+    border-right: none;
+}
+
+#searchBusca{
+   height: 3vh;
+}
+
+#searchButton{
+    height: 3vh;
+    border: thin solid #262730;
+    border-left: none;
+    background-color: #f7ae11;
+    cursor: pointer;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#filterSearch{
+    height: 3vh;
+    border: none;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    background-color: #262730;
+    cursor: pointer;
+    color: #F0F0F0;
+}
+
+#searchDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 3vw;
 }
 
 #username {

@@ -72,7 +72,6 @@ header {
     font-style: normal;
     font-weight: 500;
     font-size: 0.75vw;
-    line-height: 23px;
 }
 
 #navLeft {
@@ -80,6 +79,7 @@ header {
     justify-content: space-evenly;
     margin-left: 1.8vw;
     margin-top: 1vh;
+    align-items: center;
 }
 
 #navRight {
