@@ -105,5 +105,8 @@ dist
 
 .vscode
 
+#keep directory
+.keep
+
 #certificates
 *.pem
