@@ -4,7 +4,7 @@
   "description": "Desafio Final do ciclo I da turma Turing  - AlphaEdtech",
   "main": "server.mjs",
   "scripts": {
-    "start": "node .",
+    "start": "sudo node .",
     "dev": "nodemon .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
