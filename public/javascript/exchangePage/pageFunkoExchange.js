@@ -1,6 +1,7 @@
 import client from "../pagesClient/client.js";
 import CollectionAPI from "../api/collection-api.mjs";
 import FunkoAPI from "../api/funko-api.mjs";
+import offerAPI from "../api/offer-api.mjs"
 
 //const mainContent = document.getElementById("root");
 let id = null;
@@ -55,16 +56,23 @@ export default function clientTroca(){
             clientLeft.innerHTML = clientTrocaFunko(result[0]);
 
             const selectorFunko = document.querySelector("#selectorFunko");
-            //const exchangeButton = document.querySelector("#exchangeButton");
+            const exchangeButton = document.querySelector("#exchangeButton");
             for (let index = 0; index < funkos.length; index++) {
                 selectorFunko.innerHTML += `<option value="${funkos[index].id}">${funkos[index].name}</option>`;
             }
-            //exchangeButton.addEventListener('click', ()=>{});
+            exchangeButton.addEventListener('click', ()=>{createOffer('','')});
         }
     }
 
     function getIdFunko(_id) {
         return id = _id;
+    }
+
+    async function createOffer(target, offered) {
+        const offer = {};
+        offer.target = target;
+        offer.offered = offered;
+        await offerAPI().insert(offer);
     }
 
     return{pageFunkoExchange, getIdFunko}

@@ -29,7 +29,7 @@ export default function CollectionAPI() {
             const message = await response.json();
             throw new Error(message.error);
         }
-        const data = await response.json();
+        data = await response.json();
         return data;
 
     }
