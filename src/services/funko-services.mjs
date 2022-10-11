@@ -35,6 +35,23 @@ export default class FunkoServices {
         }
         return result;
     }
+    
+    async getUserFunko(id){
+        const pool = await Pool.get();
+        let result = { data: [], error: null, status: 200 };
+        try {
+            if (!uuidValidate(id)) {
+                result.error = new Error("Invalid id");
+                result.status = 400;
+                return result;
+            }
+            result = await this.repository.getUserFunko(pool, id);
+        } catch (error) {
+            result.error = error;
+            result.status = 500;
+        }
+        return result;
+    }
 
     async create(funko, file) {
         const pool = await Pool.get();
