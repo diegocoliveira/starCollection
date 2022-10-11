@@ -4,12 +4,14 @@ import Router from "./src/routers/router.mjs";
 import cookieParser from "cookie-parser";
 import fs from "fs/promises";
 import https from "https";
+// import Helmet from "helmet";
 
 dotenv.config({ path: "./env/.env" });
 
 const port = process.env.PORT || 443;
 const app = Express();
 const router = Router(Express);
+
 
 const jsonErrorHandler = (err, req, res, next) => {
     console.log(err);
@@ -19,6 +21,7 @@ const jsonErrorHandler = (err, req, res, next) => {
 app.use(Express.json());
 app.use(Express.urlencoded({ extended: true }));
 app.use(cookieParser());
+// app.use(Helmet());
 
 app.use("/", Express.static("public"));
 app.use("/repository", Express.static("repository"));
@@ -49,12 +52,13 @@ app.use(function (req, res, next) {
     res.type("txt").send("Not found");
 });
 
+
 const privateKey = await fs.readFile("sslcert/key.pem");
 const certificate = await fs.readFile("sslcert/cert.pem");
 
 const credentials = { key: privateKey, cert: certificate };
 
+
 https.createServer(credentials, app).listen(port, () => {
     console.log(`Servidor criado no ambiente:${process.env.NODE_ENV} na porta:${port}`);
 });
-
