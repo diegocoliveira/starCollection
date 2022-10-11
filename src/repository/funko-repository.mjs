@@ -145,4 +145,25 @@ export default class FunkoRepository {
         }
         return { data, error };
     }
+
+    async getUserFunko(pool, userId){
+        let data = [];
+        let error = null;
+
+        try {
+            const query = `SELECT funko.id, funko.name FROM starcollection.funko
+            INNER JOIN starcollection.collection ON collection.funko_id = funko.id
+            INNER JOIN starcollection."user" ON "user".id = collection.user_id
+            WHERE "user".id = $1 AND collection.deleted_at is null`;
+            const values = [userId];
+            const result = await pool.query(query, values);
+            for (let i = 0; i < result.rows.length; i++) {
+                const row = result.rows[i];
+                data.push(row);
+            }
+        } catch (err) {
+            error = err;
+        }
+        return { data, error };
+    }
 }

@@ -39,7 +39,6 @@ export default function FunkoAPI() {
     }
 
     async function update(data){
-        console.log(data);
         const options = { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) };
         const response = await fetch(`/api/funko/${data.id}`, options);
         if (!response.ok || response.status !== 200) {
@@ -51,5 +50,16 @@ export default function FunkoAPI() {
         return funko;
     }
 
-    return { create, remove, list, update };
+    async function getUserFunko(id) {
+        const options = { method: "GET", headers: { "Content-Type": "application/json" } };
+        const response = await fetch(`/api/user_funko/${id}`, options);
+        if (!response.ok || response.status !== 200) {
+            const message = await response.json();
+            throw new Error(message.error);
+        }
+        const data = await response.json();
+        return data;
+    }
+
+    return { create, remove, list, update, getUserFunko };
 }

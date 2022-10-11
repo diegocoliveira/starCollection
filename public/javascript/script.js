@@ -11,7 +11,7 @@ import trocaPendente from "./pagesClient/trocaPendente.js";
 import trocaConcluida from "./pagesClient/trocaConcluida.js";
 import trocaRecusada from "./pagesClient/trocaRecusada.js";
 import clientConfig from "./pagesClient/pageClient.js";
-import pageFunko from "./exchangePage/pageFunkoExchange.js";
+import clientTroca from "./exchangePage/pageFunkoExchange.js";
 
 
 const mainContent = document.getElementById("root");
@@ -76,7 +76,7 @@ async function route() {
             clientConfig(user);
             break;
         case "#funkoExchange":
-            pageFunko(user);
+            clientTroca().pageFunkoExchange(user);
             break;
         default:
             mainContent.innerHTML = index();

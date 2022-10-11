@@ -34,6 +34,8 @@ export default function Router(express) {
     router.delete("/collection/:id", user().verifyToken, collection().remove);
 
     router.get("/tradeable", collection().listExchange);
+    router.get("/tradeable/:id", user().verifyToken, collection().getExchangeble);
+    router.get("/user_funko/:id", user().verifyToken, funko().getUserFunko);
 
     router.post("/authentication", user().authenticate);
     router.get("/authorization", user().verifyToken, user().decodeToken);

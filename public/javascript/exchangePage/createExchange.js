@@ -1,4 +1,5 @@
 import ExchangePage from "./exchangePage.js";
+import clientTroca from "./pageFunkoExchange.js";
 import CollectionAPI from "../api/collection-api.mjs";
 
 const exchangePage = new ExchangePage();
@@ -20,7 +21,8 @@ async function insertExnchanged() {
     const funkoImg = offerDiv.querySelectorAll(".funkoImgChange");
     for (let index = 0; index < funkoImg.length; index++) {
         funkoImg[index].addEventListener('click', ()=>{
-            window.location.href = '#funkoExchange';
+            clientTroca().getIdFunko(result[index].id);
+            window.location.href = `#funkoExchange`;
         })
     }
 }

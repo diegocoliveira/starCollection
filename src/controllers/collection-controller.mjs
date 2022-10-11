@@ -81,5 +81,20 @@ export default function CollectionController() {
         }
     }
 
-    return { insert, update, remove, list, listExchange };
+    async function getExchangeble(req, res){
+        try {
+            const services = new CollectionServices();
+            const result = await services.getExchangeble(req.params.id);
+            if (result.error) {
+                res.status(result.status || 500).json({ error: result.error.message });
+                return;
+            }
+            res.status(200).json(result.data);
+        } catch (error) {
+            console.log(error);
+            res.status(500).json({ error: error.message });
+        }
+    }
+
+    return { insert, update, remove, list, listExchange, getExchangeble };
 }

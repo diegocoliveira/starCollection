@@ -156,8 +156,28 @@ export default class CollectionRepository {
             const query = `SELECT collection.id, funko.id as funko_id, funko.name as funko_name, "user".name as user_name FROM starcollection.collection 
             RIGHT JOIN starcollection.funko ON funko.id = collection.funko_id
             RIGHT JOIN starcollection."user" ON "user".id = collection.user_id
-            WHERE collection.is_exchange = true AND collection.deleted_at is null`;
+            WHERE collection.is_exchange = true AND collection.deleted_at is null AND "user".deleted_at is null`;
             const result = await pool.query(query);
+            for (let i = 0; i < result.rows.length; i++) {
+                const row = result.rows[i];
+                data.push(row);
+            }
+        } catch (err) {
+            error = err;
+        }
+        return { data, error };
+    }
+
+    async getExchangeInfo(pool, collectionId){
+        let data = [];
+        let error = null;
+        try{
+            const query = `SELECT funko.id as funko_id, funko.name as funko_name, funko.category, "user".name as user_name, "user".city, "user".state FROM starcollection.collection 
+            RIGHT JOIN starcollection.funko ON funko.id = collection.funko_id
+            RIGHT JOIN starcollection."user" ON "user".id = collection.user_id
+            WHERE collection.id = $1 AND collection.deleted_at is null`;
+            const values = [collectionId];
+            const result = await pool.query(query, values);
             for (let i = 0; i < result.rows.length; i++) {
                 const row = result.rows[i];
                 data.push(row);
