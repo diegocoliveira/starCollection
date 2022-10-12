@@ -9,5 +9,17 @@ export default function offerAPI() {
         data = await response.json();
         return data;
     }
-    return { insert };
+
+    async function countOffer() {
+        const options = { method: "GET", headers: { "Content-Type": "application/json" } };
+        const response = await fetch("/api/count_offer", options);
+        if (!response.ok || !response.status == 200) {
+            const message = await response.json();
+            throw new Error(message.error);
+        }
+        const count = await response.json();
+        return count;
+    }
+
+    return { insert, countOffer };
 }

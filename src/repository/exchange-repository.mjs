@@ -25,4 +25,17 @@ export default class ExchangeRepository {
         }
         return { data, error };
     }
+
+    async countExchange(pool){
+        let data = [];
+        let error = null;
+        try{
+            const query = `SELECT COUNT(*) FROM starcollection.exchange`;
+            const result = await pool.query(query);
+            data.push(result.rows[0].count)
+        } catch (err) {
+            error = err;
+        }
+        return { data, error };
+    }
 }
