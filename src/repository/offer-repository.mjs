@@ -1,8 +1,7 @@
 import Offer from "../model/offer.mjs";
 
 export default class OfferRepository {
-
-    async insert(pool, offer){
+    async insert(pool, offer) {
         let data = [];
         let error = null;
         const now = new Date();
@@ -12,7 +11,7 @@ export default class OfferRepository {
             const values = [offer.id, offer.target, offer.offered, now];
             const result = await pool.query(query, values);
             if (result.rowCount > 0) {
-                data = new Collection();
+                data = new Offer();
                 data.id = result.rows[0].id;
                 data.target = result.rows[0].target;
                 data.offered = result.rows[0].offered;

@@ -124,6 +124,37 @@ export default class CollectionRepository {
         return { data, error };
     }
 
+    async getTradeableByUser(pool, userId) {
+        let data = [];
+        let error = null;
+        try {
+            const query = `SELECT collection.id, collection.is_exchange, funko.id as funko_id, funko.name, funko.category
+                             FROM "starcollection".collection 
+                       RIGHT JOIN "starcollection".funko on collection.funko_id = funko.id 
+                              AND collection.user_id = $1
+                            WHERE collection.deleted_at IS NULL
+                              AND funko.deleted_at IS NULL
+                              AND collection.is_exchange = true
+                        ORDER BY funko.name ASC;`;
+            const values = [userId];
+            const result = await pool.query(query, values);
+            for (let i = 0; i < result.rows.length; i++) {
+                const row = result.rows[i];
+                const collection = new Collection();
+                collection.id = row.id;
+                collection.user.id = userId;
+                collection.isExchange = row.is_exchange;
+                collection.funko.id = row.funko_id;
+                collection.funko.name = row.name;
+                collection.funko.category = row.category;
+                data.push(collection);
+            }
+        } catch (err) {
+            error = err;
+        }
+        return { data, error };
+    }
+
     async getByFunkoId(pool, funkoId) {
         let data = [];
         let error = null;
@@ -204,20 +235,33 @@ export default class CollectionRepository {
         let data = [];
         let error = null;
         try {
-            const query = `SELECT collection.id,
-                                  collection.funko_id, funko.name, funko.category,
-                                  collection.user_id, "user".name, "user".city, "user".state
+            const query = `SELECT collection.id, is_exchange, collection.created_at, collection.updated_at, collection.deleted_at,
+                                  collection.funko_id, funko.name as funko_name, funko.category,
+                                  collection.user_id, "user".name as user_name, "user".city, "user".state
                              FROM starcollection.collection 
                        INNER JOIN starcollection.funko ON funko.id = collection.funko_id
                               AND funko.deleted_at IS NULL
                        INNER JOIN starcollection."user" ON "user".id = collection.user_id 
                               AND "user".deleted_at IS NULL
                             WHERE collection.id = $1 AND collection.deleted_at is null`;
-            const values = [collectionId];
+            const values = [id];
             const result = await pool.query(query, values);
             for (let i = 0; i < result.rows.length; i++) {
                 const row = result.rows[i];
-                data.push(row);
+                const collection = new Collection();
+                collection.id = row.id;
+                collection.funko.id = row.funko_id;
+                collection.funko.name = row.funko_name;
+                collection.funko.category = row.category;
+                collection.user.id = row.user_id;
+                collection.user.name = row.user_name;
+                collection.user.city = row.city;
+                collection.user.state = row.state;
+                collection.isExchange = row.is_exchange;
+                collection.createdAt = row.created_at;
+                collection.updatedAt = row.updated_at;
+                collection.deletedAt = row.deleted_at;
+                data.push(collection);
             }
         } catch (err) {
             error = err;

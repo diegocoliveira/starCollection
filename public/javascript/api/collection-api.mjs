@@ -67,6 +67,23 @@ export default function CollectionAPI() {
         return data;
     }
 
+    async function listExchangeUser() {
+        const options = { method: "GET", headers: { "Content-Type": "application/json" } };
+        const response = await fetch(`/api/tradeable/user`, options);
+
+        if (response.status == 401) {
+            window.location.href = "/#login";
+            throw new Error("Sua sessão expirou");
+        }
+
+        if (!response.ok || response.status !== 200) {
+            const message = await response.json();
+            throw new Error(message.error);
+        }
+        const data = await response.json();
+        return data;
+    }
+
     async function listExchange(filter, value) {
         const options = { method: "GET", headers: { "Content-Type": "application/json" } };
         const response = await fetch(`/api/tradeable?filter=${filter}&value=${value}`, options);
@@ -84,9 +101,9 @@ export default function CollectionAPI() {
         return data;
     }
 
-    async function getExchangeble(id) {
+    async function get(id) {
         const options = { method: "GET", headers: { "Content-Type": "application/json" } };
-        const response = await fetch(`/api/tradeable/${id}`, options);
+        const response = await fetch(`/api/collection/${id}`, options);
 
         if (response.status == 401) {
             window.location.href = "/#login";
@@ -100,5 +117,5 @@ export default function CollectionAPI() {
         return data;
     }
 
-    return { insert, update, remove, list, listExchange, getExchangeble };
+    return { insert, update, remove, get, list, listExchange, listExchangeUser };
 }

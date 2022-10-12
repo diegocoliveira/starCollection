@@ -5,15 +5,12 @@ export default function OfferController(){
     const services = new OfferServices();
 
     async function create(req, res){
-        if (req.user.type !== "administrador" && req.user.type !== "cliente") {
-            res.status(403).json({ error: "Not Allowed" });
-            return;
-        }
+      
         try {
             const offer = new Offer();
             offer.target = req.body.target;
             offer.offered = req.body.offered;
-            const result = await services.create(offer);
+            const result = await services.create(offer, req.user.id);
             if (result.error) {
                 res.status(result.status || 500).json({ error: result.error.message });
                 return;
