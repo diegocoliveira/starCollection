@@ -1,6 +1,31 @@
 import Exchange from "../model/exchange.mjs";
 
 export default class ExchangeRepository {
+    async insert(pool, exchange) {
+        let data = [];
+        let error = null;
+        const now = new Date();
+        try {
+            const query = `INSERT INTO starcollection.exchange (id, target, offered, ok_user_target, ok_user_offered, 
+                            status, created_at) 
+            VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *`;
+            const values = [exchange.id, exchange.target, exchange.offered, exchange.okUserTarget, exchange.okUserOffered, exchange.status, now];
+            const result = await pool.query(query, values);
+            if (result.rowCount > 0) {
+                data = new Exchange();
+                data.id = result.rows[0].id;
+                data.target = result.rows[0].target;
+                data.offered = result.rows[0].offered;
+                data.okUserTarget = result.rows[0].ok_user_target;
+                data.okUserOffered = result.rows[0].ok_user_offered;
+                data.createdAt = result.rows[0].created_at;
+            }
+        } catch (err) {
+            error = err;
+        }
+        return { data, error };
+    }
+
     async getByCollectionId(pool, collectionId) {
         let data = [];
         let error = null;
@@ -26,10 +51,10 @@ export default class ExchangeRepository {
         return { data, error };
     }
 
-    async list(pool){
+    async list(pool) {
         let data = [];
         let error = null;
-        try{
+        try {
             const query = `SELECT "user".name as user_target, funko.name as funko_target, "user2".name as user_offered, 
             funko2.name as funko_offered, exchange.status, exchange.created_at 
             FROM starcollection.exchange
@@ -43,22 +68,21 @@ export default class ExchangeRepository {
             const result = await pool.query(query);
             for (let index = 0; index < result.rows.length; index++) {
                 const row = result.rows[index];
-                data.push(row)
+                data.push(row);
             }
         } catch (err) {
             error = err;
         }
         return { data, error };
     }
-    
 
-    async countExchange(pool){
+    async countExchange(pool) {
         let data = [];
         let error = null;
-        try{
+        try {
             const query = `SELECT COUNT(*) FROM starcollection.exchange`;
             const result = await pool.query(query);
-            data.push(result.rows[0].count)
+            data.push(result.rows[0].count);
         } catch (err) {
             error = err;
         }
