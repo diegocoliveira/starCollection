@@ -2,12 +2,11 @@ import offerAPI from "../api/offer-api.mjs";
 import UserAPI from "../api/user-api.mjs";
 import exchangeAPI from "../api/exchange-api.mjs";
 
-const users = await UserAPI().countUser();
-const offers = await offerAPI().countOffer();
-const exchange = await exchangeAPI().countExchange();
+//const users = await UserAPI().countUser();
+//const offers = await offerAPI().countOffer();
+//const exchange = await exchangeAPI().countExchange();
 
-export class Dashboard{
-
+export class Dashboard {
     infos = `
             <div id="divInfos">
                 <div class="infoDashboard">
@@ -64,7 +63,7 @@ export class Dashboard{
             </div>
         </section>`;
 
-     tradeInfo = `
+    tradeInfo = `
         <div class="infoBetween">
             <h4 class="trades , font1">INFO TRADE</h4>
             <div class="divStatus">
