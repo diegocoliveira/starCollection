@@ -1,13 +1,12 @@
 import client from "../pagesClient/client.js";
 import CollectionAPI from "../api/collection-api.mjs";
 import FunkoAPI from "../api/funko-api.mjs";
-import offerAPI from "../api/offer-api.mjs"
+import offerAPI from "../api/offer-api.mjs";
 
 //const mainContent = document.getElementById("root");
 let id = null;
-export default function clientTroca(){
-
-    function clientTrocaFunko(info){
+export default function clientTroca() {
+    function clientTrocaFunko(info) {
         return `<section id="itemPage">
                     <div class="funkoInfo">
                         <img class="funkoImg" src="repository/images/${info.funko_id}.png">
@@ -41,17 +40,18 @@ export default function clientTroca(){
                         <button type="button" id="exchangeButton">Fazer Oferta</button>
                     </div>   
                 </section>`;
-    } 
+    }
 
-    async function pageFunkoExchange(user) { 
+    async function pageFunkoExchange(user) {
         if (user.length == 0) {
-            window.location.href = '#login';
-        } else{
+            window.location.href = "#login";
+        } else {
             const mainContent = document.querySelector("#root");
             mainContent.innerHTML = client(user);
-
+            console.log(id);
             const clientLeft = document.querySelector("#clientLeft");
             const result = await CollectionAPI().getExchangeble(id);
+            console.log(result);
             const funkos = await FunkoAPI().getUserFunko(user.id);
             clientLeft.innerHTML = clientTrocaFunko(result[0]);
 
@@ -60,12 +60,14 @@ export default function clientTroca(){
             for (let index = 0; index < funkos.length; index++) {
                 selectorFunko.innerHTML += `<option value="${funkos[index].id}">${funkos[index].name}</option>`;
             }
-            exchangeButton.addEventListener('click', ()=>{createOffer('','')});
+            exchangeButton.addEventListener("click", () => {
+                createOffer("", "");
+            });
         }
     }
 
     function getIdFunko(_id) {
-        return id = _id;
+        return (id = _id);
     }
 
     async function createOffer(target, offered) {
@@ -75,12 +77,14 @@ export default function clientTroca(){
         await offerAPI().insert(offer);
     }
 
-    return{pageFunkoExchange, getIdFunko}
+    return { pageFunkoExchange, getIdFunko };
 }
 
-{/* <div class="slideshow-container">
+{
+    /* <div class="slideshow-container">
                             <div class="mySlides fade">
                                 <img src="./images/jaja.svg">
                                 <img src="./images/rey.svg">
                                 <img src="./images/vader.svg">
-                      </div> */}
+                      </div> */
+}
