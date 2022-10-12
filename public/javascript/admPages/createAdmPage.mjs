@@ -12,6 +12,8 @@ import { ConfAdmPage } from "./confAdm.mjs";
 
 import FunkoAPI from "../api/funko-api.mjs";
 import UserAPI from "../api/user-api.mjs";
+import offerAPI from "../api/offer-api.mjs";
+import exchangeAPI from "../api/exchange-api.mjs";
 import logout from "../logout.js";
 
 const clear = new Clear();
@@ -38,21 +40,27 @@ export function createMenu(_user) {
     dashBoardCreate();
 }
 
-function dashBoardCreate() {
+async function dashBoardCreate() {
     const main = document.querySelector("#admMain");
+    const users = await UserAPI().countUser();
+    const offers = await offerAPI().countOffer();
+    const exchange = await exchangeAPI().countExchange();
     const dashBoard = new Dashboard();
+
     clear.mainClear();
-    main.innerHTML += dashBoard().infos;
-    main.innerHTML += dashBoard().recentTrades;
+    main.innerHTML += dashBoard.infos(users, offers, exchange);
+    main.innerHTML += dashBoard.recentTrades;
     listInfo();
 }
 
 function listInfo() {
     const infos = document.querySelector("#recentTrades");
+    const dashBoard = new Dashboard();
+
     infos.innerHTML += line.line1;
-    infos.innerHTML += dashBoard().tradeInfo + line.line2;
-    infos.innerHTML += dashBoard().tradeInfo + line.line2;
-    infos.innerHTML += dashBoard().tradeInfo + line.line2;
+    infos.innerHTML += dashBoard.tradeInfo + line.line2;
+    infos.innerHTML += dashBoard.tradeInfo + line.line2;
+    infos.innerHTML += dashBoard.tradeInfo + line.line2;
     const status = document.querySelectorAll(".status");
 
     for (let index = 0; index < status.length; index++) {
@@ -70,6 +78,7 @@ function listInfo() {
 function statusList() {
     const divStatus = document.querySelectorAll(".divStatus");
     const status = document.querySelectorAll(".status");
+    const dashBoard = new Dashboard();
 
     for (let index = 0; index < status.length; index++) {
         if (status[index].innerHTML == "troca concluida") {
