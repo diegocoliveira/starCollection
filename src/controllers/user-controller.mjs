@@ -202,5 +202,22 @@ export default function UserController() {
         }
     }
 
-    return { create, list, updateName, updateEmail, updatePassword, updateCity, remove, authenticate, verifyToken, decodeToken, logout };
+    async function countUser(req, res) {
+        if (req.user.type !== "administrador") {
+            res.status(403).json({ error: "Not Allowed" });
+            return;
+        }
+        try {
+            const result = await services.countUser();
+            if (result.error) {
+                res.status(result.status || 500).json({ error: result.error.message });
+                return;
+            }
+            res.status(200).json(result.data);
+        } catch (error) {
+            res.status(500).json({ error: error.message });
+        }
+    }
+
+    return { create, list, updateName, updateEmail, updatePassword, updateCity, remove, authenticate, verifyToken, decodeToken, logout, countUser };
 }

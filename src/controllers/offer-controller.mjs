@@ -21,5 +21,22 @@ export default function OfferController(){
             res.status(500).json({ error: error.message });
         }
     }   
-    return { create };
+
+    async function countOffer(req, res) {
+        if (req.user.type !== "administrador") {
+            res.status(403).json({ error: "Not Allowed" });
+            return;
+        }
+        try {
+            const result = await services.countOffer();
+            if (result.error) {
+                res.status(result.status || 500).json({ error: result.error.message });
+                return;
+            }
+            res.status(200).json(result.data);
+        } catch (error) {
+            res.status(500).json({ error: error.message });
+        }
+    }
+    return { create, countOffer };
 }

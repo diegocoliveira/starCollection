@@ -45,4 +45,17 @@ export default class OfferRepository {
         }
         return { data, error };
     }
+
+    async countOffer(pool){
+        let data = [];
+        let error = null;
+        try{
+            const query = `SELECT COUNT(*) FROM starcollection.offer`;
+            const result = await pool.query(query);
+            data.push(result.rows[0].count)
+        } catch (err) {
+            error = err;
+        }
+        return { data, error };
+    }
 }

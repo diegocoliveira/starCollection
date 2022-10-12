@@ -242,4 +242,17 @@ export default class UserRepository {
         }
         return { data, error };
     }
+
+    async countUser(pool){
+        let data = [];
+        let error = null;
+        try{
+            const query = `SELECT COUNT(*) FROM starcollection.user WHERE deleted_at is null and type = 'cliente'`;
+            const result = await pool.query(query);
+            data.push(result.rows[0].count)
+        } catch (err) {
+            error = err;
+        }
+        return { data, error };
+    }
 }

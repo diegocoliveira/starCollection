@@ -229,4 +229,16 @@ export default class UserServices {
         }
         return result;
     }
+
+    async countUser(){
+        const pool = await Pool.get();
+        let result = { data: [], error: null, status: 200 };
+        try{
+            result = await this.repository.countUser(pool);
+        } catch (error) {
+            result.error = error;
+            result.status = 500;
+        }
+        return result;
+    }
 }
