@@ -76,6 +76,41 @@ export default class OfferServices {
         return result;
     }
 
+    async listReceived(userId) {
+        const pool = await Pool.get();
+        let result = { data: [], error: null, status: 200 };
+        try {
+            if (!uuidValidate(userId)) {
+                result.error = new Error("Invalid id User");
+                result.status = 400;
+                return result;
+            }
+            result = await this.repository.getReceived(pool, userId);
+            
+        } catch (error) {
+            result.error = error;
+            result.status = 500;
+        }
+        return result;
+    }
+
+    async listSent(userId) {
+        const pool = await Pool.get();
+        let result = { data: [], error: null, status: 200 };
+        try {
+            if (!uuidValidate(userId)) {
+                result.error = new Error("Invalid id User");
+                result.status = 400;
+                return result;
+            }
+            result = await this.repository.getSent(pool, userId);
+        } catch (error) {
+            result.error = error;
+            result.status = 500;
+        }
+        return result;
+    }
+
     async countOffer(){
         const pool = await Pool.get();
         let result = { data: [], error: null, status: 200 };
