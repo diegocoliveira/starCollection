@@ -2,15 +2,16 @@
     background-size: 2.5vh;
     padding-left: 1.5vw;
     height: 3vh;
+    width: 30vw;
     border: thin solid #262730;
     border-right: none;
 }
 
-#searchBusca{
-   height: 3vh;
+#searchBusca {
+    height: 3vh;
 }
 
-#searchButton{
+#searchButton {
     height: 3vh;
     border: thin solid #262730;
     border-left: none;
@@ -20,21 +21,21 @@
     border-top-right-radius: 5px;
 }
 
-#filterSearch{
+#filterSearch {
     height: 3vh;
     border: none;
     border-bottom-left-radius: 5px;
     border-top-left-radius: 5px;
     background-color: #262730;
     cursor: pointer;
-    color: #F0F0F0;
+    color: #f0f0f0;
 }
 
-#searchDiv{
+#searchDiv {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-left: 3vw;
+    align-items: center;
 }
 
 #username {
@@ -42,8 +43,8 @@
     border-radius: 20px;
     height: 2.5vh;
     margin: 1vh;
-    background: #F0F0F0;
-    border: 2px solid #F0F0F0;
+    background: #f0f0f0;
+    border: 2px solid #f0f0f0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
 }
 
@@ -52,8 +53,8 @@
     border-radius: 20px;
     height: 2.5vh;
     margin: 1vh;
-    background: #F0F0F0;
-    border: 2px solid #F0F0F0;
+    background: #f0f0f0;
+    border: 2px solid #f0f0f0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
 }
 
@@ -66,17 +67,17 @@
     border-radius: 20px;
     height: 2.5vh;
     margin: 1vh;
-    background: #F0F0F0;
-    border: 2px solid #F0F0F0;
+    background: #f0f0f0;
+    border: 2px solid #f0f0f0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
 }
-#emailForgot{
+#emailForgot {
     padding-left: 1.5vw;
     border-radius: 20px;
     height: 2.5vh;
     margin: 1vh;
-    background: #F0F0F0;
-    border: 2px solid #F0F0F0;
+    background: #f0f0f0;
+    border: 2px solid #f0f0f0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
 }
 #city {
@@ -84,8 +85,8 @@
     border-radius: 20px;
     height: 2.5vh;
     margin: 1vh;
-    background: #F0F0F0;
-    border: 2px solid #F0F0F0;
+    background: #f0f0f0;
+    border: 2px solid #f0f0f0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
 }
 
@@ -94,7 +95,7 @@
     border-radius: 20px;
     height: 2.5vh;
     margin: 1vh;
-    background: #F0F0F0;
-    border: 2px solid #F0F0F0;
+    background: #f0f0f0;
+    border: 2px solid #f0f0f0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
 }

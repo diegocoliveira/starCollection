@@ -66,10 +66,10 @@ export default function CollectionController() {
         }
     }
 
-    async function listExchange(req, res){
+    async function listTradeable(req, res) {
         try {
             const services = new CollectionServices();
-            const result = await services.listExchange();
+            const result = await services.listTradeable(req.query.filter, req.query.value);
             if (result.error) {
                 res.status(result.status || 500).json({ error: result.error.message });
                 return;
@@ -81,10 +81,24 @@ export default function CollectionController() {
         }
     }
 
-    async function getExchangeble(req, res){
+    async function getTradeableByUser(req, res) {
         try {
             const services = new CollectionServices();
-            const result = await services.getExchangeble(req.params.id);
+            const result = await services.getTradeableByUser(req.user.id);
+            if (result.error) {
+                res.status(result.status || 500).json({ error: result.error.message });
+                return;
+            }
+            res.status(200).json(result.data);
+        } catch (error) {
+            console.log(error);
+            res.status(500).json({ error: error.message });
+        }
+    }
+    async function get(req, res) {
+        try {
+            const services = new CollectionServices();
+            const result = await services.get(req.params.id);
             if (result.error) {
                 res.status(result.status || 500).json({ error: result.error.message });
                 return;
@@ -96,5 +110,5 @@ export default function CollectionController() {
         }
     }
 
-    return { insert, update, remove, list, listExchange, getExchangeble };
+    return { insert, update, remove, get, list, getTradeableByUser, listTradeable };
 }

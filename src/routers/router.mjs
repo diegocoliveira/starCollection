@@ -32,12 +32,12 @@ export default function Router(express) {
 
     router.post("/collection", user().verifyToken, collection().insert);
     router.get("/collection", user().verifyToken, collection().list);
+    router.get("/collection/:id", user().verifyToken, collection().get);
     router.put("/collection/:id", user().verifyToken, collection().update);
     router.delete("/collection/:id", user().verifyToken, collection().remove);
 
-    router.get("/tradeable", collection().listExchange);
-    router.get("/tradeable/:id", user().verifyToken, collection().getExchangeble);
-    router.get("/user_funko/:id", user().verifyToken, funko().getUserFunko);
+    router.get("/tradeable", collection().listTradeable);
+    router.get("/tradeable/user", user().verifyToken, collection().getTradeableByUser);
 
     router.post("/offer", user().verifyToken, offer().create);
 

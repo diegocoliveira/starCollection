@@ -46,7 +46,6 @@ export default class CollectionServices {
             result.status = 500;
         }
         return result;
-
     }
 
     async remove(id) {
@@ -108,12 +107,12 @@ export default class CollectionServices {
         return result;
     }
 
-    async listExchange(){
+    async listTradeable(filter, value) {
         const pool = await Pool.get();
         let result = { data: [], error: null, status: 200 };
         try {
             const repository = new CollectionRepository();
-            result = await repository.getExchange(pool);
+            result = await repository.getTradeable(pool, filter, value);
         } catch (error) {
             result.error = error;
             result.status = 500;
@@ -121,7 +120,7 @@ export default class CollectionServices {
         return result;
     }
 
-    async getExchangeble(id){
+    async get(id) {
         const pool = await Pool.get();
         let result = { data: [], error: null, status: 200 };
         try {
@@ -131,7 +130,24 @@ export default class CollectionServices {
                 return result;
             }
             const repository = new CollectionRepository();
-            result = await repository.getExchangeInfo(pool, id);
+            result = await repository.get(pool, id);
+        } catch (error) {
+            result.error = error;
+            result.status = 500;
+        }
+        return result;
+    }
+    async getTradeableByUser(id) {
+        const pool = await Pool.get();
+        let result = { data: [], error: null, status: 200 };
+        try {
+            if (!uuidValidate(id)) {
+                result.error = new Error("Invalid id");
+                result.status = 400;
+                return result;
+            }
+            const repository = new CollectionRepository();
+            result = await repository.getTradeableByUser(pool, id);
         } catch (error) {
             result.error = error;
             result.status = 500;

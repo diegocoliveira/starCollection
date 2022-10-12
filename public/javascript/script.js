@@ -13,21 +13,22 @@ import trocaRecusada from "./pagesClient/trocaRecusada.js";
 import clientConfig from "./pagesClient/pageClient.js";
 import clientTroca from "./exchangePage/pageFunkoExchange.js";
 
-
 const mainContent = document.getElementById("root");
+const searchButton = document.querySelector("#searchButton");
+searchButton.addEventListener("click", () => {
+    createExchange();
+});
 
 async function route() {
     const hash = window.location.hash;
     const clientsAuthorized = [
-        "#exchange",
         "#collection",
         "#ofertas",
         "#trocasPendentes",
         "#trocasConcluidas",
         "#trocasRecusadas",
         "#configuracoes",
-        "#funkoExchange"
-
+        "#funkoExchange",
     ];
     const admAuthorized = ["#admPage"];
     const user = await UserAPI().authorization();
@@ -38,6 +39,9 @@ async function route() {
         window.location.hash = "#login";
     }
     mainContent.innerHTML = "";
+    const search = document.querySelector("#search");
+    search.value = "";
+
     switch (hash) {
         case "#":
             mainContent.innerHTML = index();

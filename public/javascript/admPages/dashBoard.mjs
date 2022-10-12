@@ -57,7 +57,7 @@ export class Dashboard{
             </div>
         </section>`;
 
-     tradeInfo = `
+    tradeInfo = `
         <div class="infoBetween">
             <h4 class="trades , font1">INFO TRADE</h4>
             <div class="divStatus">

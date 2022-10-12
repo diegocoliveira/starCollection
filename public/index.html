@@ -1,60 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./font/stylesheet.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="./css/main.css" />
-
-<body>
-
-    <main id="mainCenter">
-        <header>
-            <div id="navLeft">
-                <h1><a class="linkFormat" href="#" id="logo">S.C.</a></h1>
-                
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Home</title>
+        <link rel="stylesheet" href="./css/reset.css" />
+        <link rel="stylesheet" href="./font/stylesheet.css" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./css/main.css" />
+    </head>
+    <body>
+        <main id="mainCenter">
+            <header>
+                <div id="navLeft">
+                    <h1><a class="linkFormat" href="#" id="logo">S.C.</a></h1>
+                </div>
                 <div id="searchDiv">
-                <select name="filterSearch" id="filterSearch">
-                    <option value="all">Todos</option>
-                    <option value="funko">Funko</option>
-                    <option value="cidade">Cidade</option>
-                    <option value="estado">Estado</option>
-                </select>
-                <input type="search" name="search" id="search" placeholder="BUSCA">
-                <button type="button" id="searchButton" name="search" value="Busca"><img src="./images/search.svg" alt="lupaBusca" id="searchBusca"></button>
-            </div>
-            </div>
-
-            <nav id="navRight">
-                <a class="linkFormat" href="/#exchange">TROCA</a>
-
-                <div class="icons">
-                    <img id: src="./images/personBlack.svg" class="iconsImage">
-                    <a class="linkFormat" href="/#login" id="login">LOGIN</a>
+                    <select name="filterSearch" id="filterSearch">
+                        <option value="funko">Funko</option>
+                        <option value="cidade">Cidade</option>
+                        <option value="estado">Estado</option>
+                    </select>
+                    <input type="search" name="search" id="search" placeholder="BUSCA" />
+                    <a id="searchButton" name="search" value="Busca">
+                        <img src="./images/search.svg" alt="lupaBusca" id="searchBusca" />
+                    </a>
                 </div>
 
+                <nav id="navRight">
+                    <a class="linkFormat" href="/#exchange">TROCA</a>
 
-                <div class="icons">
-                    <a class="linkFormat" href="/#darkSide">DARK SIDE</a>
-                    <img src="./images/toggle_off.svg" class="iconsImage">
-                </div>
-            </nav>
-        </header>
+                    <div class="icons">
+                        <img id: src="./images/personBlack.svg" class="iconsImage">
+                        <a class="linkFormat" href="/#login" id="login">LOGIN</a>
+                    </div>
 
-        <div id="root"></div>
-    </main>
+                    <div class="icons">
+                        <a class="linkFormat" href="/#darkSide">DARK SIDE</a>
+                        <img src="./images/toggle_off.svg" class="iconsImage" />
+                    </div>
+                </nav>
+            </header>
 
-    <script type="module" src="./javascript/script.js"></script>
-</body>
+            <div id="root"></div>
+        </main>
 
+        <script type="module" src="./javascript/script.js"></script>
+    </body>
 </html>
