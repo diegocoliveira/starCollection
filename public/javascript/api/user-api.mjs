@@ -135,5 +135,16 @@ export default function UserAPI() {
         return true;
     }
 
-    return { userCreate, userList, updateName, updateEmail, updatePassword, updateCity, removeUser, authentication, authorization, logout };
+    async function countUser() {
+        const options = { method: "GET", headers: { "Content-Type": "application/json" } };
+        const response = await fetch("/api/count_user", options);
+        if (!response.ok || !response.status == 200) {
+            const message = await response.json();
+            throw new Error(message.error);
+        }
+        const count = await response.json();
+        return count;
+    }
+
+    return { userCreate, userList, updateName, updateEmail, updatePassword, updateCity, removeUser, authentication, authorization, logout, countUser };
 }

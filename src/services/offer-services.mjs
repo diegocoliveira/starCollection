@@ -26,4 +26,16 @@ export default class OfferServices{
         }
         return result;
     }
+
+    async countOffer(){
+        const pool = await Pool.get();
+        let result = { data: [], error: null, status: 200 };
+        try{
+            result = await this.repository.countOffer(pool);
+        } catch (error) {
+            result.error = error;
+            result.status = 500;
+        }
+        return result;
+    }
 }

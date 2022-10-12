@@ -1,3 +1,11 @@
+import offerAPI from "../api/offer-api.mjs";
+import UserAPI from "../api/user-api.mjs";
+import exchangeAPI from "../api/exchange-api.mjs";
+
+const users = await UserAPI().countUser();
+const offers = await offerAPI().countOffer();
+const exchange = await exchangeAPI().countExchange();
+
 export class Dashboard{
 
     infos = `
@@ -7,7 +15,7 @@ export class Dashboard{
                         <img src="./images/person2.svg" alt="person icon 2">
                     </div>
                     <div class="info">
-                        <p id="quantUsers" class="font1">0</p>
+                        <p id="quantUsers" class="font1">${users}</p>
                         <p class="font3">usuários</p>
                     </div>
                     </div>
@@ -16,7 +24,7 @@ export class Dashboard{
                             <img src="./images/tagsBlack.svg" alt="tag icon">
                         </div>
                         <div class="info">
-                            <p id="quantOffer" class="font1">0</p>
+                            <p id="quantOffer" class="font1">${offers}</p>
                             <p class="font3">ofertas</p>
                         </div>
                     </div>
@@ -25,7 +33,7 @@ export class Dashboard{
                             <img src="./images/repeat.svg" alt="repeat icon">
                         </div>
                         <div class="info">
-                            <p id="quantTrades" class="font1">0</p>
+                            <p id="quantTrades" class="font1">${exchange}</p>
                             <p class="font3">trocas</p>
                         </div>
                     </div>
