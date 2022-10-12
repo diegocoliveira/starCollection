@@ -57,13 +57,15 @@ export class Dashboard{
             </div>
         </section>`;
 
-    tradeInfo = `
-        <div class="infoBetween">
-            <h4 class="trades , font1">INFO TRADE</h4>
+    tradeInfo(info){
+        return `<div class="infoBetween">
+            <h4 class="trades , font1">${info.funko_target} (${info.user_target}) x ${info.funko_offered} (${info.user_offered})</h4>
             <div class="divStatus">
-                <p class="status , font1"></p>
+                <p font1">${info.created_at}</p>
+                <p class="status , font1">${info.status}</p>
             </div>
-        </div>`;
+        </div>`
+    }
 
     finished = '<img class="iconStatus" src="./images/statusFinished.svg" alt="finished icon"/>';
     pending = '<img class="iconStatus" src="./images/statusPending.svg" alt="pending icon"/>';

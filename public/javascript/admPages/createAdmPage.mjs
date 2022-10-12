@@ -53,24 +53,14 @@ async function dashBoardCreate() {
     listInfo();
 }
 
-function listInfo() {
+async function listInfo() {
     const infos = document.querySelector("#recentTrades");
     const dashBoard = new Dashboard();
+    const exchange = await exchangeAPI().list();
 
     infos.innerHTML += line.line1;
-    infos.innerHTML += dashBoard.tradeInfo + line.line2;
-    infos.innerHTML += dashBoard.tradeInfo + line.line2;
-    infos.innerHTML += dashBoard.tradeInfo + line.line2;
-    const status = document.querySelectorAll(".status");
-
-    for (let index = 0; index < status.length; index++) {
-        if (index == 0) {
-            status[index].innerHTML = "troca concluida";
-        } else if (index == 1) {
-            status[index].innerHTML = "troca em andamento";
-        } else if (index == 2) {
-            status[index].innerHTML = "troca recusada";
-        }
+    for (let index = 0; index < exchange.length; index++) {
+        infos.innerHTML += dashBoard.tradeInfo(exchange[index]) + line.line2;
     }
     statusList();
 }
