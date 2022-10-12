@@ -40,6 +40,8 @@ export default function Router(express) {
     router.get("/tradeable/user", user().verifyToken, collection().getTradeableByUser);
 
     router.post("/offer", user().verifyToken, offer().create);
+    router.get("/offer/received", user().verifyToken, offer().listReceived);
+    router.get("/offer/sent", user().verifyToken, offer().listSent);
 
     router.post("/authentication", user().authenticate);
     router.get("/authorization", user().verifyToken, user().decodeToken);
