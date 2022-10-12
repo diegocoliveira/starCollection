@@ -46,6 +46,8 @@ export default function Router(express) {
 
     router.post("/exchange", user().verifyToken, exchange().create);
 
+    router.get("/exchange", user().verifyToken, exchange().list);
+
     router.post("/authentication", user().authenticate);
     router.get("/authorization", user().verifyToken, user().decodeToken);
     router.get("/logout", user().logout);

@@ -42,6 +42,23 @@ export default class ExchangeServices {
         return result;
     }
 
+    async list(userId) {
+        if (!uuidValidate(userId)) {
+            result.error = new Error("Invalid  user id");
+            result.status = 400;
+            return result;
+        }
+        const pool = await Pool.get();
+        let result = { data: [], error: null, status: 200 };
+        try {
+            result = await this.repository.list(pool);
+        } catch (error) {
+            result.error = error;
+            result.status = 500;
+        }
+        return result;
+    }
+
     async countExchange() {
         const pool = await Pool.get();
         let result = { data: [], error: null, status: 200 };
