@@ -12,6 +12,8 @@ import { ConfAdmPage } from "./confAdm.mjs";
 
 import FunkoAPI from "../api/funko-api.mjs";
 import UserAPI from "../api/user-api.mjs";
+import offerAPI from "../api/offer-api.mjs";
+import exchangeAPI from "../api/exchange-api.mjs";
 import logout from "../logout.js";
 
 const clear = new Clear();
@@ -40,10 +42,13 @@ export function createMenu(_user) {
     dashBoardCreate();
 }
 
-function dashBoardCreate() {
+async function dashBoardCreate() {
     const main = document.querySelector("#admMain");
+    const users = await UserAPI().countUser();
+    const offers = await offerAPI().countOffer();
+    const exchange = await exchangeAPI().countExchange();
     clear.mainClear();
-    main.innerHTML += dashBoard.infos;
+    main.innerHTML += dashBoard.infos(users, offers, exchange);
     main.innerHTML += dashBoard.recentTrades;
     listInfo();
 }
