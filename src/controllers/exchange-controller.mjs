@@ -24,7 +24,6 @@ export default function exchangeController() {
                 res.status(result.status || 500).json({ error: result.error.message });
                 return;
             }
-            res.status(201).json(result.data);
             res.status(200).json(result.data);
         } catch (error) {
             console.log(error);
