@@ -1,71 +1,102 @@
 import client from "./client.js";
+import offerAPI from "../api/offer-api.mjs";
+import exchangeAPI from "../api/exchange-api.mjs";
 
 const mainContent = document.getElementById("root");
 
-const minhasOfertas = `
-<section id="clientConfPage">
-<div class="containTrocasDiv">
+function minhasOfertas(){
+    return `<section id="clientConfPage">
+                <div class="containTrocasDiv">
 
-    <div class="headerTrocaClient">
+                    <div class="headerTrocaClient">
+                        <div class="trocasPage">
+                            <img id="gearClientImg" src="./images/tagsBlack.svg " alt="">
+                            <p>minhas ofertas</p>
+                        </div>
+                    </div>
 
-    <div class="trocasPage">
-    <img id="gearClientImg" src="./images/tagsBlack.svg " alt="">
-    <p>minhas ofertas</p>
-    </div>
+                    <div class="infosTrocaCliente">
+                        <h2 class="fontTroca">Recebidas</h2>
+                        <div class="barTroca"></div>
+                        <div id="tableClientTrade"></div>
+                    </div>
 
-    </div>
+                    <div class="infosTrocaCliente">
 
-    <div class="infosTrocaCliente">
-        
-        <h2 class="fontTroca">Recebidas</h2>
+                        <h2 class="fontTroca">Feitas</h2>
 
-        <div class="barTroca"></div>
+                        <div class="barTroca"></div>
 
+                        <div id="tableClientSend"></div>
+                    </div>
+                </div>
+                </div>
+            </section>`;
+}
 
-        <div id="tableClientTrade">
-
-        <div class="emAndamento">
-                <h4>Darth Vader (usuário P) x Stormtrooper (eu)</h4>
+function offerRecieved(received){
+    return `<div class="emAndamento">
+                <h4>${received.offered.funko.name} (${received.offered.user.name}) x ${received.target.funko.name} (${received.target.user.name})</h4>
                 <div>
-                <label class="labelTroca">proposta feita em:</label>
-                <input type="date" class="inputTroca" value="2021-08-01">
+                    <label class="labelTroca">proposta feita em:</label>
+                    <p>${received.createdAt}</p>
                 </div>
                 <input type="submit" class="btnTrocaAzul" value="Aceitar">
                 <input type="submit" class="btnTrocaVermelho" value="Recusar">
-        </div>
-        <div class="barTrade"></div>
-
-    </div>
-    </div>
-
-    <div class="infosTrocaCliente">
-
-    <h2 class="fontTroca">Feitas</h2>
-
-    <div class="barTroca"></div>
-
-    <div id="tableClientTrade">
-
-    <div class="emAndamento">
-            <h4>Yoda (usuário D) x Rey (eu)</h4>
-            <div>
-            <label class="labelTroca">proposta feita em:</label>
-            <input type="date" class="inputTroca" value="2021-08-01">
             </div>
-    </div>
-    <div class="barTrade"></div>
+            <div class="barTrade"></div>`
+}
 
-</div>
-</div>
-</div>
+function offerSend(send) {
+    return `<div class="emAndamento">
+                <h4>${send.offered.funko.name} (${send.offered.user.name}) x ${send.target.funko.name} (${send.target.user.name})</h4>
+                <div>
+                    <label class="labelTroca">proposta feita em:</label>
+                    <p>${send.createdAt}</p>
+                </div>
+            </div>
+            <div class="barTrade"></div>`
+}
 
-</div>
-</section>
-`;
+function btnActions(received, user) {
+    const btnTrocaAzul = tableClientTrade.querySelectorAll(".btnTrocaAzul");
+    const btnTrocaVermelho = tableClientTrade.querySelectorAll(".btnTrocaVermelho");
+    for (let index = 0; index < btnTrocaAzul.length; index++) {
+        btnTrocaAzul[index].addEventListener('click', async ()=>{
+            if (confirm(`Deseja realmente trocar o Funko "${received[index].target.funko.name}" pelo "${received[index].offered.funko.name}"?`) == true) {
+                const data = {};
+                data.offerId = received[index].id;
+                await exchangeAPI().create(data);
+                createMyOffers(user);
+            }
+        })         
+    }
+    for (let index = 0; index < btnTrocaVermelho.length; index++) {
+        btnTrocaVermelho[index].addEventListener('click', async ()=>{
+            if (confirm(`Deseja cancelar a trocar do Funko "${received[index].target.funko.name}" pelo "${received[index].offered.funko.name}"?`) == true) {
+                await offerAPI().refuseOffer(received[index].id);
+                createMyOffers(user);
+            }
+        });            
+    }
+}
    
-
-export default (user) => { 
+export default async function createMyOffers(user) { 
     mainContent.innerHTML = client(user);
     const clientLeft = document.querySelector("#clientLeft");
-    clientLeft.innerHTML = minhasOfertas;
+    const received = await offerAPI().getReceived();
+    const send = await offerAPI().getSent();
+    clientLeft.innerHTML = minhasOfertas();
+
+    const tableClientTrade = document.querySelector("#tableClientTrade");
+    for (let index = 0; index < received.length; index++) {
+        tableClientTrade.innerHTML += offerRecieved(received[index]);
+    }
+
+    btnActions(received, user);
+
+    const tableClientSend = document.querySelector("#tableClientSend");
+    for (let index = 0; index < send.length; index++) {
+        tableClientSend.innerHTML += offerSend(send[index]);
+    }
 };

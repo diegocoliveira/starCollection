@@ -73,7 +73,7 @@ function statusList() {
     for (let index = 0; index < status.length; index++) {
         if (status[index].innerHTML == "troca concluida") {
             divStatus[index].innerHTML += dashBoard.finished;
-        } else if (status[index].innerHTML == "troca em andamento") {
+        } else if (status[index].innerHTML == "em andamento") {
             divStatus[index].innerHTML += dashBoard.pending;
         } else if (status[index].innerHTML == "troca recusada") {
             divStatus[index].innerHTML += dashBoard.refused;
