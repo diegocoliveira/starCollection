@@ -2,10 +2,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
     width: 100%;
-    height: 35%;
-    margin-top: 2vh;
+    height: 25%;
+    margin-top: 15%;
 }
 #collectionButton{
     background: #fbf9f9;
@@ -13,22 +13,25 @@
     font-family: "Roboto";
     font-style: normal;
     font-weight: 700;
-    font-size: 0.7vw;
+    font-size: 1rem;
     line-height: 23px;
     color: #000000;
     cursor: pointer;
-    width: 6vw;
-    height: 4vh;
+    width: 45%;
+    height: 20%;
+    margin-top: 3%;
 }
 
 .optionsClient{
-    height: 3vh;
+    height: 30%;
     width: 100%;
     background-color: #262730;
-    border: none;;
-    font-size: 0.8em;
+    border: none;
+    font-size: 0.8rem;
     text-decoration: none;
     color: #fbf9f9;
+    display: flex;
+    justify-content: center;
 }
 
 .optionsClient:hover {
@@ -55,18 +58,15 @@
 }
 
 .optionsPrincipal {
-    height: 7vh;
+    height: 15%;
     width: 100%;
-
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-
     background-color: #262730;
     border: none;
-
-    font-size: 0.8em;
+    font-size: 1.3rem;
     text-decoration: none;
 }
 
@@ -80,7 +80,6 @@
     height: 1px;
     background: #fbf9f9;
     margin-top: 1vh;
-    margin-bottom: 1vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -112,11 +111,22 @@
 } */
 
 #subMenuClient {
-    height: 50%;
+    height: 100%;
 
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 
     font-size: 1.3rem;
+}
+.navMenuClient{
+    height: 60%;
+    width: 100%;
+}
+.divOptionsTrocas{
+    height: 35%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }

@@ -48,7 +48,7 @@ export class Dashboard{
                 <div id="infoTrades">
                     <h3 class="fonteFunko">Funko</h3>
                    
-                        <img src="./images/repeat.svg" alt="repeat icon" class="iconAdm">
+                        <img src="./images/repeat.svg" alt="repeat icon" class="iconAdmDash">
                     
                 </div>
                 <div>

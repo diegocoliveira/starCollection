@@ -7,7 +7,7 @@
 }
 .fontStarWars{
     font-family: "Distant Galaxy";
-    font-size: 1.4vw;
+    font-size: 2rem;
     color: #ffffff;
 }
 .fontStarWarsBlack{
@@ -24,6 +24,7 @@
     margin: 0;
     font-family: "Roboto", sans-serif;
     color: #000000;
+    font-size: 1rem;
 }
 .font2Cliente{
     font-family: "Roboto", sans-serif;
@@ -37,6 +38,7 @@
     margin: 0;
     font-family: "Roboto", sans-serif;
     color: #ffffff;
+    font-weight: bold;
 }
 
 .font3 {

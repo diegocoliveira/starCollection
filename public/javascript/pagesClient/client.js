@@ -1,17 +1,17 @@
 export default function menuLateralClient(user) {
     return `<aside id="clientRight">
-                <div>
+                <div class="divContainerMenuLateral">
 
                     <div id="perfilClient">
                         <img src="./images/person-circleWhite.png" class="avatar" alt="user icon">
                         <h2 class="fontStarWars">${user.name}</h2>
                      
-                        <button id="collectionButton"><a class="linkFormat" href="/#collection">Minha Coleção</a></button>
+                        <button id="collectionButton"><a class="linkFormat linkAmyCollection" href="/#collection">Minha Coleção</a></button>
                     </div>
 
                     <div class="barClient"></div>
 
-                    <nav>
+                    <nav class="navMenuClient">
 
                         <div id="subMenuClient">
                             <button id="dashBt" class="optionsPrincipal , font2">
@@ -21,11 +21,11 @@ export default function menuLateralClient(user) {
                                 Minhas Trocas
                             </button>
 
-
+                            <div class="divOptionsTrocas">
                             <button class="optionsClient"><a class="linkFormatTrocas" href="/#pendente">em andamento</a></button>
                             <button class="optionsClient"><a class="linkFormatTrocas" href="/#concluida">concluídas</a></button>
                             <button class="optionsClient"><a class="linkFormatTrocas" href="/#recusada">recusadas</a></button>
-
+                            </div>
 
                     
 

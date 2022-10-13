@@ -17,7 +17,7 @@ margin-top: 2%;
 .minhasTrocas{
 display: flex;
 flex-direction: row;
-width: 40%;
+width: 60%;
 height: 100%;
 justify-content: space-between;
 }
@@ -35,14 +35,18 @@ justify-content: space-between;
     color: #fbf9f9;
     border: none;
     cursor: pointer;
-    padding: 0.1vh 1vw 0.1vh 1vw;
+    padding: 0.1% 3% 0.1% 3%;
 }
 .btnTrocaAzul{
     background-color: #262730;
     color: #fbf9f9;
     border: none;
     cursor: pointer;
-    padding: 0.1vh 1vw 0.1vh 1vw;
+    padding: 0.1% 3% 0.1% 3%;
+}
+.btnMinhasTrocas{
+    height: 100% !important;
+    padding: 1.1% 3% 1.1% 3% !important;
 }
 .btnTrocasWhite{
     background-color: #fbf9f9;
@@ -60,19 +64,20 @@ justify-content: space-between;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 2vw;
+    padding-left: 4%;
 }
 
 #gearClientTrocaImg{
-    margin-left: 1vw;
+    margin-right: 7%;
+    height: 50%
 }
 
 .barTroca {
     width: 100%;
-    height: 3px;
+    height: 1%;
     background: #000000;
-    margin-top: 0.2vh;
-    margin-bottom: 1vh;
+    margin-top: 1%;
+    margin-bottom: 2%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,7 +85,7 @@ justify-content: space-between;
 
 .confInfosClientTroca {
 
-    padding: 2vw;
+    padding: 4%;
     height: 75%;
     background-color: #fbf9f9;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
@@ -89,7 +94,7 @@ justify-content: space-between;
     margin-top: 5%;
 }
 .infosTrocaCliente{
-    padding: 2vw;
+    padding: 3%;
     height: 35%;
     background-color: #fbf9f9;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
@@ -98,18 +103,19 @@ justify-content: space-between;
     margin-top: 5%;
 }
 .fontTroca{
-    font-size: 2.5vh;
+    font-size: 1.5rem;
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
 }
 
 .fonteFunko{
-    font-size: 2vh;
+    font-size: 1.5rem;
     font-family: "Distant Galaxy";
     margin: 0.8vw 0 0 0;
+    width: 20%;
 }
 .fonteStatus{
-    font-size: 1.8vh;
+    font-size: 1.5rem;
     font-family: "Distant Galaxy";
     margin: 0.8vw 0 0 0;
 }
@@ -123,7 +129,7 @@ justify-content: space-between;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 0 1vw 0 1vw;
+    margin: 0 2% 0 2%;
 }
 .infoBetweenClientTrade{
     display: flex;
@@ -137,13 +143,13 @@ justify-content: space-between;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 98%;
+    width: 100%;
 }
 .barTrade{
     width: 100%;
-    height: 1px;
+    height: 1%;
     background: #000000;
-    margin: 1vh 0 1vh 0;
+    margin: 2% 0 2% 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -157,6 +163,7 @@ justify-content: space-between;
     overflow-y: auto;
 }
 .labelTroca{
-    font-size: 1.2vh;
+    font-size: 1rem;
     font-family: 'Roboto', sans-serif;
+    margin-top: 2%;
 }

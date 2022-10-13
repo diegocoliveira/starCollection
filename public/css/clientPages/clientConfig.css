@@ -1,7 +1,7 @@
 #clientConfPage {
     width: 100%;
     height: 100%;
-    padding: 2vw;
+    padding: 3%;
 
     display: flex;
     flex-direction: column;
@@ -13,6 +13,7 @@
     flex-direction: column;
     position: relative;
     left: 5%;
+    margin-top: 5%;
 }
 #infoDivClient {
     width: 100%;
@@ -48,9 +49,8 @@
 }
 
 .confInfosClient {
-
-    padding: 2vw;
-    height: 50%;
+    padding: 3%;
+    height: 56%;
     background-color: #fbf9f9;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
     justify-content: space-between;
@@ -89,12 +89,10 @@
 }
 
 .blueBar {
-
     width: 100%;
     height: 20%;
     background: #262730;
     display: flex;
-
 }
 
 .lowClient {
@@ -109,20 +107,18 @@
     align-items: flex-start;
     color: #fbf9f9;
     width: 100%;
-    padding-top: 0.9vh;
-    padding-bottom: 0.9vh;
+    padding-top: 1%;
+    padding-bottom: 1%;
     background: #262730;
-    margin-left: 1vw;
+    margin-left: 5%;
 }
 .dataConfsClient{
     text-align: start;
-    min-width: 10vw;
-    margin-bottom: 1.5vh;
+    min-width: 100%;
 }
 .dataConfsClientEdit{
     text-align: end;
-    min-width: 10vw;
-    margin-bottom: 1.5vh;
+    margin-bottom: 2%;
 }
 .infoBetweenClient{
     display: flex;
@@ -130,25 +126,26 @@
     justify-content: space-around;
     align-items: center;
     text-align: start;
-    margin-top: 1vh;
+    margin-top: 2%;
 }
 #tableClient{
     display: flex;
     flex-direction:row;
     justify-content: space-around;
+    width: 100%;
+    height: 75%;
 }
 #gearClientImg{
-    margin-right: 1vw;
+    margin-right: 5%;
+    
 }
 
 .iconClient {
-    width: 2vw;
-
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 2vw;
-    margin-right: 0.5vw;
+    margin-left: 19%;
+    margin-right: 5%;
 }
 .linkFormatTrocas{
     text-decoration: none;
@@ -156,6 +153,10 @@
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 0.75vw;
+    font-size: 1.1rem;
     line-height: 23px;
+}
+.divContainerMenuLateral {
+height: 95%;
+width: 100%;
 }

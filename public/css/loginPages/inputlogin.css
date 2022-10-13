@@ -1,18 +1,19 @@
 #search {
-    background-size: 2.5vh;
-    padding-left: 1.5vw;
-    height: 3vh;
-    width: 30vw;
+    padding-left: 5%;
+    height: 60%;
+    width: 65%;
     border: thin solid #262730;
     border-right: none;
 }
 
 #searchBusca {
-    height: 3vh;
+    height: 90%;
 }
 
 #searchButton {
-    height: 3vh;
+    height: 60%;
+    width: 8%;
+    padding-top: 0.5%;
     border: thin solid #262730;
     border-left: none;
     background-color: #f7ae11;
@@ -22,13 +23,15 @@
 }
 
 #filterSearch {
-    height: 3vh;
+    height: 60%;
     border: none;
     border-bottom-left-radius: 5px;
     border-top-left-radius: 5px;
     background-color: #262730;
     cursor: pointer;
     color: #f0f0f0;
+    width: 12%;
+    text-align: center;
 }
 
 #searchDiv {
@@ -36,66 +39,83 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    height: 100%;
+    width: 50%;
 }
 
 #username {
-    padding-left: 1.5vw;
     border-radius: 20px;
-    height: 2.5vh;
-    margin: 1vh;
+    height: 5%;
     background: #f0f0f0;
     border: 2px solid #f0f0f0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
+    width: 50%;
+    text-align: center;
 }
 
 #input-email {
-    padding-left: 1.5vw;
     border-radius: 20px;
-    height: 2.5vh;
-    margin: 1vh;
+    height: 6%;
+    width: 50%;
+    text-align: center;
     background: #f0f0f0;
     border: 2px solid #f0f0f0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
 }
-
+.inputSignup {
+    height: 5% !important;
+}
 #input-password {
-    background-image: url("../../images/visibility_off.svg");
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: 2.5vh;
-    padding-left: 1.5vw;
     border-radius: 20px;
-    height: 2.5vh;
-    margin: 1vh;
+    height: 6%;
     background: #f0f0f0;
     border: 2px solid #f0f0f0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
+    width: 50%;
+    text-align: center;
 }
 #emailForgot {
-    padding-left: 1.5vw;
     border-radius: 20px;
-    height: 2.5vh;
-    margin: 1vh;
+    height: 6%;
     background: #f0f0f0;
     border: 2px solid #f0f0f0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
+    width: 50%;
+    text-align: center
 }
 #city {
-    padding-left: 1.5vw;
     border-radius: 20px;
-    height: 2.5vh;
-    margin: 1vh;
+    height: 5%;
     background: #f0f0f0;
     border: 2px solid #f0f0f0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
+    width: 50%;
+    text-align: center
 }
 
 #state {
-    padding-left: 1.5vw;
     border-radius: 20px;
-    height: 2.5vh;
-    margin: 1vh;
+    height: 5%;
     background: #f0f0f0;
     border: 2px solid #f0f0f0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
+    width: 50%;
+    text-align: center
+}
+.pForgot {
+    width: 50%;
+    display: flex;
+    justify-content: end;
+}
+.pLoginSignup {
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 23px;
+    color: #000000;
+}
+.titleH2signup {
+    font-family: "Distant Galaxy";
+    font-size: 2rem;
+    text-align: center;
 }

@@ -37,7 +37,7 @@ const clientTrocaPendente = `
         <div class="emAndamento">
                 <div class="dataPedidoTroca">
                 <h4>Darth Vader (usuário R) x Stormtrooper (usuário A)</h4>
-                <div>
+                <div class="labelTroca">
                 <label class="labelTroca">proposta feita em:</label>
                 <input type="date" class="inputTroca" value="2021-08-01">
                 </div>

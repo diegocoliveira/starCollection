@@ -41,8 +41,10 @@ function offerRecieved(received){
                     <label class="labelTroca">proposta feita em:</label>
                     <p>${received.createdAt}</p>
                 </div>
-                <input type="submit" class="btnTrocaAzul" value="Aceitar">
-                <input type="submit" class="btnTrocaVermelho" value="Recusar">
+
+                <input type="submit" class="btnTrocaAzul btnMinhasTrocas" value="Aceitar">
+                <input type="submit" class="btnTrocaVermelho btnMinhasTrocas" value="Recusar">
+
             </div>
             <div class="barTrade"></div>`
 }
