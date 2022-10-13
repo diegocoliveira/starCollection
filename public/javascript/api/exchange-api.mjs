@@ -15,6 +15,7 @@ export default function exchangeAPI() {
         const data = await response.json();
         return data;
     }
+    
 
     async function countExchange() {
         const options = { method: "GET", headers: { "Content-Type": "application/json" } };
