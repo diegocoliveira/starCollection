@@ -77,6 +77,7 @@ async function postClient(){
         password.value == '';
         state.value == '';
         result.innerHTML = 'Usuário cadastrado com sucesso';
+        setInterval(()=>{window.location.hash = '#login'}, 2000);
     } catch (error) {
         result.innerHTML = error.message;
         console.log(error);
