@@ -99,12 +99,12 @@ export default class CollectionRepository {
         let error = null;
         try {
             const query = `SELECT collection.id, collection.is_exchange, funko.id as funko_id, funko.name, funko.category
-                             FROM "starcollection".collection 
-                       RIGHT JOIN "starcollection".funko on collection.funko_id = funko.id 
+                             FROM starcollection.funko
+                        LEFT JOIN collection ON funko.id = collection.funko_id
                               AND collection.user_id = $1
-                            WHERE collection.deleted_at IS NULL
-                              AND funko.deleted_at IS NULL
-                        ORDER BY funko.name ASC;`;
+                              AND collection.deleted_at IS NULL
+                            WHERE funko.deleted_at IS NULL
+                         ORDER BY funko.name ASC`;
             const values = [userId];
             const result = await pool.query(query, values);
             for (let i = 0; i < result.rows.length; i++) {
