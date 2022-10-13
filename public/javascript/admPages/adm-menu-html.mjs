@@ -2,11 +2,11 @@ export default function admMenu(user) {
     return `<aside id="admMenu">
     <div>
     <div id="perfil">
-        <img src="./images/person-circleWhite.png" class="avatar" alt="user icon">
-        <h2 class="fontStarWars">${user.name}</h2>
+        <img src="./images/person-circleWhite.png" class="avatarMenuLateral" alt="user icon">
+        <h2 class="fontStarWarsMenu">${user.name}</h2>
     </div>
     <div class="barClient"></div>
-    <nav>
+    <nav class="navMenuAdm">
     <div id="subMenu">
     <button id="dashBt" class="options , font2">
         <div class="iconAdm">

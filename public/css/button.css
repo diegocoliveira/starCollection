@@ -16,7 +16,7 @@
 
 .registeBt {
     width: 40%;
-    height: 5vh;
+    height: 34%;
     border-radius: 25px;
     color: #ffffff;
     border: none;
@@ -73,7 +73,7 @@
 }
 
 .options {
-    height: 5%;
+    height: 25%;
     width: 100%;
 
     display: flex;

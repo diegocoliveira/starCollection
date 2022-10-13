@@ -70,8 +70,8 @@
 .infoBetween{
 
     width: 100%;
-    padding: 0.5vw;
-
+    padding: 1%;
+    height: 15%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -88,7 +88,7 @@
 
 .divStatus{
 
-    width: 45%;
+    width: 20%;
     height: 100%;
 
     display: flex;
@@ -99,7 +99,7 @@
 }
 
 .iconStatus {
-    width: 2vw;
+    width: 12%;
 
     display: flex;
     align-items: center;

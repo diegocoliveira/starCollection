@@ -21,8 +21,8 @@ export default function clientTroca() {
                     <div class="exchangeFunko">
                         <div id="titleBox">
                             <h3 id="productFunko">Funko</h4>
-                            <h2 id="funkoName">${info.funko.name}</h2>
                             <h4>${info.funko.category}</h4>
+                            <h2 id="funkoName">${info.funko.name}</h2>
                             <div class="barTroca"></div>
                         </div>
                         

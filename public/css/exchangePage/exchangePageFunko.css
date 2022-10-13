@@ -75,14 +75,14 @@
     width: 90%;
 }
 #productFunko{
-    font-size: 2vh;
+    font-size: 1.2rem;
     font-family: 'Roboto', sans-serif;
     font-weight: 400
 }
 #funkoName{
-    font-size: 3vh;
+    font-size: 1.6rem;
     font-family: "Distant Galaxy";
-    margin: 0.8vw 0 0 0;
+    margin: 4% 0 0 0;
 }
 .selectorFunko{
     width: 90%;
@@ -104,5 +104,5 @@
     height: 12%;
     background-color: red;
     color: white;
-    font-size: 150%;
+    font-size: 1.4rem;
 }

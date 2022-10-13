@@ -31,8 +31,10 @@ body {
 
 .flex {
     display: flex;
-    gap: 1vw;
+    gap: 5%;
     align-items: center;
+    height: 100%;
+    width: 80%;
 }
 .flexListUser {
     display: flex;

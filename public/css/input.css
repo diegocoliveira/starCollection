@@ -11,9 +11,10 @@ select:focus {
 }
 
 select {
-    height: 5vh;
+    height: 10%;
     background-color: transparent;
-    border: none;
+    /* border: none; */
+    width: 70%;
 }
 
 textarea {
@@ -28,5 +29,5 @@ textarea {
 .file {
     display: flex;
     flex-direction: column;
-    gap: 1vh;
+    gap: 5%;
 }
