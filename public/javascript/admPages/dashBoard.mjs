@@ -61,7 +61,6 @@ export class Dashboard{
         return `<div class="infoBetween">
             <h4 class="trades , font1">${info.funko_target} (${info.user_target}) x ${info.funko_offered} (${info.user_offered})</h4>
             <div class="divStatus">
-                <p font1">${info.created_at}</p>
                 <p class="status , font1">${info.status}</p>
             </div>
         </div>`

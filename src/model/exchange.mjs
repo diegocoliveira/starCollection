@@ -5,6 +5,7 @@ export default class Exchange {
         this.offered = null;
         this.okUserTarget = false;
         this.okUserOffered = false;
+        this.status = "em andamento";
         this.createdAt = null;
         this.updatedAt = null;
         this.deletedAt = null;

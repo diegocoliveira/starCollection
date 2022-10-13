@@ -21,6 +21,20 @@ export default function OfferController() {
         }
     }
 
+    async function remove(req, res){
+        try {
+            const result = await services.remove(req.params.id);
+            if (result.error) {
+                res.status(result.status || 500).json({ error: result.error.message });
+                return;
+            }
+            res.status(200).json(result.data);
+        } catch (error) {
+            console.log(error);
+            res.status(500).json({ error: error.message });
+        }
+    }
+
     async function listReceived(req, res) {
         try {
             const result = await services.listReceived(req.user.id);
@@ -65,5 +79,5 @@ export default function OfferController() {
             res.status(500).json({ error: error.message });
         }
     }
-    return { create, listReceived, listSent, countOffer };
+    return { create, remove, listReceived, listSent, countOffer };
 }

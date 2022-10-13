@@ -23,6 +23,47 @@ export default class OfferRepository {
         return { data, error };
     }
 
+    async delete(pool, id) {
+        let data = [];
+        let error = null;
+        try {
+            const query = `DELETE FROM starcollection.offer WHERE id = $1 RETURNING *`;
+            const values = [id];
+            const result = await pool.query(query, values);
+            if (result.rowCount > 0) {
+                data = new Offer();
+                data.id = result.rows[0].id;
+                data.target = result.rows[0].target;
+                data.offered = result.rows[0].offered;
+                data.createdAt = result.rows[0].created_at;
+            }
+        } catch (err) {
+            error = err;
+        }
+        return { data, error };
+    }
+
+    async get(pool, id) {
+        let data = [];
+        let error = null;
+        try {
+            const query = `SELECT * FROM starcollection.offer WHERE id = $1`;
+            const values = [id];
+            const result = await pool.query(query, values);
+            if (result.rowCount > 0) {
+                const offer = new Offer();
+                offer.id = result.rows[0].id;
+                offer.target = result.rows[0].target;
+                offer.offered = result.rows[0].offered;
+                offer.createdAt = result.rows[0].created_at;
+                data.push(offer);
+            }
+        } catch (err) {
+            error = err;
+        }
+        return { data, error };
+    }
+
     async getByCollectionId(pool, collectionId) {
         let data = [];
         let error = null;
