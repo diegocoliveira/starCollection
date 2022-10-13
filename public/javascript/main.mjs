@@ -39,7 +39,6 @@ async function update(e) {
 
 async function remove(e) {
     const id = e.target.getAttribute("data-id");
-    console.log(id);
     try {
         result.innerHTML = "";
         await teamApi.remove(id);

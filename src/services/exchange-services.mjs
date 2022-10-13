@@ -20,9 +20,7 @@ export default class ExchangeServices {
             if (result.error) {
                 throw result.error;
             }
-            console.log(result.data[0]);
             const offer = result.data;
-            console.log(offer);
             const exchange = new Exchange();
             exchange.id = uuid();
             exchange.target = offer.target;
