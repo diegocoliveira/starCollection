@@ -6,19 +6,7 @@ export class ConfAdmPage{
                     <h2 class="fontStarWarsBlack">Configuracoes</h2>
                 </div>
                 <div class="line2"></div>
-                <div class="confInfos , flex">
-                    <div id="infoDiv" class="flex">
-                        <div class="greyDiv">
-                            <img id="imgConf" src="./images/person3.svg" alt=""/>
-                        </div>
-                        <div class="info">
-                            <h4>Foto</h4>
-                            <p class="low">tamanho minimo 100x100</p>
-                            <button id="btRmFt">remover</button>
-                        </div>
-                    </div>
-                    <input id="inputImgPerfil" type='file'/>
-                </div>
+               
                 <div class="confInfos">
                     <div class="fontStarWarsBlack">
                         <h3>Dados Pessoais</h3>

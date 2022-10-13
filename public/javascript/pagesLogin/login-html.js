@@ -17,7 +17,7 @@ export default () => {
 
             <p class="pLogin">Por favor, insira sua senha</p>
             <input type="password" placeholder="**********" id="input-password">
-            <p><a id="forgot" href="/#forgot">Esqueceu sua senha?</a></p>
+            <p class="pForgot"><a id="forgot" href="/#forgot">Esqueceu sua senha?</a></p>
 
             <input type="submit" value="Entrar" id="btn-login"/>
             <div id="result" class="font1 , error"> </div>

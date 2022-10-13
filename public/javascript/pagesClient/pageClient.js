@@ -14,25 +14,6 @@ function clientConfig(user){
             <p>configurações</p>
         </div>
 
-        <div class="confInfosClientTop">
-        <div class="blueBar"><p class="dataPerson">Foto</p></div>
-
-            <div id="infoDivClient">
-    
-                <div class="greyDivClient">
-                    <img id="imgConfClient" src="./images/person3.svg" alt=""/>
-                </div>
-    
-                <div class="infoClient">
-                    <h4>Foto</h4>
-                    <p class="lowClient">tamanho minimo 100x100</p>
-                    <button id="btRmFtclient">remover</button>
-                </div>
-                <input id="inputImgPerfil" type='file'/>
-            </div>
-    
-        </div>
-        
     
         <div class="confInfosClient">
     

@@ -8,8 +8,8 @@ export default () => {
 
             <div id="mainRightLogin">
             
-            <h2 class="titleH2">Esqueceu a Senha?</h2>
-            <p class="pSignup"><a id="signup" href="/#login">Conecte-se</a></p>
+            <h2 class="titleH2Forgot">Esqueceu a Senha?</h2>
+            <p class="pSignupForgot"><a id="signup" href="/#login">Conecte-se</a></p>
 
             <div class="bar"></div>
 
@@ -17,7 +17,7 @@ export default () => {
             <input type="email" placeholder="e.g.: R2-D2@gmail.com" id="emailForgot">
             
 
-            <input class="btn-pages-login" type="submit" value="Envie" id="loginButton">
+            <input class="btn-pages-loginForgot" type="submit" value="Envie" id="loginButton">
             
            
             </div>

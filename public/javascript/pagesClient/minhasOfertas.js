@@ -30,8 +30,8 @@ const minhasOfertas = `
                 <label class="labelTroca">proposta feita em:</label>
                 <input type="date" class="inputTroca" value="2021-08-01">
                 </div>
-                <input type="submit" class="btnTrocaAzul" value="Aceitar">
-                <input type="submit" class="btnTrocaVermelho" value="Recusar">
+                <input type="submit" class="btnTrocaAzul btnMinhasTrocas" value="Aceitar">
+                <input type="submit" class="btnTrocaVermelho btnMinhasTrocas" value="Recusar">
         </div>
         <div class="barTrade"></div>
 

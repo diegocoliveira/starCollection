@@ -8,21 +8,21 @@ export default function signupPage() {
 
     <div id="mainRightLogin">
     
-    <h2 class="titleH2">Criar Nova Conta</h2>
+    <h2 class="titleH2signup">Criar Nova Conta</h2>
     <p class="pSignup">Já é Registrado?  <a id="signup" href="/#login">Conecte-se</a></p>
 
     <div class="bar"></div>
 
-    <p class="pLogin">Por favor, insira o seu nome</p>
+    <p class="pLoginSignup">Por favor, insira o seu nome</p>
     <input type="text" placeholder="R2-D2" id="username">
 
-    <p class="pLogin">Por favor, insira o seu e-mail</p>
-    <input type="email" placeholder="e.g.: R2-D2@gmail.com" id="input-email">
+    <p class="pLoginSignup">Por favor, insira o seu e-mail</p>
+    <input type="email" placeholder="e.g.: R2-D2@gmail.com" id="input-email" class="inputSignup">
 
-    <p class="pLogin">Por favor, insira sua senha</p>
-    <input type="password" placeholder="**********" id="input-password">
+    <p class="pLoginSignup">Por favor, insira sua senha</p>
+    <input type="password" placeholder="**********" id="input-password" class="inputSignup">
 
-    <p class="pLogin">Por favor, insira seu estado</p>
+    <p class="pLoginSignup">Por favor, insira seu estado</p>
     <select name="estado" id="state">
         <option value="" selected></option>
         <optgroup label="Norte">
@@ -64,10 +64,10 @@ export default function signupPage() {
         </optgroup>
     </select>
 
-    <p class="pLogin">Por favor, insira sua cidade</p>
+    <p class="pLoginSignup">Por favor, insira sua cidade</p>
     <select name="cidade" id="city"></select>
 
-    <input class="btn-pages-login" type="submit" value="Cadastre-se" id="loginButton">
+    <input class="btn-pages-cadastro" type="submit" value="Cadastre-se" id="loginButton">
     
     <div id="result" class="font1 , error"> </div>
 
