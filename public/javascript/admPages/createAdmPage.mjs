@@ -45,10 +45,11 @@ async function dashBoardCreate() {
     const users = await UserAPI().countUser();
     const offers = await offerAPI().countOffer();
     const exchange = await exchangeAPI().countExchange();
+    const online = (await UserAPI().totalOnline()) || 0;
     const dashBoard = new Dashboard();
 
     clear.mainClear();
-    main.innerHTML += dashBoard.infos(users, offers, exchange);
+    main.innerHTML += dashBoard.infos(users, offers, exchange, online);
     main.innerHTML += dashBoard.recentTrades;
     listInfo();
 }

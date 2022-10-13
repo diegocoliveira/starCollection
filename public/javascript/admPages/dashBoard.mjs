@@ -1,6 +1,5 @@
-export class Dashboard{
-
-    infos(users, offers, exchange){
+export class Dashboard {
+    infos(users, offers, exchange, online) {
         return `<div id="divInfos">
             <div class="infoDashboard">
                 <div class="iconAdm">
@@ -34,8 +33,8 @@ export class Dashboard{
                         <img src="./images/view.svg" alt="view icon">
                     </div>
                     <div class="info">
-                        <p id="quantView" class="font1">0</p>
-                        <p class="font3">visualizações diárias</p>
+                        <p id="quantView" class="font1">${online}</p>
+                        <p class="font3">acessos diários</p>
                     </div>
             </div>
         </div>`;
@@ -57,13 +56,13 @@ export class Dashboard{
             </div>
         </section>`;
 
-    tradeInfo(info){
+    tradeInfo(info) {
         return `<div class="infoBetween">
             <h4 class="trades , font1">${info.funko_target} (${info.user_target}) x ${info.funko_offered} (${info.user_offered})</h4>
             <div class="divStatus">
                 <p class="status , font1">${info.status}</p>
             </div>
-        </div>`
+        </div>`;
     }
 
     finished = '<img class="iconStatus" src="./images/statusFinished.svg" alt="finished icon"/>';

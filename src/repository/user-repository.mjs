@@ -228,7 +228,7 @@ export default class UserRepository {
             const query = `UPDATE starcollection.user SET last_login_at = $1
                             WHERE deleted_at IS NULL
                               AND email = $2 AND password = $3 RETURNING *`;
-            
+
             const values = [now, email, password];
             const result = await pool.query(query, values);
             if (result.rowCount > 0) {
@@ -247,13 +247,29 @@ export default class UserRepository {
         return { data, error };
     }
 
-    async countUser(pool){
+    async totalOnline(pool) {
+        let data = 0;
+        let error = null;
+        try {
+            const query = `SELECT count(*) as online FROM starcollection.user
+                            WHERE last_login_at > CURRENT_TIMESTAMP - INTERVAL '1 day'`;
+            const result = await pool.query(query);
+            if (result.rowCount > 0) {
+                data = result.rows[0].online;
+            }
+        } catch (err) {
+            error = err;
+        }
+        return { data, error };
+    }
+
+    async countUser(pool) {
         let data = [];
         let error = null;
-        try{
+        try {
             const query = `SELECT COUNT(*) FROM starcollection.user WHERE deleted_at is null and type = 'cliente'`;
             const result = await pool.query(query);
-            data.push(result.rows[0].count)
+            data.push(result.rows[0].count);
         } catch (err) {
             error = err;
         }
