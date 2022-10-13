@@ -1,4 +1,6 @@
 import client from "./client.js";
+import exchangeAPI from "../api/exchange-api.mjs";
+import logout from "../logout.js";
 
 const mainContent = document.getElementById("root");
 
@@ -33,25 +35,35 @@ const clientTrocaConcl = `
         <div class="barTroca"></div>
 
 
-        <div id="tableClientTrade">
-
-        <div class="infoBetweenClientTrade">
-                <h4>Darth Vader (usuário R) x Stormtrooper (usuário A)</h4>
-                <div>
-                <label class="labelTroca">troca concluída em:</label>
-                <input type="date" class="inputTroca" value="2021-08-01">
-                </div>
-        </div>
-        <div class="barTrade"></div>
-
-    </div>
+        <div id="tableClientTrade"></div>
     </div>
 </div>
-</section>
+</section>`;
 
-`;
-export default (user) => { 
+function infos(finished) {
+    const timestamp = Date.parse(finished.updatedAt);
+    const date = new Date(timestamp).toLocaleString();
+    return `<div class="infoBetweenClientTrade">
+                <h4>${finished.offered.funko.name} (${finished.offered.user.name}) x ${finished.target.funko.name} (${finished.target.user.name})</h4>
+                <div>
+                    <label class="labelTroca">troca concluída em:</label>
+                    <p class="inputTroca">${date}</p>
+                </div>
+            </div>
+            <div class="barTrade"></div>`;
+}
+
+export default async(user) => { 
+    const finisheds = await exchangeAPI().listStatus('concluída');
     mainContent.innerHTML = client(user);
     const clientLeft = document.querySelector("#clientLeft");
     clientLeft.innerHTML = clientTrocaConcl;
+
+    const tableClientTrade = document.querySelector("#tableClientTrade");
+    for (let index = 0; index < finisheds.length; index++) {
+        tableClientTrade.innerHTML += infos(finisheds[index]);
+    }
+
+    const btnLogout = document.querySelector("#btn-logout");
+    btnLogout.onclick = logout;
 };

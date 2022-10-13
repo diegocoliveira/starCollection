@@ -100,7 +100,7 @@ export default class ExchangeRepository {
         let data = [];
         let error = null;
         try {
-            const query = `SELECT exchange.id, exchange.status,
+            const query = `SELECT exchange.id, exchange.status, exchange.created_at, exchange.updated_at,
                                   target.id as target_id, offered.id as offered_id,
                                   target_user.id as target_user_id, target_user.name as target_user_name,
                                   target_funko.id as target_funko_id, target_funko.name as target_funko_name,
@@ -123,6 +123,8 @@ export default class ExchangeRepository {
                 const exchange = new Exchange();
                 exchange.id = row.id;
                 exchange.status = row.status;
+                exchange.createdAt = row.created_at;
+                exchange.updatedAt = row.updated_at;
                 exchange.target = {};
                 exchange.target.id = row.target_id;
                 exchange.target.user = {};

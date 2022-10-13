@@ -1,6 +1,7 @@
 import client from "./client.js";
 import offerAPI from "../api/offer-api.mjs";
 import exchangeAPI from "../api/exchange-api.mjs";
+import logout from "../logout.js";
 
 const mainContent = document.getElementById("root");
 
@@ -35,11 +36,13 @@ function minhasOfertas(){
 }
 
 function offerRecieved(received){
+    const timestamp = Date.parse(received.createdAt);
+    const date = new Date(timestamp).toLocaleString();
     return `<div class="emAndamento">
                 <h4>${received.offered.funko.name} (${received.offered.user.name}) x ${received.target.funko.name} (${received.target.user.name})</h4>
                 <div>
                     <label class="labelTroca">proposta feita em:</label>
-                    <p>${received.createdAt}</p>
+                    <p>${date}</p>
                 </div>
 
                 <input type="submit" class="btnTrocaAzul btnMinhasTrocas" value="Aceitar">
@@ -50,11 +53,13 @@ function offerRecieved(received){
 }
 
 function offerSend(send) {
+    const timestamp = Date.parse(send.createdAt);
+    const date = new Date(timestamp).toLocaleString();
     return `<div class="emAndamento">
                 <h4>${send.offered.funko.name} (${send.offered.user.name}) x ${send.target.funko.name} (${send.target.user.name})</h4>
                 <div>
                     <label class="labelTroca">proposta feita em:</label>
-                    <p>${send.createdAt}</p>
+                    <p>${date}</p>
                 </div>
             </div>
             <div class="barTrade"></div>`
@@ -101,4 +106,7 @@ export default async function createMyOffers(user) {
     for (let index = 0; index < send.length; index++) {
         tableClientSend.innerHTML += offerSend(send[index]);
     }
+
+    const btnLogout = document.querySelector("#btn-logout");
+    btnLogout.onclick = logout;
 };

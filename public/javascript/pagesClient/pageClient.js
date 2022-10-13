@@ -223,4 +223,7 @@ export default (user) => {
             alert(error.message);
         }
     }
+
+    const btnLogout = document.querySelector("#btn-logout");
+    btnLogout.onclick = logout;
 };
