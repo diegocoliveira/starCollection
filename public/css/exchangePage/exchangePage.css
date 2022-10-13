@@ -38,7 +38,12 @@
     cursor: pointer;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
 }
-
+#filter{
+    background-color: transparent !important;
+    border: none !important;
+    height: 100% !important;
+    width: 5% !important;
+}
 .funkoImgChange:hover {
 
     transform: scale(1.05);
