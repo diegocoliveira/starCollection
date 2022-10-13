@@ -71,11 +71,11 @@ function statusList() {
     const dashBoard = new Dashboard();
 
     for (let index = 0; index < status.length; index++) {
-        if (status[index].innerHTML == "troca concluida") {
+        if (status[index].innerHTML == "concluída") {
             divStatus[index].innerHTML += dashBoard.finished;
         } else if (status[index].innerHTML == "em andamento") {
             divStatus[index].innerHTML += dashBoard.pending;
-        } else if (status[index].innerHTML == "troca recusada") {
+        } else if (status[index].innerHTML == "cancelada") {
             divStatus[index].innerHTML += dashBoard.refused;
         }
     }
@@ -307,19 +307,9 @@ function confCreate() {
     const confAdmPage = new ConfAdmPage();
     main.innerHTML = confAdmPage.confPage(user);
 
-    const inputImgPerfil = document.querySelector("#inputImgPerfil");
     const btRmFt = document.querySelector("#btRmFt");
     const editBts = document.querySelectorAll(".whiteBt");
     const infoDivs = document.querySelectorAll(".infoBetween");
-
-    inputImgPerfil.addEventListener("change", function () {
-        readURL(this, "imgConf");
-    });
-
-    btRmFt.addEventListener("click", () => {
-        const imgConf = document.querySelector("#imgConf");
-        imgConf.src = "./images/person3.svg";
-    });
 
     for (let index = 0; index < editBts.length; index++) {
         editBts[index].addEventListener("click", () => {

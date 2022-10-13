@@ -32,6 +32,22 @@ export default function exchangeAPI() {
         const data = await response.json();
         return data;
     }
+
+    async function listStatus(status) {
+        const options = { method: "GET", headers: { "Content-Type": "application/json" } };
+        const response = await fetch(`/api/exchange?status=${status}`, options);
+        if (response.status == 401) {
+            window.location.href = "/#login";
+            throw new Error("Sua sessão expirou");
+        }
+
+        if (!response.ok || response.status !== 200) {
+            const message = await response.json();
+            throw new Error(message.error);
+        }
+        const data = await response.json();
+        return data;
+    }
     
 
     async function countExchange() {
@@ -44,6 +60,40 @@ export default function exchangeAPI() {
         const count = await response.json();
         return count;
     }
-    return { create, list, countExchange }
+
+    async function accepted(id) {
+        const options = { method: "PUT", headers: { "Content-Type": "application/json" }};
+        const response = await fetch(`/api//exchange/accepted/${id}`, options);
+
+        if (response.status == 401) {
+            window.location.href = "/#login";
+            throw new Error("Sua sessão expirou");
+        }
+
+        if (!response.ok || response.status !== 200) {
+            const message = await response.json();
+            throw new Error(message.error);
+        }
+        const result = await response.json();
+        return response;
+    }
+
+    async function canceled(id) {
+        const options = { method: "PUT", headers: { "Content-Type": "application/json" }};
+        const response = await fetch(`/api/exchange/canceled/${id}`, options);
+
+        if (response.status == 401) {
+            window.location.href = "/#login";
+            throw new Error("Sua sessão expirou");
+        }
+
+        if (!response.ok || response.status !== 200) {
+            const message = await response.json();
+            throw new Error(message.error);
+        }
+        const result = await response.json();
+        return result;
+    }
+    return { create, list, listStatus, countExchange, accepted, canceled }
 }
 

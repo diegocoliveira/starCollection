@@ -46,8 +46,9 @@ export default function Router(express) {
 
     router.post("/exchange", user().verifyToken, exchange().create);
     router.get("/exchange", user().verifyToken, exchange().list);
-    router.get("/exchange/canceled/:id", user().verifyToken, exchange().canceled);
-    router.get("/exchange/accepted/:id", user().verifyToken, exchange().accepted);
+    router.get("/exchange?status", user().verifyToken, exchange().list);
+    router.put("/exchange/canceled/:id", user().verifyToken, exchange().canceled);
+    router.put("/exchange/accepted/:id", user().verifyToken, exchange().accepted);
 
     router.post("/authentication", user().authenticate);
     router.get("/authorization", user().verifyToken, user().decodeToken);
