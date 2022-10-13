@@ -11,14 +11,15 @@
 
     display: flex;
     justify-content: flex-end;
-    width: 97%
+    width: 97%;
+    height: 10%;
 }
 
 #offerDiv{
 
     width: 99%;
-    height: 93%;
-    padding: 2vw;
+    height: 90%;
+    padding: 2%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;

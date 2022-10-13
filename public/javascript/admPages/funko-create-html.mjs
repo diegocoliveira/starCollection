@@ -18,14 +18,14 @@ export default class FunkoCreate {
 
     <div id="infoProds">
 
-        <div class="subinfoProds">        
+        <div class="subinfoProds sizeFontRegister">        
             <label for="txt-name" class="fontRegister , bold">Nome</label>
             <div class="register">
                 <input type="text" name="name" id="txt-name" placeholder="Nome do Funko"/>                    
             </div>
         </div>
 
-        <div class="subinfoProds">
+        <div class="subinfoProds sizeFontRegister">
             <label for="select-category" class="fontRegister , bold">Categoria</label>
             <div class="register">
             <select name="category" id="select-category">

@@ -3,8 +3,8 @@ export default function menuLateralClient(user) {
                 <div class="divContainerMenuLateral">
 
                     <div id="perfilClient">
-                        <img src="./images/person-circleWhite.png" class="avatar" alt="user icon">
-                        <h2 class="fontStarWars">${user.name}</h2>
+                        <img src="./images/person-circleWhite.png" class="avatarMenuLateral" alt="user icon">
+                        <h2 class="fontStarWarsMenu">${user.name}</h2>
                      
                         <button id="collectionButton"><a class="linkFormat linkAmyCollection" href="/#collection">Minha Coleção</a></button>
                     </div>

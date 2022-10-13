@@ -34,7 +34,7 @@
 
 #infoProds {
     width: 50%;
-    height: 80%;
+    height: 100%;
 
     display: flex;
     flex-direction: column;
@@ -62,12 +62,17 @@
     width: 100%;
     display: flex;
     justify-content: space-evenly;
-    margin-top: 4%;
+    height: 100%;
 }
-
+#select-category{
+    background-color: transparent !important;
+    border: none !important;
+    height: 100% !important;
+    width: 100% !important;
+}
 .register {
     width: 100%;
-    min-height: 5vh;
+    min-height: 70%;
 
     display: flex;
     flex-direction: column;
@@ -79,7 +84,10 @@
 }
 
 .fontRegister {
-    margin: 0 0 1vh 0;
+    margin: 0 0 1% 0;
     font-family: "Roboto", sans-serif;
     color: #000000;
+}
+.sizeFontRegister{
+    height: 12% !important;
 }

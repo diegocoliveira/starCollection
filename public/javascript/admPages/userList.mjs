@@ -18,7 +18,7 @@ export class UserListPage{
         return `<div class="between">
             <div class="flex">
                 <img class="avatar" src="./images/personBlack.svg" alt="">
-                <p class="fontStarWarsBlackUsers">${user.name}</p>
+                <p class="font1">${user.name}</p>
             </div>
             <button id="${user.id}" name="${user.name}" class="whiteBt">
                 <img src="./images/user-block.svg" alt="block icon">
@@ -31,13 +31,12 @@ export class UserListPage{
         <div class="headerAdm"> 
             <h2 class="fontTroca">Novos Usuários</h2>
         </div>
-        <div class="line2"></div>
     </div>`;
 
     newUserView(user){
-        return `<div class="newListNewUsers , flex">
-            <img class="avatar" src="./images/personBlack.svg" alt="">
-            <p class="fontStarWarsBlackUsers">${user.name}</p>
+        return `<div class="newListNewUsers , flex , changeLine2">
+            <img class="avatar avatarNewUsers" src="./images/personBlack.svg" alt="">
+            <p class="font1">${user.name}</p>
         </div>`;
     } 
 }
