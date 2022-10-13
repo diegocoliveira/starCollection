@@ -57,6 +57,7 @@ export default function Router(express) {
     router.get("/count_user", user().verifyToken, user().countUser);
     router.get("/count_Offer", user().verifyToken, offer().countOffer);
     router.get("/count_exchange", user().verifyToken, exchange().countExchange);
+    router.get("/dashboard/online", user().verifyToken, user().totalOnline);
 
     return router;
 }
