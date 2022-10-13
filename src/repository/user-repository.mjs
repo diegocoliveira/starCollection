@@ -223,9 +223,13 @@ export default class UserRepository {
     async authenticate(pool, email, password) {
         let data = [];
         let error = null;
+        const now = new Date();
         try {
-            const query = `SELECT * FROM starcollection.user WHERE deleted_at is null and email = $1 and password = $2`;
-            const values = [email, password];
+            const query = `UPDATE starcollection.user SET last_login_at = $1
+                            WHERE deleted_at IS NULL
+                              AND email = $2 AND password = $3 RETURNING *`;
+            
+            const values = [now, email, password];
             const result = await pool.query(query, values);
             if (result.rowCount > 0) {
                 data = new User();
