@@ -16,7 +16,7 @@ export class UserListPage{
 
     userView(user){
         return `<div class="between">
-            <div class="flex">
+            <div class="flex changeLine2">
                 <img class="avatar" src="./images/personBlack.svg" alt="">
                 <p class="font1">${user.name}</p>
             </div>
