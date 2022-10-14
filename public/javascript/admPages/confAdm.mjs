@@ -12,7 +12,7 @@ export class ConfAdmPage {
                 <p class="dataPerson">Dados Pessoais</p>
                </div>
                     
-                    <div class="infoBetween paddingInfoBetween">
+                    <div class="infoBetweenDois paddingInfoBetween">
                         <div class="flex">
                             <p class="font1 , bold , dataConfs">Nome</p>
                             <p id="name" class="dataConfs">${user.name}</p>
@@ -21,7 +21,7 @@ export class ConfAdmPage {
                             <img src="./images/edit.svg " alt="">
                         </button>
                     </div>
-                    <div class="infoBetween paddingInfoBetween">
+                    <div class="infoBetweenDois paddingInfoBetween">
                         <div class="flex">
                             <p class="font1 , bold , dataConfs">E-mail</p>
                             <p id="email" class="dataConfs">${user.email}</p>
@@ -30,7 +30,7 @@ export class ConfAdmPage {
                             <img src="./images/edit.svg " alt="">
                         </button>
                     </div>
-                    <div class="infoBetween paddingInfoBetween">
+                    <div class="infoBetweenDois paddingInfoBetween">
                         <div class="flex">
                             <p class="font1 , bold , dataConfs">Senha</p>
                             <p id="pass" class="dataConfs">*********</p>
@@ -39,7 +39,7 @@ export class ConfAdmPage {
                             <img src="./images/edit.svg " alt="">
                         </button>
                     </div>
-                    <div class="infoBetween paddingInfoBetween">
+                    <div class="infoBetweenDois paddingInfoBetween">
                         <div class="flex">
                             <p class="font1 , bold , dataConfs">UF - Cidade</p>
                             <p id="endress" class="dataConfs">${user.state} - ${user.city}</p>
